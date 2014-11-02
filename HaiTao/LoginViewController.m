@@ -22,7 +22,7 @@ static NSString *kViewKey = @"viewKey";
 
 @synthesize loginTableView, logoImageView;
 @synthesize btnLogin, btnCancel;
-@synthesize txtUser,txtPass;
+@synthesize txtCountryPhoneCode, txtUser,txtPass;
 @synthesize dataArray; 
 
 
@@ -43,6 +43,10 @@ static NSString *kViewKey = @"viewKey";
     [super viewDidLoad];
 	
 	self.dataArray = [NSArray arrayWithObjects:
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"国家区号: ",kSourceKey,
+                       self.txtCountryPhoneCode,kViewKey,
+                       nil],
 					  [NSDictionary dictionaryWithObjectsAndKeys:
 					   @"手机号: ",kSourceKey,
 					   self.txtUser,kViewKey,
@@ -99,7 +103,7 @@ static NSString *kViewKey = @"viewKey";
  */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-	return 2;
+	return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -124,9 +128,39 @@ static NSString *kViewKey = @"viewKey";
 	return cell;
 }
 
+-(void)initCountryPickerView
+{
+    CountryPicker* pickerView = [[CountryPicker alloc] init];
+    [pickerView sizeToFit];
+    pickerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    pickerView.delegate = self;
+    //pickerView.dataSource = self;
+    pickerView.showsSelectionIndicator = YES;
+    
+    txtCountryPhoneCode.inputView = pickerView;
+}
 
 #pragma mark -
 #pragma mark TextFields
+
+- (UITextField *)txtCountryPhoneCode{
+    if (txtCountryPhoneCode == nil) {
+        CGRect frame = CGRectMake(kLeftMargin + 110, 10.0, kTextFieldWidth, kTextFieldHeight);
+        txtCountryPhoneCode = [[UITextField alloc] initWithFrame:frame];
+        txtCountryPhoneCode.borderStyle = UITextBorderStyleNone;
+        txtCountryPhoneCode.textColor = [UIColor blackColor];
+        txtCountryPhoneCode.font = [UIFont systemFontOfSize:17];
+        txtCountryPhoneCode.placeholder = @"Country Code";
+        txtCountryPhoneCode.backgroundColor = [UIColor whiteColor];
+        txtCountryPhoneCode.autocorrectionType = UITextAutocorrectionTypeNo;
+        txtCountryPhoneCode.inputView = self.pickerCountryView;
+        txtCountryPhoneCode.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [self initCountryPickerView];
+        txtCountryPhoneCode.tag = kViewTag;
+        txtCountryPhoneCode.delegate = self;
+    }
+    return txtCountryPhoneCode;
+}
 
 - (UITextField *)txtUser{
 	if (txtUser == nil) {
@@ -166,6 +200,8 @@ static NSString *kViewKey = @"viewKey";
 	return txtPass;
 }
 
+
+
 #pragma mark UITextFieldDelegate methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 	[textField resignFirstResponder];
@@ -193,6 +229,12 @@ static NSString *kViewKey = @"viewKey";
 	
 	[UIView commitAnimations];
 	return YES;
+}
+
+- (void)countryPicker:(__unused CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code
+{
+    self.txtCountryPhoneCode.text = code;
+    //[self.txtCountryPhoneCode resignFirstResponder];
 }
 
 - (IBAction)Login:(id)sender {
