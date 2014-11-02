@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CountryPicker.h"
+#import "WeiboSDK-Prefix.pch"
 @protocol LoginViewControllerDelegate;
-@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate,CountryPickerDelegate> {
+@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate,CountryPickerDelegate, WBHttpRequestDelegate> {
 	IBOutlet UITableView *loginTableView;
-	IBOutlet UIImageView *logoImageView;
 	UIButton *btnLogin;
-	UIButton *btnCancel;
 	
     UITextField *txtCountryPhoneCode;
 	UITextField *txtUser;
@@ -23,14 +22,13 @@
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *loginTableView;
-@property (nonatomic, retain) IBOutlet UIImageView *logoImageView;
+
 @property (nonatomic, retain) IBOutlet UIButton *btnLogin;
-@property (nonatomic, retain) IBOutlet UIButton *btnCancel;
 @property (nonatomic, retain) UITextField *txtCountryPhoneCode;
 @property (nonatomic, retain) UITextField *txtUser;
 @property (nonatomic, retain) UITextField *txtPass;
 @property (nonatomic, retain) NSArray *dataArray;
+@property (weak, nonatomic) IBOutlet UIImageView *imageWeibo;
 
-@property (retain, nonatomic) IBOutlet CountryPicker *pickerCountryView;
 @end
 

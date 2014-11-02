@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "WeiboSDK-Prefix.pch"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate>
+{
+NSString* wbtoken;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -19,6 +23,7 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+@property (strong, nonatomic) NSString *wbtoken;
 
 
 @end

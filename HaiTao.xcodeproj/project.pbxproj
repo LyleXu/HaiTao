@@ -14,7 +14,6 @@
 		6D6A42CA1A05BA3B0005B35F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42C91A05BA3B0005B35F /* Images.xcassets */; };
 		6D6A42CD1A05BA3B0005B35F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42CB1A05BA3B0005B35F /* LaunchScreen.xib */; };
 		6D6A42D91A05BA3B0005B35F /* HaiTaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A42D81A05BA3B0005B35F /* HaiTaoTests.m */; };
-		6D6A42E31A05BB7B0005B35F /* libWeiboSDK in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42E21A05BB7B0005B35F /* libWeiboSDK */; };
 		6D6A42E91A05BE6C0005B35F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A42E81A05BE6C0005B35F /* LoginViewController.m */; };
 		6D6A42EB1A05C00C0005B35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42EA1A05C00C0005B35F /* Main.storyboard */; };
 		6D6A43291A05E1F40005B35F /* CountryPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A43281A05E1F40005B35F /* CountryPicker.m */; };
@@ -275,6 +274,8 @@
 		6D6A45331A05F7CC0005B35F /* QQ_logo64X64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */; };
 		6D6A45361A0607260005B35F /* weibo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45341A0607250005B35F /* weibo@2x.png */; };
 		6D6A45371A0607260005B35F /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45351A0607260005B35F /* weixin@2x.png */; };
+		6D6A453C1A061FB50005B35F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6A45391A061FB50005B35F /* libWeiboSDK.a */; };
+		6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,7 +302,6 @@
 		6D6A42D21A05BA3B0005B35F /* HaiTaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaiTaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6A42D71A05BA3B0005B35F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D6A42D81A05BA3B0005B35F /* HaiTaoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaiTaoTests.m; sourceTree = "<group>"; };
-		6D6A42E21A05BB7B0005B35F /* libWeiboSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libWeiboSDK; sourceTree = "<group>"; };
 		6D6A42E71A05BE6C0005B35F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6D6A42E81A05BE6C0005B35F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6D6A42EA1A05C00C0005B35F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -564,6 +564,10 @@
 		6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ_logo64X64@2x.png"; sourceTree = "<group>"; };
 		6D6A45341A0607250005B35F /* weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo@2x.png"; sourceTree = "<group>"; };
 		6D6A45351A0607260005B35F /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
+		6D6A45391A061FB50005B35F /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = libWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
+		6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = libWeiboSDK/WeiboSDK.bundle; sourceTree = "<group>"; };
+		6D6A453B1A061FB50005B35F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboSDK.h; path = libWeiboSDK/WeiboSDK.h; sourceTree = "<group>"; };
+		6D6A453E1A062FA40005B35F /* WeiboSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WeiboSDK-Prefix.pch"; path = "libWeiboSDK/WeiboSDK-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +575,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6A453C1A061FB50005B35F /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,8 +592,8 @@
 		6D6A42AD1A05BA3A0005B35F = {
 			isa = PBXGroup;
 			children = (
+				6D6A45381A061F890005B35F /* libWeiboSDK */,
 				6D6A432A1A05E5690005B35F /* Resources */,
-				6D6A42E21A05BB7B0005B35F /* libWeiboSDK */,
 				6D6A42B81A05BA3B0005B35F /* HaiTao */,
 				6D6A42D51A05BA3B0005B35F /* HaiTaoTests */,
 				6D6A42B71A05BA3A0005B35F /* Products */,
@@ -930,6 +935,17 @@
 			name = Flags;
 			sourceTree = "<group>";
 		};
+		6D6A45381A061F890005B35F /* libWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6D6A453E1A062FA40005B35F /* WeiboSDK-Prefix.pch */,
+				6D6A45391A061FB50005B35F /* libWeiboSDK.a */,
+				6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */,
+				6D6A453B1A061FB50005B35F /* WeiboSDK.h */,
+			);
+			name = libWeiboSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1159,6 +1175,7 @@
 				6D6A44C61A05E60E0005B35F /* MS.png in Resources */,
 				6D6A44691A05E60E0005B35F /* DM.png in Resources */,
 				6D6A44AB1A05E60E0005B35F /* KZ.png in Resources */,
+				6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */,
 				6D6A443E1A05E60E0005B35F /* BA.png in Resources */,
 				6D6A45131A05E60E0005B35F /* TZ.png in Resources */,
 				6D6A44D21A05E60E0005B35F /* NG.png in Resources */,
@@ -1192,7 +1209,6 @@
 				6D6A44DB1A05E60E0005B35F /* PA.png in Resources */,
 				6D6A450C1A05E60E0005B35F /* TM.png in Resources */,
 				6D6A44D11A05E60E0005B35F /* NF.png in Resources */,
-				6D6A42E31A05BB7B0005B35F /* libWeiboSDK in Resources */,
 				6D6A44BF1A05E60E0005B35F /* ML.png in Resources */,
 				6D6A446C1A05E60E0005B35F /* EC.png in Resources */,
 				6D6A450D1A05E60E0005B35F /* TN.png in Resources */,
@@ -1409,6 +1425,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaiTao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1419,6 +1439,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HaiTao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

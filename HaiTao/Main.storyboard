@@ -291,6 +291,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5fm-YD-eIT"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="jHt-yj-eQG" id="QBZ-bc-3Mf"/>
+                        <outlet property="imageWeibo" destination="bf6-ly-fLs" id="UgT-C2-C6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3GH-4y-ihl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

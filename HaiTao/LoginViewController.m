@@ -1,11 +1,3 @@
-//
-//  LoginViewController.m
-//  QQDemo
-//
-//  Created by DotHide on 11-8-3.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "LoginViewController.h"
 #define kLeftMargin				20.0
 #define kRightMargin			20.0
@@ -20,23 +12,28 @@ static NSString *kViewKey = @"viewKey";
 
 @implementation LoginViewController
 
-@synthesize loginTableView, logoImageView;
-@synthesize btnLogin, btnCancel;
+@synthesize loginTableView;
+@synthesize btnLogin;
 @synthesize txtCountryPhoneCode, txtUser,txtPass;
-@synthesize dataArray; 
-
-
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
+@synthesize dataArray;
+-(void)initImageClickEvent
+{
+    self.imageWeibo.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageWeiboClicked)];
+    [self.imageWeibo addGestureRecognizer:singleTap];
 }
-*/
 
+-(void)imageWeiboClicked
+{
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI = kRedirectURI;
+    request.scope = @"all";
+    request.userInfo = @{@"SSO_From": @"LoginViewController",
+                         @"Other_Info_1": [NSNumber numberWithInt:123],
+                         @"Other_Info_2": @[@"obj1", @"obj2"],
+                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+    [WeiboSDK sendRequest:request];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -57,15 +54,9 @@ static NSString *kViewKey = @"viewKey";
 					   nil],
 					  nil];
 	self.editing = NO;
+    
+    [self initImageClickEvent];
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -80,14 +71,9 @@ static NSString *kViewKey = @"viewKey";
     // e.g. self.myOutlet = nil;
 
 	txtUser = nil;
-
+    txtCountryPhoneCode = nil;
 	txtPass = nil;
 	self.dataArray = nil;
-}
-
-
-- (void)dealloc {
-
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -96,11 +82,6 @@ static NSString *kViewKey = @"viewKey";
 }
 
 #pragma mark UITableViewDataSource methods
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-	return 1;
-}
- */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 	return 3;
@@ -134,7 +115,6 @@ static NSString *kViewKey = @"viewKey";
     [pickerView sizeToFit];
     pickerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     pickerView.delegate = self;
-    //pickerView.dataSource = self;
     pickerView.showsSelectionIndicator = YES;
     
     txtCountryPhoneCode.inputView = pickerView;
@@ -153,7 +133,6 @@ static NSString *kViewKey = @"viewKey";
         txtCountryPhoneCode.placeholder = @"Country Code";
         txtCountryPhoneCode.backgroundColor = [UIColor whiteColor];
         txtCountryPhoneCode.autocorrectionType = UITextAutocorrectionTypeNo;
-        txtCountryPhoneCode.inputView = self.pickerCountryView;
         txtCountryPhoneCode.clearButtonMode = UITextFieldViewModeWhileEditing;
         [self initCountryPickerView];
         txtCountryPhoneCode.tag = kViewTag;
@@ -200,42 +179,33 @@ static NSString *kViewKey = @"viewKey";
 	return txtPass;
 }
 
-
-
 #pragma mark UITextFieldDelegate methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
 	[textField resignFirstResponder];
 	return YES;
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-	NSUInteger distance;
-	CGContextRef context = UIGraphicsGetCurrentContext();
-	[UIView beginAnimations:nil context:context];
-	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-	[UIView setAnimationDuration:0.3];
-	self.logoImageView.alpha = 0.0f;
-	
-	CGRect frame = self.loginTableView.frame;
-	CGRect frame2 = self.btnLogin.frame;
-	distance = frame2.origin.y - frame.origin.y;
-	frame.origin.y = 20.0;
-	self.loginTableView.frame = frame;
-	frame2.origin.y = frame.origin.y + distance;
-	self.btnLogin.frame = frame2;
-	CGRect frame3 = self.btnCancel.frame;
-	frame3.origin.y = frame2.origin.y;
-	self.btnCancel.frame = frame3;
-	
-	[UIView commitAnimations];
-	return YES;
-}
-
 - (void)countryPicker:(__unused CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code
 {
     self.txtCountryPhoneCode.text = code;
-    //[self.txtCountryPhoneCode resignFirstResponder];
 }
+
+- (void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result
+{
+    NSString *title = nil;
+    UIAlertView *alert = nil;
+    
+    title = @"收到网络回调";
+    alert = [[UIAlertView alloc] initWithTitle:title
+                                       message:[NSString stringWithFormat:@"%@",result]
+                                      delegate:nil
+                             cancelButtonTitle:@"确定"
+                             otherButtonTitles:nil];
+    [alert show];
+}
+
+
+
 
 - (IBAction)Login:(id)sender {
 
