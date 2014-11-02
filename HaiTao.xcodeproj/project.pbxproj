@@ -273,6 +273,8 @@
 		6D6A45281A05E60E0005B35F /* ZM.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A442A1A05E60E0005B35F /* ZM.png */; };
 		6D6A45291A05E60E0005B35F /* ZW.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A442B1A05E60E0005B35F /* ZW.png */; };
 		6D6A45331A05F7CC0005B35F /* QQ_logo64X64@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */; };
+		6D6A45361A0607260005B35F /* weibo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45341A0607250005B35F /* weibo@2x.png */; };
+		6D6A45371A0607260005B35F /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45351A0607260005B35F /* weixin@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -560,6 +562,8 @@
 		6D6A442A1A05E60E0005B35F /* ZM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZM.png; path = Flags/ZM.png; sourceTree = "<group>"; };
 		6D6A442B1A05E60E0005B35F /* ZW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZW.png; path = Flags/ZW.png; sourceTree = "<group>"; };
 		6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QQ_logo64X64@2x.png"; sourceTree = "<group>"; };
+		6D6A45341A0607250005B35F /* weibo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo@2x.png"; sourceTree = "<group>"; };
+		6D6A45351A0607260005B35F /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +661,8 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D6A45341A0607250005B35F /* weibo@2x.png */,
+				6D6A45351A0607260005B35F /* weixin@2x.png */,
 				6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */,
 				6D6A432D1A05E5FF0005B35F /* Flags */,
 			);
@@ -1119,6 +1125,7 @@
 				6D6A45291A05E60E0005B35F /* ZW.png in Resources */,
 				6D6A44C11A05E60E0005B35F /* MN.png in Resources */,
 				6D6A44981A05E60E0005B35F /* IO.png in Resources */,
+				6D6A45371A0607260005B35F /* weixin@2x.png in Resources */,
 				6D6A448C1A05E60E0005B35F /* GY.png in Resources */,
 				6D6A44641A05E60E0005B35F /* CY.png in Resources */,
 				6D6A44551A05E60E0005B35F /* CD.png in Resources */,
@@ -1247,6 +1254,7 @@
 				6D6A45051A05E60E0005B35F /* TD.png in Resources */,
 				6D6A44B11A05E60E0005B35F /* LR.png in Resources */,
 				6D6A450E1A05E60E0005B35F /* TO.png in Resources */,
+				6D6A45361A0607260005B35F /* weibo@2x.png in Resources */,
 				6D6A45071A05E60E0005B35F /* TG.png in Resources */,
 				6D6A45171A05E60E0005B35F /* US.png in Resources */,
 				6D6A44E91A05E60E0005B35F /* QA.png in Resources */,

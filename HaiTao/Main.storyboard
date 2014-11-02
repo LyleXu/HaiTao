@@ -16,20 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36H-lJ-gE5">
-                                <rect key="frame" x="16" y="522" width="30" height="30"/>
-                                <state key="normal" title="登陆">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-Ra-fHW">
+                                <rect key="frame" x="207" y="522" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="注 册">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="284" y="522" width="100" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36H-lJ-gE5">
+                                <rect key="frame" x="16" y="522" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="登陆">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="522" width="100" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="k0U-yp-gxe" kind="show" id="mC4-gY-iCV"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-Ra-fHW">
-                                <rect key="frame" x="207" y="522" width="30" height="30"/>
-                                <state key="normal" title="注册">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -53,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="KeJ-g2-Mkd">
-                                <rect key="frame" x="21" y="72" width="328" height="266"/>
+                                <rect key="frame" x="10" y="72" width="307" height="266"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loginCell" id="8bI-Pj-Vjq">
@@ -65,13 +75,16 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
                                     <outlet property="delegate" destination="k0U-yp-gxe" id="tro-T8-y4v"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isb-MF-U9z">
-                                <rect key="frame" x="274" y="346" width="75" height="30"/>
+                                <rect key="frame" x="242" y="339" width="75" height="30"/>
                                 <state key="normal" title="忘记密码？">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -91,13 +104,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QQ_logo64X64.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nrc-Xg-SJf">
-                                <rect key="frame" x="21" y="516" width="64" height="64"/>
+                                <rect key="frame" x="16" y="482" width="64" height="64"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-Cb-H00">
-                                <rect key="frame" x="153" y="516" width="64" height="64"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weibo.png" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ly-fLs">
+                                <rect key="frame" x="253" y="482" width="64" height="64"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bf6-ly-fLs">
-                                <rect key="frame" x="279" y="516" width="64" height="64"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weixin.png" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-Cb-H00">
+                                <rect key="frame" x="135" y="482" width="64" height="64"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,5 +142,7 @@
     </scenes>
     <resources>
         <image name="QQ_logo64X64.png" width="64" height="64"/>
+        <image name="weibo.png" width="42" height="42"/>
+        <image name="weixin.png" width="42" height="42"/>
     </resources>
 </document>
