@@ -210,5 +210,8 @@ static NSString *kViewKey = @"viewKey";
 - (IBAction)Login:(id)sender {
 
 }
+- (IBAction)returnLoginPage:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
 @end

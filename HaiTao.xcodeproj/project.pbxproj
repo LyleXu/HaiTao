@@ -276,6 +276,7 @@
 		6D6A45371A0607260005B35F /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A45351A0607260005B35F /* weixin@2x.png */; };
 		6D6A453C1A061FB50005B35F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6A45391A061FB50005B35F /* libWeiboSDK.a */; };
 		6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */; };
+		6DCA1AD61A0BBB9A000E4E7E /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA1AD51A0BBB9A000E4E7E /* login.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -568,6 +569,7 @@
 		6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = libWeiboSDK/WeiboSDK.bundle; sourceTree = "<group>"; };
 		6D6A453B1A061FB50005B35F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboSDK.h; path = libWeiboSDK/WeiboSDK.h; sourceTree = "<group>"; };
 		6D6A453E1A062FA40005B35F /* WeiboSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WeiboSDK-Prefix.pch"; path = "libWeiboSDK/WeiboSDK-Prefix.pch"; sourceTree = "<group>"; };
+		6DCA1AD51A0BBB9A000E4E7E /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -666,6 +668,7 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DCA1AD51A0BBB9A000E4E7E /* login.png */,
 				6D6A45341A0607250005B35F /* weibo@2x.png */,
 				6D6A45351A0607260005B35F /* weixin@2x.png */,
 				6D6A45321A05F7CC0005B35F /* QQ_logo64X64@2x.png */,
@@ -1115,6 +1118,7 @@
 				6D6A44F21A05E60E0005B35F /* SD.png in Resources */,
 				6D6A44DD1A05E60E0005B35F /* PF.png in Resources */,
 				6D6A44B41A05E60E0005B35F /* LU.png in Resources */,
+				6DCA1AD61A0BBB9A000E4E7E /* login.png in Resources */,
 				6D6A44E81A05E60E0005B35F /* PY.png in Resources */,
 				6D6A44CA1A05E60E0005B35F /* MW.png in Resources */,
 				6D6A45151A05E60E0005B35F /* UG.png in Resources */,
