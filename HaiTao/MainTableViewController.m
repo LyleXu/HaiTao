@@ -56,8 +56,6 @@
         cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
-    //cell.lblSellerName.text = @"Happy";
-    
     return cell;
 }
 
@@ -66,7 +64,12 @@
 //
 - (void)hySegmentedControlSelectAtIndex:(NSInteger)index
 {
-    //NSLog(@"%d",index);
+    if(index == 0)
+    {
+        // Maijia shang pin
+    }else{
+        // Maijia Show
+    }
 }
 /*
 // Override to support conditional editing of the table view.

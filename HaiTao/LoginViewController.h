@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CountryPicker.h"
 #import "WeiboSDK-Prefix.pch"
+#import "CountryPhoneTableViewController.h"
+#import "PassValueDelegate.h"
 @protocol LoginViewControllerDelegate;
-@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate,CountryPickerDelegate, WBHttpRequestDelegate> {
+@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate, WBHttpRequestDelegate,PassValueDelegate> {
 	IBOutlet UITableView *loginTableView;
 	UIButton *btnLogin;
 	
-    UITextField *txtCountryPhoneCode;
+    UILabel *lblCountryPhoneCode;
 	UITextField *txtUser;
 	UITextField *txtPass;
     
@@ -24,7 +25,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *loginTableView;
 
 @property (nonatomic, retain) IBOutlet UIButton *btnLogin;
-@property (nonatomic, retain) UITextField *txtCountryPhoneCode;
+@property (nonatomic, retain) UILabel *lblCountryPhoneCode;
 @property (nonatomic, retain) UITextField *txtUser;
 @property (nonatomic, retain) UITextField *txtPass;
 @property (nonatomic, retain) NSArray *dataArray;

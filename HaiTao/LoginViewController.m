@@ -14,7 +14,7 @@ static NSString *kViewKey = @"viewKey";
 
 @synthesize loginTableView;
 @synthesize btnLogin;
-@synthesize txtCountryPhoneCode, txtUser,txtPass;
+@synthesize lblCountryPhoneCode, txtUser,txtPass;
 @synthesize dataArray;
 -(void)initImageClickEvent
 {
@@ -42,7 +42,7 @@ static NSString *kViewKey = @"viewKey";
 	self.dataArray = [NSArray arrayWithObjects:
                       [NSDictionary dictionaryWithObjectsAndKeys:
                        @"国家区号: ",kSourceKey,
-                       self.txtCountryPhoneCode,kViewKey,
+                       self.lblCountryPhoneCode,kViewKey,
                        nil],
 					  [NSDictionary dictionaryWithObjectsAndKeys:
 					   @"手机号: ",kSourceKey,
@@ -71,7 +71,7 @@ static NSString *kViewKey = @"viewKey";
     // e.g. self.myOutlet = nil;
 
 	txtUser = nil;
-    txtCountryPhoneCode = nil;
+    lblCountryPhoneCode = nil;
 	txtPass = nil;
 	self.dataArray = nil;
 }
@@ -101,44 +101,44 @@ static NSString *kViewKey = @"viewKey";
 		}
 	}
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
 	//配置单元格
 	cell.textLabel.text = [[dataArray objectAtIndex:indexPath.row] valueForKey:kSourceKey];
-	UITextField *tmpTxtField = [[self.dataArray objectAtIndex:indexPath.row] valueForKey:kViewKey];
-	[cell.contentView addSubview:tmpTxtField];
-	
+    if(indexPath.row == 0)
+    {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UIButton* lblPhone = [[self.dataArray objectAtIndex:indexPath.row] valueForKey:kViewKey];
+        [cell.contentView addSubview:lblPhone];
+    }else
+    {
+        UITextField *tmpTxtField = [[self.dataArray objectAtIndex:indexPath.row] valueForKey:kViewKey];
+        [cell.contentView addSubview:tmpTxtField];
+    }
+
 	return cell;
 }
 
--(void)initCountryPickerView
-{
-    CountryPicker* pickerView = [[CountryPicker alloc] init];
-    [pickerView sizeToFit];
-    pickerView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    pickerView.delegate = self;
-    pickerView.showsSelectionIndicator = YES;
-    
-    txtCountryPhoneCode.inputView = pickerView;
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showCountry"]) {
+       
+        CountryPhoneTableViewController *controller = (CountryPhoneTableViewController *)[segue destinationViewController];
+        controller.delegate = self;
+    }
 }
 
 #pragma mark -
 #pragma mark TextFields
 
-- (UITextField *)txtCountryPhoneCode{
-    if (txtCountryPhoneCode == nil) {
+- (UILabel *)lblCountryPhoneCode{
+    if (lblCountryPhoneCode == nil) {
         CGRect frame = CGRectMake(kLeftMargin + 110, 10.0, kTextFieldWidth, kTextFieldHeight);
-        txtCountryPhoneCode = [[UITextField alloc] initWithFrame:frame];
-        txtCountryPhoneCode.borderStyle = UITextBorderStyleNone;
-        txtCountryPhoneCode.textColor = [UIColor blackColor];
-        txtCountryPhoneCode.font = [UIFont systemFontOfSize:17];
-        txtCountryPhoneCode.placeholder = @"Country Code";
-        txtCountryPhoneCode.backgroundColor = [UIColor whiteColor];
-        txtCountryPhoneCode.autocorrectionType = UITextAutocorrectionTypeNo;
-        txtCountryPhoneCode.clearButtonMode = UITextFieldViewModeWhileEditing;
-        [self initCountryPickerView];
-        txtCountryPhoneCode.tag = kViewTag;
-        txtCountryPhoneCode.delegate = self;
+        lblCountryPhoneCode = [[UILabel alloc] initWithFrame:frame];
+        lblCountryPhoneCode.backgroundColor = [UIColor whiteColor];
+        lblCountryPhoneCode.tag = kViewTag;
     }
-    return txtCountryPhoneCode;
+    return lblCountryPhoneCode;
 }
 
 - (UITextField *)txtUser{
@@ -185,11 +185,6 @@ static NSString *kViewKey = @"viewKey";
 	return YES;
 }
 
-- (void)countryPicker:(__unused CountryPicker *)picker didSelectCountryWithName:(NSString *)name code:(NSString *)code
-{
-    self.txtCountryPhoneCode.text = code;
-}
-
 - (void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result
 {
     NSString *title = nil;
@@ -204,12 +199,15 @@ static NSString *kViewKey = @"viewKey";
     [alert show];
 }
 
-
-
+-(void)passValue:(NSString *)value
+{
+    self.lblCountryPhoneCode.text = value;
+}
 
 - (IBAction)Login:(id)sender {
 
 }
+
 - (IBAction)returnLoginPage:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
