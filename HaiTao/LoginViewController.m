@@ -121,8 +121,7 @@ static NSString *kViewKey = @"viewKey";
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showCountry"]) {
-       
+    if ([[segue identifier] isEqualToString:@"showCountry"]) {       
         CountryPhoneTableViewController *controller = (CountryPhoneTableViewController *)[segue destinationViewController];
         controller.delegate = self;
     }

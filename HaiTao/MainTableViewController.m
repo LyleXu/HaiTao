@@ -8,19 +8,25 @@
 
 #import "MainTableViewController.h"
 #import "MaijiaTableViewCell.h"
-
-@interface MainTableViewController ()
-
+#import "YIFullScreenScroll.h"
+@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
 
 @implementation MainTableViewController
+{
+    YIFullScreenScroll* _fullScreenDelegate;
+}
 @synthesize segmentedControl;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:20 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
-    [self.view addSubview:segmentedControl];
+    [self.navigationController.navigationBar addSubview:segmentedControl];
     
+    _fullScreenDelegate = [[YIFullScreenScroll alloc] initWithViewController:self];
+    _fullScreenDelegate.shouldShowUIBarsOnScrollUp = YES;
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -42,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 1;
+    return 10;
 }
 
 
@@ -71,6 +77,54 @@
         // Maijia Show
     }
 }
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.toolbarItems.count == 0) {
+        [self.navigationController setToolbarHidden:YES animated:animated];
+    }
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.toolbarItems.count > 0) {
+        [self.navigationController setToolbarHidden:NO animated:animated];
+    }
+    
+    // set on viewDidAppear, if using tabBarController
+    [_fullScreenDelegate layoutTabBarController];
+}
+
+#pragma mark -
+
+#pragma mark UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_fullScreenDelegate scrollViewWillBeginDragging:scrollView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{    
+    [_fullScreenDelegate scrollViewDidScroll:scrollView];
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+    return [_fullScreenDelegate scrollViewShouldScrollToTop:scrollView];;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    [_fullScreenDelegate scrollViewDidScrollToTop:scrollView];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

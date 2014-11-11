@@ -23,6 +23,7 @@
 - (void)awakeFromNib {
     // Initialization code
     [self roundedImagesWithBorder : self.sellerAvatar : @"QQ_logo64X64"];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

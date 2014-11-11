@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HYSegmentedControl.h"
-@interface MainTableViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate>
+@interface MainTableViewController : UIViewController
 @property (retain, nonatomic)  HYSegmentedControl *segmentedControl;
 
 @end
