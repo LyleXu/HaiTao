@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k0U-yp-gxe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -423,10 +423,10 @@
             </objects>
             <point key="canvasLocation" x="1972.5" y="305"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="xjX-nS-uOU">
             <objects>
-                <viewController id="Tce-Gh-z3d" sceneMemberID="viewController">
+                <viewController id="Tce-Gh-z3d" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4a-P3-6VH"/>
                         <viewControllerLayoutGuide type="bottom" id="qVe-cJ-Vwq"/>
@@ -442,26 +442,100 @@
                                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 </variation>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-99-QVs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="100" id="JRj-ne-LWk" customClass="GoodsTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JRj-ne-LWk" id="vTS-2l-X5a">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bnn-GO-LgV">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <state key="normal" title="#潮品">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="0.0" width="39" height="30"/>
+                                                    </variation>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaopin1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-G6-5A6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="29" width="100" height="75"/>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaopin3.png" translatesAutoresizingMaskIntoConstraints="NO" id="4lc-DY-buM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="220" y="29" width="100" height="75"/>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaopin2.png" translatesAutoresizingMaskIntoConstraints="NO" id="osT-9J-CVd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="110" y="29" width="100" height="75"/>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Bnn-GO-LgV"/>
+                                                    <exclude reference="rfC-G6-5A6"/>
+                                                    <exclude reference="4lc-DY-buM"/>
+                                                    <exclude reference="osT-9J-CVd"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Bnn-GO-LgV"/>
+                                                    <include reference="rfC-G6-5A6"/>
+                                                    <include reference="4lc-DY-buM"/>
+                                                    <include reference="osT-9J-CVd"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chaopin1" destination="rfC-G6-5A6" id="gf3-8t-w8D"/>
+                                            <outlet property="chaopin2" destination="osT-9J-CVd" id="Wbn-I4-V3a"/>
+                                            <outlet property="chaopin3" destination="4lc-DY-buM" id="j7c-ni-h9X"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="101" width="336" height="418"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tce-Gh-z3d" id="cxS-wv-b3g"/>
+                                    <outlet property="delegate" destination="Tce-Gh-z3d" id="DEn-Pi-7ZH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="KfQ-7d-JSe"/>
+                                <exclude reference="5qB-99-QVs"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="KfQ-7d-JSe"/>
+                                <include reference="5qB-99-QVs"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="faxian.png" id="nqb-qF-VVH">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
                     </tabBarItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6D5-Hi-dmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3540" y="124"/>
+            <point key="canvasLocation" x="3540" y="123"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hoe-7W-ELN">
@@ -787,6 +861,9 @@
         <image name="Location.png" width="13" height="23"/>
         <image name="QQ_logo64X64.png" width="64" height="64"/>
         <image name="camera-icon.png" width="28" height="23"/>
+        <image name="chaopin1.png" width="97" height="75"/>
+        <image name="chaopin2.png" width="102" height="77"/>
+        <image name="chaopin3.png" width="112" height="78"/>
         <image name="close_button.png" width="20" height="20"/>
         <image name="faxian.png" width="33" height="33"/>
         <image name="feed.png" width="33" height="33"/>
