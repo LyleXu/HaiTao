@@ -434,7 +434,26 @@
                     <view key="view" contentMode="scaleToFill" id="RT9-b5-FRE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KfQ-7d-JSe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                </variation>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KfQ-7d-JSe"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KfQ-7d-JSe"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="faxian.png" id="nqb-qF-VVH">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="20"/>
@@ -541,7 +560,13 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zan.png" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VT-SG1">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="399" width="40" height="30"/>
+                                                        <rect key="frame" x="8" y="399" width="20" height="15"/>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun.png" translatesAutoresizingMaskIntoConstraints="NO" id="nec-oD-psG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="88" y="396" width="20" height="18"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-gz-OoB">
@@ -550,7 +575,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="56" y="399" width="39" height="21"/>
+                                                        <rect key="frame" x="36" y="396" width="39" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="341" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="277-nV-O4J">
@@ -559,7 +584,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="145" y="399" width="29" height="21"/>
+                                                        <rect key="frame" x="114" y="396" width="29" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maijia.png" translatesAutoresizingMaskIntoConstraints="NO" id="2fK-YE-0XH">
@@ -580,7 +605,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-eK-LKy">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="241" y="13" width="24" height="24"/>
+                                                        <rect key="frame" x="252" y="13" width="14" height="24"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice gift " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiA-wP-TGo">
@@ -622,18 +647,22 @@
                                                         <rect key="frame" x="237" y="371" width="75" height="30"/>
                                                     </variation>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun.png" translatesAutoresizingMaskIntoConstraints="NO" id="nec-oD-psG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrI-Wu-kXa">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="103" y="397" width="40" height="35"/>
+                                                        <rect key="frame" x="251" y="61" width="30" height="30"/>
                                                     </variation>
-                                                </imageView>
+                                                </button>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="MS8-Ft-Cr2"/>
                                                     <exclude reference="E4w-pi-gEa"/>
                                                     <exclude reference="SN4-VT-SG1"/>
+                                                    <exclude reference="nec-oD-psG"/>
                                                     <exclude reference="AAA-gz-OoB"/>
                                                     <exclude reference="277-nV-O4J"/>
                                                     <exclude reference="2fK-YE-0XH"/>
@@ -643,7 +672,7 @@
                                                     <exclude reference="D1y-FM-PM0"/>
                                                     <exclude reference="J0V-gI-xc4"/>
                                                     <exclude reference="Blj-jn-hQN"/>
-                                                    <exclude reference="nec-oD-psG"/>
+                                                    <exclude reference="nrI-Wu-kXa"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -651,6 +680,7 @@
                                                     <include reference="MS8-Ft-Cr2"/>
                                                     <include reference="E4w-pi-gEa"/>
                                                     <include reference="SN4-VT-SG1"/>
+                                                    <include reference="nec-oD-psG"/>
                                                     <include reference="AAA-gz-OoB"/>
                                                     <include reference="277-nV-O4J"/>
                                                     <include reference="2fK-YE-0XH"/>
@@ -660,7 +690,7 @@
                                                     <include reference="D1y-FM-PM0"/>
                                                     <include reference="J0V-gI-xc4"/>
                                                     <include reference="Blj-jn-hQN"/>
-                                                    <include reference="nec-oD-psG"/>
+                                                    <include reference="nrI-Wu-kXa"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -754,7 +784,7 @@
     </scenes>
     <resources>
         <image name="Back_button.png" width="11" height="21"/>
-        <image name="Location.png" width="16" height="16"/>
+        <image name="Location.png" width="13" height="23"/>
         <image name="QQ_logo64X64.png" width="64" height="64"/>
         <image name="camera-icon.png" width="28" height="23"/>
         <image name="close_button.png" width="20" height="20"/>

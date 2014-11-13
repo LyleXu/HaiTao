@@ -17,7 +17,7 @@
 		6D6A42EB1A05C00C0005B35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42EA1A05C00C0005B35F /* Main.storyboard */; };
 		6D6A453C1A061FB50005B35F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6A45391A061FB50005B35F /* libWeiboSDK.a */; };
 		6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */; };
-		6D77DFC41A14ED9D00BDCE9E /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D77DFC31A14ED9D00BDCE9E /* Location@2x.png */; };
+		6D77DFC61A14F63A00BDCE9E /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D77DFC51A14F63A00BDCE9E /* Location@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -84,7 +84,7 @@
 		6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = libWeiboSDK/WeiboSDK.bundle; sourceTree = "<group>"; };
 		6D6A453B1A061FB50005B35F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboSDK.h; path = libWeiboSDK/WeiboSDK.h; sourceTree = "<group>"; };
 		6D6A453E1A062FA40005B35F /* WeiboSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "WeiboSDK-Prefix.pch"; path = "libWeiboSDK/WeiboSDK-Prefix.pch"; sourceTree = "<group>"; };
-		6D77DFC31A14ED9D00BDCE9E /* Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@2x.png"; sourceTree = "<group>"; };
+		6D77DFC51A14F63A00BDCE9E /* Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Location@2x.png"; path = "resources/Location@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6D77DFC31A14ED9D00BDCE9E /* Location@2x.png */,
+				6D77DFC51A14F63A00BDCE9E /* Location@2x.png */,
 				6DCA1B1D1A1100FB000E4E7E /* Back_button@2x.png */,
 				6DCA1B1E1A1100FB000E4E7E /* camera-icon@2x.png */,
 				6DCA1B1F1A1100FB000E4E7E /* close_button@2x.png */,
@@ -411,6 +411,7 @@
 				6DCA1B321A1100FB000E4E7E /* geren@2x.png in Resources */,
 				6DCA1B361A1100FB000E4E7E /* QQ_logo64X64@2x.png in Resources */,
 				6DCA1B2F1A1100FB000E4E7E /* close_button@2x.png in Resources */,
+				6D77DFC61A14F63A00BDCE9E /* Location@2x.png in Resources */,
 				6DCA1B311A1100FB000E4E7E /* feed@2x.png in Resources */,
 				6DCA1B3B1A1100FB000E4E7E /* xiaoxi@2x.png in Resources */,
 				6DCA1B381A1100FB000E4E7E /* siliao@2x.png in Resources */,
@@ -426,7 +427,6 @@
 				6DCA1B341A1100FB000E4E7E /* maijia@2x.png in Resources */,
 				6DCA1B3A1A1100FB000E4E7E /* weixin@2x.png in Resources */,
 				6DCA1B351A1100FB000E4E7E /* pinglun@2x.png in Resources */,
-				6D77DFC41A14ED9D00BDCE9E /* Location@2x.png in Resources */,
 				6D6A42CA1A05BA3B0005B35F /* Images.xcassets in Resources */,
 				6D6A42EB1A05C00C0005B35F /* Main.storyboard in Resources */,
 			);
