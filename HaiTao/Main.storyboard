@@ -335,7 +335,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
@@ -526,7 +526,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MS8-Ft-Cr2">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="1" width="64" height="64"/>
+                                                        <rect key="frame" x="8" y="1" width="48" height="48"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Bob" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-pi-gEa">
@@ -535,19 +535,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="80" y="8" width="87" height="21"/>
+                                                        <rect key="frame" x="64" y="14" width="87" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zan.png" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VT-SG1">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="412" width="59" height="25"/>
-                                                    </variation>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun.png" translatesAutoresizingMaskIntoConstraints="NO" id="nec-oD-psG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="137" y="412" width="59" height="25"/>
+                                                        <rect key="frame" x="8" y="399" width="40" height="30"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-gz-OoB">
@@ -556,7 +550,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="75" y="415" width="39" height="21"/>
+                                                        <rect key="frame" x="56" y="399" width="39" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="341" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="277-nV-O4J">
@@ -565,13 +559,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="204" y="415" width="29" height="21"/>
+                                                        <rect key="frame" x="145" y="399" width="29" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maijia.png" translatesAutoresizingMaskIntoConstraints="NO" id="2fK-YE-0XH">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="65" width="320" height="320"/>
+                                                        <rect key="frame" x="0.0" y="52" width="320" height="320"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巴黎" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wq-Gg-HRK">
@@ -580,30 +574,76 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="270" y="8" width="34" height="21"/>
+                                                        <rect key="frame" x="268" y="14" width="34" height="21"/>
                                                     </variation>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-eK-LKy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="241" y="13" width="24" height="24"/>
+                                                    </variation>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice gift " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiA-wP-TGo">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="386" width="300" height="21"/>
+                                                        <rect key="frame" x="8" y="375" width="80" height="21"/>
                                                     </variation>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1y-FM-PM0">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <state key="normal" title="#lextriana">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="75" y="371" width="67" height="30"/>
+                                                    </variation>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0V-gI-xc4">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <state key="normal" title="#lucastriana">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="150" y="371" width="83" height="30"/>
+                                                    </variation>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blj-jn-hQN">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <state key="normal" title="#familyfirst">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="237" y="371" width="75" height="30"/>
+                                                    </variation>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun.png" translatesAutoresizingMaskIntoConstraints="NO" id="nec-oD-psG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="103" y="397" width="40" height="35"/>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="MS8-Ft-Cr2"/>
                                                     <exclude reference="E4w-pi-gEa"/>
                                                     <exclude reference="SN4-VT-SG1"/>
-                                                    <exclude reference="nec-oD-psG"/>
                                                     <exclude reference="AAA-gz-OoB"/>
                                                     <exclude reference="277-nV-O4J"/>
                                                     <exclude reference="2fK-YE-0XH"/>
                                                     <exclude reference="6Wq-Gg-HRK"/>
+                                                    <exclude reference="bGx-eK-LKy"/>
                                                     <exclude reference="SiA-wP-TGo"/>
+                                                    <exclude reference="D1y-FM-PM0"/>
+                                                    <exclude reference="J0V-gI-xc4"/>
+                                                    <exclude reference="Blj-jn-hQN"/>
+                                                    <exclude reference="nec-oD-psG"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -611,12 +651,16 @@
                                                     <include reference="MS8-Ft-Cr2"/>
                                                     <include reference="E4w-pi-gEa"/>
                                                     <include reference="SN4-VT-SG1"/>
-                                                    <include reference="nec-oD-psG"/>
                                                     <include reference="AAA-gz-OoB"/>
                                                     <include reference="277-nV-O4J"/>
                                                     <include reference="2fK-YE-0XH"/>
                                                     <include reference="6Wq-Gg-HRK"/>
+                                                    <include reference="bGx-eK-LKy"/>
                                                     <include reference="SiA-wP-TGo"/>
+                                                    <include reference="D1y-FM-PM0"/>
+                                                    <include reference="J0V-gI-xc4"/>
+                                                    <include reference="Blj-jn-hQN"/>
+                                                    <include reference="nec-oD-psG"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -710,6 +754,7 @@
     </scenes>
     <resources>
         <image name="Back_button.png" width="11" height="21"/>
+        <image name="Location.png" width="16" height="16"/>
         <image name="QQ_logo64X64.png" width="64" height="64"/>
         <image name="camera-icon.png" width="28" height="23"/>
         <image name="close_button.png" width="20" height="20"/>
@@ -718,10 +763,10 @@
         <image name="geren.png" width="33" height="33"/>
         <image name="login.png" width="644" height="989"/>
         <image name="maijia.png" width="319" height="321"/>
-        <image name="pinglun.png" width="59" height="25"/>
+        <image name="pinglun.png" width="20" height="17"/>
         <image name="weibo.png" width="60" height="60"/>
         <image name="weixin.png" width="60" height="60"/>
         <image name="xiaoxi.png" width="33" height="33"/>
-        <image name="zan.png" width="59" height="25"/>
+        <image name="zan.png" width="20" height="15"/>
     </resources>
 </document>

@@ -13,7 +13,7 @@
 
 -(void)roundedImagesWithBorder:(UIImageView *)view :(NSString *)image
 {
-    [view.layer setCornerRadius:CGRectGetHeight([view bounds]) / 4];
+    [view.layer setCornerRadius:CGRectGetHeight([view bounds]) / 6];
     view.layer.masksToBounds = YES;
     view.layer.borderWidth = 2;
     view.layer.borderColor = [[UIColor grayColor] CGColor];
