@@ -16,11 +16,19 @@ static NSString *kViewKey = @"viewKey";
 @synthesize btnLogin;
 @synthesize lblCountryPhoneCode, txtUser,txtPass;
 @synthesize dataArray;
+
 -(void)initImageClickEvent
 {
+    //sina weibo
     self.imageWeibo.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageWeiboClicked)];
     [self.imageWeibo addGestureRecognizer:singleTap];
+    
+    // qq
+    self.imageQQ.userInteractionEnabled = YES;
+    UITapGestureRecognizer *qqTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageQQClicked)];
+    [self.imageQQ addGestureRecognizer:qqTap];
+
 }
 
 -(void)imageWeiboClicked
@@ -35,6 +43,11 @@ static NSString *kViewKey = @"viewKey";
     [WeiboSDK sendRequest:request];
 }
 
+-(void)imageQQClicked
+{
+    _tencentOAuth.redirectURI = @"www.qq.com";
+    [_tencentOAuth authorize:_permissions inSafari:NO];
+}
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +67,18 @@ static NSString *kViewKey = @"viewKey";
 					   nil],
 					  nil];
 	self.editing = NO;
+    
+    // Init QQ
+    _permissions = [NSMutableArray arrayWithObjects:
+                     kOPEN_PERMISSION_GET_USER_INFO,
+                     kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
+                     nil];
+    
+    NSString *appid = @"1103463337";
+    
+    _tencentOAuth = [[TencentOAuth alloc] initWithAppId:appid
+                                            andDelegate:self];
+    
     
     [self initImageClickEvent];
 }
@@ -209,6 +234,39 @@ static NSString *kViewKey = @"viewKey";
 
 - (IBAction)returnLoginPage:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)tencentDidLogin {
+    // 登录成功
+    
+    if (_tencentOAuth.accessToken
+        && 0 != [_tencentOAuth.accessToken length])
+    {
+    }
+    else
+    {
+    }
+}
+
+- (void)tencentDidNotLogin:(BOOL)cancelled
+{
+    if (cancelled){
+    }
+    else {
+    }
+    
+}
+
+-(void)tencentDidNotNetWork
+{
+    //_labelTitle.text=@"无网络连接，请设置网络";
+}
+
+-(void)tencentDidLogout
+{ /*
+    _labelTitle.text=@"退出登录成功，请重新登录";
+    _labelAccessToken.text = @"";
+    */
 }
 
 @end

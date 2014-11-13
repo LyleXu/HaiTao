@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -334,7 +335,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
@@ -412,6 +413,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnLogin" destination="jHt-yj-eQG" id="QBZ-bc-3Mf"/>
+                        <outlet property="imageQQ" destination="Nrc-Xg-SJf" id="3dc-G3-cKZ"/>
+                        <outlet property="imageWeiXin" destination="1fH-Cb-H00" id="9g4-WL-UgL"/>
                         <outlet property="imageWeibo" destination="bf6-ly-fLs" id="UgT-C2-C6g"/>
                         <outlet property="loginTableView" destination="KeJ-g2-Mkd" id="OLe-32-NzG"/>
                     </connections>

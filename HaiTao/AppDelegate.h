@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "WeiboSDK-Prefix.pch"
-
+#import <TencentOpenAPI/TencentOAuth.h>
 @interface AppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate>
 {
 NSString* wbtoken;

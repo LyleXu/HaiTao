@@ -49,7 +49,15 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    if([sourceApplication isEqualToString:@"com.sina.weibo"])
+    {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }else
+        return [TencentOAuth HandleOpenURL:url];
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [TencentOAuth HandleOpenURL:url];
 }
 
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request
