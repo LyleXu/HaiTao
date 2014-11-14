@@ -10,7 +10,8 @@
 
 #define HYSegmentedControl_Height 44.0
 #define HYSegmentedControl_Width ([UIScreen mainScreen].bounds.size.width)
-#define Min_Width_4_Button 80.0
+#define Min_Width_4_Button 40.0
+#define Max_Width_4_Button 50.0
 
 #define Define_Tag_add 1000
 
