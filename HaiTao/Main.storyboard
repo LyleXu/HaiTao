@@ -335,7 +335,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
@@ -554,12 +554,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuv-sl-dNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4267.5" y="595"/>
+            <point key="canvasLocation" x="5065.5" y="595"/>
         </scene>
-        <!--View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="lEw-w9-E6V">
             <objects>
-                <viewController id="krm-tI-BCF" sceneMemberID="viewController">
+                <viewController id="krm-tI-BCF" customClass="MessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9l3-Io-ww4"/>
                         <viewControllerLayoutGuide type="bottom" id="TRd-1p-8hn"/>
@@ -569,11 +569,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="xiaoxi.png" id="5KJ-da-6lw"/>
+                    <navigationItem key="navigationItem" id="ueL-nA-p8W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOj-jA-Uds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3483" y="1052"/>
+            <point key="canvasLocation" x="4281" y="1052"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Lme-dd-Ixe">
@@ -1021,7 +1021,7 @@
                         <segue destination="lC8-HO-QTO" kind="relationship" relationship="viewControllers" id="mdg-PJ-pAp"/>
                         <segue destination="Tce-Gh-z3d" kind="relationship" relationship="viewControllers" id="7FM-LH-69P"/>
                         <segue destination="1my-B2-eoL" kind="relationship" relationship="viewControllers" id="5LM-Y0-o6G"/>
-                        <segue destination="krm-tI-BCF" kind="relationship" relationship="viewControllers" id="Rba-iu-Vta"/>
+                        <segue destination="84u-Pl-cv0" kind="relationship" relationship="viewControllers" id="Rba-iu-Vta"/>
                         <segue destination="mwE-VS-4CA" kind="relationship" relationship="viewControllers" id="hA4-Jl-nUC"/>
                     </connections>
                 </tabBarController>
@@ -1047,6 +1047,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fO-ZM-3X8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4326" y="-636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="94B-VY-7yU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="84u-Pl-cv0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="xiaoxi.png" id="5KJ-da-6lw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xOI-If-zTM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="krm-tI-BCF" kind="relationship" relationship="rootViewController" id="CDG-BP-kSg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLJ-12-hWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3483" y="1052"/>
         </scene>
     </scenes>
     <resources>
