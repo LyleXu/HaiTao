@@ -17,6 +17,7 @@
 
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:64 Titles:@[@"标签",@"特卖",@"最新",@"最热"] delegate:self] ;
     [self.view addSubview:segmentedControl];
 }

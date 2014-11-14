@@ -18,26 +18,20 @@
     YIFullScreenScroll* _fullScreenDelegate;
 }
 @synthesize segmentedControl;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:20 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
-    [self.navigationController.navigationBar addSubview:segmentedControl];
-    
     _fullScreenDelegate = [[YIFullScreenScroll alloc] initWithViewController:self];
     _fullScreenDelegate.shouldShowUIBarsOnScrollUp = YES;
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -62,7 +56,18 @@
         cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
+    cell.sellerAvatar.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageSellerAvatarClicked)];
+    [cell.sellerAvatar addGestureRecognizer:singleTap];
+    
     return cell;
+}
+
+-(void)imageSellerAvatarClicked
+{
+    // jump to the seller page
+    SellerViewController* controller = [[SellerViewController alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 //
@@ -82,6 +87,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
+    [self.navigationController.navigationBar addSubview:segmentedControl];
     
     if (self.toolbarItems.count == 0) {
         [self.navigationController setToolbarHidden:YES animated:animated];

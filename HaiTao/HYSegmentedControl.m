@@ -8,7 +8,7 @@
 
 #import "HYSegmentedControl.h"
 
-#define HYSegmentedControl_Height 30.0
+#define HYSegmentedControl_Height 44.0
 #define HYSegmentedControl_Width ([UIScreen mainScreen].bounds.size.width)
 #define Min_Width_4_Button 80.0
 
