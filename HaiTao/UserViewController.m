@@ -8,10 +8,16 @@
 
 #import "UserViewController.h"
 #import "UserInfoTableViewController.h"
+@interface UserViewController()<HYSegmentedControlDelegate>
+
+@end
+
 @implementation UserViewController
-@synthesize segmentedControl,btnModifyUserInfo;
+@synthesize segmentedControl;
+@synthesize btnModifyUserInfo;
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
     // 设置圆角半径
     self.btnModifyUserInfo.layer.masksToBounds = YES;
     self.btnModifyUserInfo.layer.cornerRadius = 4;
@@ -39,5 +45,15 @@
     [self setHidesBottomBarWhenPushed:NO];
     [super viewWillDisappear:YES];
 
+}
+
+- (void)hySegmentedControlSelectAtIndex:(NSInteger)index
+{
+    if(index == 0)
+    {
+        // Maijia shang pin
+    }else{
+        // Maijia Show
+    }
 }
 @end
