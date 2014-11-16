@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "HYSegmentedControl.h"
+#import "PSCollectionView.h"
+#import "PullPsCollectionView.h"
 @interface UserViewController : UIViewController
 @property (retain, nonatomic)  HYSegmentedControl *segmentedControl;
 @property (retain, nonatomic) IBOutlet UIButton *btnModifyUserInfo;
+
+@property(nonatomic,retain) PullPsCollectionView *collectionView;
+@property(nonatomic,retain)NSMutableArray *items;
+-(void)loadDataSource;
 @end
