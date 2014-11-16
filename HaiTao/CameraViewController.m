@@ -27,18 +27,18 @@
 {
     [super viewWillAppear:YES];
     
-    [self showCamera];
+    //[self showCamera];
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self showCamera];
 }
 
 -(void)cancelCamera
 {
-    [self showCamera];
+    //[self showCamera];
 }
 
 - (void)cameraPhoto:(UIImage *)image  //选择完图片
