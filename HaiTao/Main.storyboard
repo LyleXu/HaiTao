@@ -335,7 +335,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
