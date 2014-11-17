@@ -9,6 +9,7 @@
 #import "MainTableViewController.h"
 #import "MaijiaTableViewCell.h"
 #import "YIFullScreenScroll.h"
+#import "ShopCartViewController.h"
 @interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
@@ -117,7 +118,9 @@
 
 -(void)onBtnTouch
 {
-    
+    // go to shopcart
+    ShopCartViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"shopcartcontroller"];
+    [self presentViewController:ctl animated:YES completion:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
