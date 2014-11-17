@@ -20,6 +20,7 @@
 
 @property (assign, nonatomic) id<HYSegmentedControlDelegate>delegate;
 //初始化函数 
+- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width Titles:(NSArray *)titles delegate:(id)delegate;
 - (id)initWithOriginY:(CGFloat)y Titles:(NSArray *)titles delegate:(id)delegate;
 //提供方法改变 index
 - (void)changeSegmentedControlWithIndex:(NSInteger)index;

@@ -88,12 +88,35 @@
 {
     [super viewWillAppear:animated];
     
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
-    [self.navigationController.navigationBar addSubview:segmentedControl];
+    // title
+    UILabel* lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(140, 0, 100, 24)];
+    lblTitle.text = @"轻 奢";
+    [self.navigationController.navigationBar addSubview:lblTitle] ;
+
+    // shop cart
+    UIImage *imageBtn = [UIImage imageNamed:@"shopcart.png"];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(300, 0, 24, 20)];
+    [btn setBackgroundImage:imageBtn forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(onBtnTouch) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    [self.navigationItem setRightBarButtonItem:barButtonItem];
+    
+    // segment control
+    UIView* segmentContainer = [[UIView alloc] initWithFrame:CGRectMake(40, 24, 260, 20)];
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:240 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
+    //[self.navigationController.navigationBar addSubview:segmentedControl];
+    [segmentContainer addSubview:self.segmentedControl];
+     [self.navigationController.navigationBar addSubview:segmentContainer];
     
     if (self.toolbarItems.count == 0) {
         [self.navigationController setToolbarHidden:YES animated:animated];
     }
+    
+}
+
+-(void)onBtnTouch
+{
     
 }
 

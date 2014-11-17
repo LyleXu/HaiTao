@@ -8,7 +8,7 @@
 
 #import "HYSegmentedControl.h"
 
-#define HYSegmentedControl_Height 44.0
+#define HYSegmentedControl_Height 20.0
 #define HYSegmentedControl_Width ([UIScreen mainScreen].bounds.size.width)
 #define Min_Width_4_Button 80.0
 
@@ -37,7 +37,16 @@
 
 - (id)initWithOriginY:(CGFloat)y Titles:(NSArray *)titles delegate:(id)delegate
 {
-    CGRect rect4View = CGRectMake(.0f, y, HYSegmentedControl_Width, HYSegmentedControl_Height);
+    return [self initWithOriginY:y width:0 Titles:titles delegate:delegate];
+}
+
+- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width Titles:(NSArray *)titles delegate:(id)delegate
+{
+    if(width == 0)
+    {
+        width = HYSegmentedControl_Width;
+    }
+    CGRect rect4View = CGRectMake(.0f, y, width, HYSegmentedControl_Height);
     if (self = [super initWithFrame:rect4View]) {
         
         self.backgroundColor = UIColorFromRGBValue(0xf3f3f3);

@@ -114,6 +114,7 @@
 		6D8812761A18FE8100C863C2 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8812701A18FE8100C863C2 /* CellView.xib */; };
 		6D8812771A18FE8100C863C2 /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812721A18FE8100C863C2 /* PSCollectionView.m */; };
 		6D8812781A18FE8100C863C2 /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812741A18FE8100C863C2 /* PSCollectionViewCell.m */; };
+		6D88127A1A1A125600C863C2 /* shopcart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8812791A1A125500C863C2 /* shopcart@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -324,6 +325,7 @@
 		6D8812721A18FE8100C863C2 /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCollectionView.m; path = PSCollectionView/PSCollectionView.m; sourceTree = "<group>"; };
 		6D8812731A18FE8100C863C2 /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCollectionViewCell.h; path = PSCollectionView/PSCollectionViewCell.h; sourceTree = "<group>"; };
 		6D8812741A18FE8100C863C2 /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCollectionViewCell.m; path = PSCollectionView/PSCollectionViewCell.m; sourceTree = "<group>"; };
+		6D8812791A1A125500C863C2 /* shopcart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopcart@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -494,7 +496,6 @@
 			children = (
 				6DCA1B701A137F67000E4E7E /* Frameworks */,
 				6D6A45381A061F890005B35F /* libWeiboSDK */,
-				6D6A432A1A05E5690005B35F /* Resources */,
 				6D6A42B81A05BA3B0005B35F /* HaiTao */,
 				6D6A42D51A05BA3B0005B35F /* HaiTaoTests */,
 				6D6A42B71A05BA3A0005B35F /* Products */,
@@ -538,6 +539,7 @@
 		6D6A42B91A05BA3B0005B35F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D6A432A1A05E5690005B35F /* Resources */,
 				6D77E0271A15A50B00BDCE9E /* messages.plist */,
 				6D6A42BA1A05BA3B0005B35F /* Info.plist */,
 				6D6A42BB1A05BA3B0005B35F /* main.m */,
@@ -566,6 +568,7 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D8812791A1A125500C863C2 /* shopcart@2x.png */,
 				6D77E02D1A15AD7000BDCE9E /* settings@2x.png */,
 				6D77E0041A15A34200BDCE9E /* Message */,
 				6D77DFCE1A1500C100BDCE9E /* Test */,
@@ -588,6 +591,7 @@
 				6DCA1B2C1A1100FB000E4E7E /* zan@2x.png */,
 			);
 			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		6D6A45381A061F890005B35F /* libWeiboSDK */ = {
@@ -982,6 +986,7 @@
 				6D6164D91A15F04900DF1B14 /* Default-568h@2x.png in Resources */,
 				6D77DFDE1A150DAF00BDCE9E /* fans2@2x.png in Resources */,
 				6D77E0161A15A37C00BDCE9E /* chat_bg_default.jpg in Resources */,
+				6D88127A1A1A125600C863C2 /* shopcart@2x.png in Resources */,
 				6DCA1B311A1100FB000E4E7E /* feed@2x.png in Resources */,
 				6D8812591A18FE1000C863C2 /* blueArrow.png in Resources */,
 				6DCA1B3B1A1100FB000E4E7E /* xiaoxi@2x.png in Resources */,

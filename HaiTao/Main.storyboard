@@ -335,7 +335,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
@@ -1066,25 +1066,13 @@
                                                         <rect key="frame" x="64" y="14" width="87" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zan.png" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VT-SG1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="399" width="20" height="15"/>
-                                                    </variation>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinglun.png" translatesAutoresizingMaskIntoConstraints="NO" id="nec-oD-psG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="396" width="20" height="18"/>
-                                                    </variation>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-gz-OoB">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="36" y="396" width="39" height="21"/>
+                                                        <rect key="frame" x="64" y="396" width="39" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="341" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="277-nV-O4J">
@@ -1093,7 +1081,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="114" y="396" width="29" height="21"/>
+                                                        <rect key="frame" x="177" y="396" width="29" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maijia.png" translatesAutoresizingMaskIntoConstraints="NO" id="2fK-YE-0XH">
@@ -1177,12 +1165,28 @@
                                                         <segue destination="P8c-Z1-MLn" kind="show" id="kmt-wt-m5a"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-Ln-us9">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" image="zan.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="395" width="52" height="22"/>
+                                                    </variation>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erp-jA-JAT">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" image="pinglun.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="118" y="395" width="51" height="22"/>
+                                                    </variation>
+                                                </button>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="E4w-pi-gEa"/>
-                                                    <exclude reference="SN4-VT-SG1"/>
-                                                    <exclude reference="nec-oD-psG"/>
                                                     <exclude reference="AAA-gz-OoB"/>
                                                     <exclude reference="277-nV-O4J"/>
                                                     <exclude reference="2fK-YE-0XH"/>
@@ -1194,13 +1198,13 @@
                                                     <exclude reference="Blj-jn-hQN"/>
                                                     <exclude reference="nrI-Wu-kXa"/>
                                                     <exclude reference="8KO-ju-rGL"/>
+                                                    <exclude reference="hWW-Ln-us9"/>
+                                                    <exclude reference="Erp-jA-JAT"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="E4w-pi-gEa"/>
-                                                    <include reference="SN4-VT-SG1"/>
-                                                    <include reference="nec-oD-psG"/>
                                                     <include reference="AAA-gz-OoB"/>
                                                     <include reference="277-nV-O4J"/>
                                                     <include reference="2fK-YE-0XH"/>
@@ -1212,12 +1216,12 @@
                                                     <include reference="Blj-jn-hQN"/>
                                                     <include reference="nrI-Wu-kXa"/>
                                                     <include reference="8KO-ju-rGL"/>
+                                                    <include reference="hWW-Ln-us9"/>
+                                                    <include reference="Erp-jA-JAT"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imgComments" destination="nec-oD-psG" id="5Vb-Bv-Tte"/>
-                                            <outlet property="imgGood" destination="SN4-VT-SG1" id="7jE-8L-8ts"/>
                                             <outlet property="imgSellerPicture" destination="2fK-YE-0XH" id="MRu-h6-nZR"/>
                                             <outlet property="lblCommentsCount" destination="277-nV-O4J" id="i99-sn-iaY"/>
                                             <outlet property="lblGoodCount" destination="AAA-gz-OoB" id="CxF-An-Bfs"/>
@@ -1568,10 +1572,10 @@
         <image name="geren.png" width="33" height="33"/>
         <image name="login.png" width="644" height="989"/>
         <image name="maijia.png" width="319" height="321"/>
-        <image name="pinglun.png" width="20" height="17"/>
+        <image name="pinglun.png" width="51" height="17"/>
         <image name="weibo.png" width="60" height="60"/>
         <image name="weixin.png" width="60" height="60"/>
         <image name="xiaoxi.png" width="33" height="33"/>
-        <image name="zan.png" width="20" height="15"/>
+        <image name="zan.png" width="52" height="17"/>
     </resources>
 </document>
