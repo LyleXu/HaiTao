@@ -22,6 +22,10 @@
     [self.view addSubview:segmentedControl];
 }
 
+- (IBAction)cancelSearch:(id)sender {
+    [self.searchBar resignFirstResponder];
+}
+
 #pragma Tableview delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

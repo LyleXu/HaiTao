@@ -10,5 +10,6 @@
 #import "HYSegmentedControl.h"
 #import "GoodsTableViewCell.h"
 @interface SearchViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet HYSegmentedControl* segmentedControl;
 @end
