@@ -39,42 +39,45 @@
     [self.view addSubview:segmentedControl];
 
     // remove the segment control in the navigation bar
-    for (UIView *views in self.navigationController.navigationBar.subviews) {
-        if ([views isKindOfClass:[HYSegmentedControl class]]) {
-            //NSLog(@"找到啦");
-            [views removeFromSuperview];
-        }
-    }
+//    for (UIView *views in self.navigationController.navigationBar.subviews) {
+//        for (UIView * subviews1 in views.subviews) {
+//            if ([subviews1 isKindOfClass:[HYSegmentedControl class]]) {
+//                //NSLog(@"找到啦");
+//                [subviews1 removeFromSuperview];
+//                break;
+//            }
+//        }
+//    }
     
     // collection view
-    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:collectionView];
-    collectionView.collectionViewDelegate = self;
-    collectionView.collectionViewDataSource = self;
-    collectionView.pullDelegate=self;
-    collectionView.backgroundColor = [UIColor clearColor];
-    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    
-    collectionView.numColsPortrait = 3;
-    collectionView.numColsLandscape = 3;
-    
-    collectionView.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
-    collectionView.pullBackgroundColor = [UIColor yellowColor];
-    collectionView.pullTextColor = [UIColor blackColor];
-    //    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
-    //    [headerView setBackgroundColor:[UIColor redColor]];
-    //    self.collectionView.headerView=headerView;
-    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:self.collectionView.bounds];
-    loadingLabel.text = @"Loading...";
-    loadingLabel.textAlignment = UITextAlignmentCenter;
-    collectionView.loadingView = loadingLabel;
-    
-    //    [self loadDataSource];
-    if(!collectionView.pullTableIsRefreshing) {
-        collectionView.pullTableIsRefreshing = YES;
-        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
-    }
+//    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
+//    [self.view addSubview:collectionView];
+//    collectionView.collectionViewDelegate = self;
+//    collectionView.collectionViewDataSource = self;
+//    collectionView.pullDelegate=self;
+//    collectionView.backgroundColor = [UIColor clearColor];
+//    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    
+//    
+//    collectionView.numColsPortrait = 3;
+//    collectionView.numColsLandscape = 3;
+//    
+//    collectionView.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
+//    collectionView.pullBackgroundColor = [UIColor yellowColor];
+//    collectionView.pullTextColor = [UIColor blackColor];
+//    //    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
+//    //    [headerView setBackgroundColor:[UIColor redColor]];
+//    //    self.collectionView.headerView=headerView;
+//    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:self.collectionView.bounds];
+//    loadingLabel.text = @"Loading...";
+//    loadingLabel.textAlignment = UITextAlignmentCenter;
+//    collectionView.loadingView = loadingLabel;
+//    
+//    //    [self loadDataSource];
+//    if(!collectionView.pullTableIsRefreshing) {
+//        collectionView.pullTableIsRefreshing = YES;
+//        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
+//    }
 
 }
 

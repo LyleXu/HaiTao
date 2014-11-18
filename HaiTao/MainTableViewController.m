@@ -116,6 +116,24 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    // remove the segment control in the navigation bar
+    for (UIView *views in self.navigationController.navigationBar.subviews) {
+        if([views isKindOfClass:[UILabel class]])
+        {
+            [views removeFromSuperview];
+        }
+        
+        for (UIView * subviews1 in views.subviews) {
+            if ([subviews1 isKindOfClass:[HYSegmentedControl class]]) {
+                //NSLog(@"找到啦");
+                [subviews1 removeFromSuperview];
+            }
+        }
+    }
+}
+
 -(void)onBtnTouch
 {
     // go to shopcart
