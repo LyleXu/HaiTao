@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReleaseGoodsViewController : UITableViewController
+@interface ReleaseGoodsViewController : UIViewController
 
 @end

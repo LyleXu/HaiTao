@@ -614,21 +614,6 @@
                                     <segue destination="Vq1-1D-j2U" kind="presentation" id="oRg-ZL-rdS"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gga-Ad-EU4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="标记标签" id="wXp-PF-Jdv">
-                                        <barButtonItem key="rightBarButtonItem" title="下一步" id="x3t-2b-B5V">
-                                            <connections>
-                                                <segue destination="AZQ-JI-X6l" kind="show" id="K3V-k7-DvK"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                </variation>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -638,7 +623,6 @@
                                 <exclude reference="YN0-ni-dnE"/>
                                 <exclude reference="eu5-5X-8Du"/>
                                 <exclude reference="XtU-Uj-VAq"/>
-                                <exclude reference="gga-Ad-EU4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -648,7 +632,6 @@
                                 <include reference="YN0-ni-dnE"/>
                                 <include reference="eu5-5X-8Du"/>
                                 <include reference="XtU-Uj-VAq"/>
-                                <include reference="gga-Ad-EU4"/>
                             </mask>
                         </variation>
                     </view>
@@ -664,7 +647,7 @@
         <!--Release Goods View Controller-->
         <scene sceneID="sgn-Ud-697">
             <objects>
-                <viewController id="AZQ-JI-X6l" customClass="ReleaseGoodsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="releasegoodsviewcontroller" id="AZQ-JI-X6l" customClass="ReleaseGoodsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OxX-C0-MMW"/>
                         <viewControllerLayoutGuide type="bottom" id="ZDB-d0-X8F"/>
@@ -672,18 +655,6 @@
                     <view key="view" contentMode="scaleToFill" id="i8Q-Pc-dBh">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-jJ-1jg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="上架" id="Z6m-9J-rXF">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; back" id="x27-Jr-VIr"/>
-                                        <barButtonItem key="rightBarButtonItem" title="发布" id="fKK-bG-Tq4"/>
-                                    </navigationItem>
-                                </items>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                </variation>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBa-FZ-3Af">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -775,20 +746,19 @@
                                     <rect key="frame" x="118" y="478" width="85" height="21"/>
                                 </variation>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jK-CB-yvo">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJl-xc-Xbo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="7" y="235" width="305" height="240"/>
+                                    <rect key="frame" x="0.0" y="235" width="320" height="240"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="hN2-8s-TLa" kind="embed" id="HNE-Lz-QUR"/>
+                                    <segue destination="hN2-8s-TLa" kind="embed" id="fl1-eZ-R2C"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="0vB-jJ-1jg"/>
                                 <exclude reference="fBa-FZ-3Af"/>
                                 <exclude reference="vqG-rk-peY"/>
                                 <exclude reference="uGG-IP-dkZ"/>
@@ -796,12 +766,11 @@
                                 <exclude reference="oyF-2B-HxQ"/>
                                 <exclude reference="1Px-0a-YmT"/>
                                 <exclude reference="3OI-Cb-Rmq"/>
-                                <exclude reference="0jK-CB-yvo"/>
+                                <exclude reference="pJl-xc-Xbo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="0vB-jJ-1jg"/>
                                 <include reference="fBa-FZ-3Af"/>
                                 <include reference="vqG-rk-peY"/>
                                 <include reference="uGG-IP-dkZ"/>
@@ -809,7 +778,7 @@
                                 <include reference="oyF-2B-HxQ"/>
                                 <include reference="1Px-0a-YmT"/>
                                 <include reference="3OI-Cb-Rmq"/>
-                                <include reference="0jK-CB-yvo"/>
+                                <include reference="pJl-xc-Xbo"/>
                             </mask>
                         </variation>
                     </view>
@@ -1019,7 +988,6 @@
                             <outlet property="delegate" destination="hN2-8s-TLa" id="qYH-rg-I0V"/>
                         </connections>
                     </tableView>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9o-LK-Axq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
