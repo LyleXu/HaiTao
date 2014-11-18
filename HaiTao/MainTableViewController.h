@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HYSegmentedControl.h"
 #import "SellerViewController.h"
+#import "GoodsDetailViewController.h"
 @interface MainTableViewController : UIViewController
 @property (retain, nonatomic)  HYSegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UINavigationItem *mainNavigationItem;
