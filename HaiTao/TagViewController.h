@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TagViewController : UIViewController
-
+@property (strong,nonatomic) NSArray* items;
 @end

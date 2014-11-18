@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LocationViewController : UIViewController
+@property (strong,nonatomic) NSArray* items;
 
 @end
