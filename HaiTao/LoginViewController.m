@@ -45,8 +45,8 @@ static NSString *kViewKey = @"viewKey";
 
 -(void)imageQQClicked
 {
-    _tencentOAuth.redirectURI = @"www.qq.com";
-    [_tencentOAuth authorize:_permissions inSafari:NO];
+    //_tencentOAuth.redirectURI = @"www.qq.com";
+    [_tencentOAuth authorize:_permissions inSafari:YES];
 }
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
