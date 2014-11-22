@@ -147,8 +147,8 @@
 -(void)onBtnTouch
 {
     // go to shopcart
-//    ShopCartViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"shopcartcontroller"];
-//    [self presentViewController:ctl animated:YES completion:nil];
+    ShopCartViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"shopcartcontroller"];
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated

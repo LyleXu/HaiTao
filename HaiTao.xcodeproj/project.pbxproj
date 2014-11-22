@@ -134,6 +134,8 @@
 		6D8812771A18FE8100C863C2 /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812721A18FE8100C863C2 /* PSCollectionView.m */; };
 		6D8812781A18FE8100C863C2 /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812741A18FE8100C863C2 /* PSCollectionViewCell.m */; };
 		6D88127A1A1A125600C863C2 /* shopcart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8812791A1A125500C863C2 /* shopcart@2x.png */; };
+		6D98A2E01A201CE000B23B46 /* ShopCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D98A2DF1A201CE000B23B46 /* ShopCartTableViewCell.m */; };
+		6D98A2E71A20309F00B23B46 /* fans0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D98A2E61A20309F00B23B46 /* fans0@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -369,6 +371,9 @@
 		6D8812731A18FE8100C863C2 /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCollectionViewCell.h; path = PSCollectionView/PSCollectionViewCell.h; sourceTree = "<group>"; };
 		6D8812741A18FE8100C863C2 /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCollectionViewCell.m; path = PSCollectionView/PSCollectionViewCell.m; sourceTree = "<group>"; };
 		6D8812791A1A125500C863C2 /* shopcart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopcart@2x.png"; sourceTree = "<group>"; };
+		6D98A2DE1A201CE000B23B46 /* ShopCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartTableViewCell.h; sourceTree = "<group>"; };
+		6D98A2DF1A201CE000B23B46 /* ShopCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartTableViewCell.m; sourceTree = "<group>"; };
+		6D98A2E61A20309F00B23B46 /* fans0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fans0@2x.png"; path = "resources/Test/fans0@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -663,6 +668,7 @@
 		6D77DFCE1A1500C100BDCE9E /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				6D98A2E61A20309F00B23B46 /* fans0@2x.png */,
 				6D2A34A81A1B3B0200E6615E /* test0.png */,
 				6D2A34A91A1B3B0200E6615E /* test1.png */,
 				6D2A34AA1A1B3B0200E6615E /* test2.png */,
@@ -892,6 +898,8 @@
 				6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */,
 				6D2A34C21A1B403600E6615E /* GoodsDetailViewController.h */,
 				6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */,
+				6D98A2DE1A201CE000B23B46 /* ShopCartTableViewCell.h */,
+				6D98A2DF1A201CE000B23B46 /* ShopCartTableViewCell.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1087,6 +1095,7 @@
 				6D77E0181A15A37C00BDCE9E /* chat_bottom_keyboard_press.png in Resources */,
 				6D77E01F1A15A37C00BDCE9E /* chat_bottom_voice_press.png in Resources */,
 				6D77E0281A15A50B00BDCE9E /* messages.plist in Resources */,
+				6D98A2E71A20309F00B23B46 /* fans0@2x.png in Resources */,
 				6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */,
 				6D6164DA1A15F04900DF1B14 /* Default.png in Resources */,
 				6DCA1B2D1A1100FB000E4E7E /* Back_button@2x.png in Resources */,
@@ -1180,6 +1189,7 @@
 				6D88124E1A18FDFA00C863C2 /* UIImageView+WebCache.m in Sources */,
 				6D6164BC1A15F01600DF1B14 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				6D77E02C1A15AB8600BDCE9E /* UserViewController.m in Sources */,
+				6D98A2E01A201CE000B23B46 /* ShopCartTableViewCell.m in Sources */,
 				6D88124C1A18FDFA00C863C2 /* SDWebImagePrefetcher.m in Sources */,
 				6D6A42E91A05BE6C0005B35F /* LoginViewController.m in Sources */,
 				6D88124A1A18FDFA00C863C2 /* SDWebImageDownloader.m in Sources */,
