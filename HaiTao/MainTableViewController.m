@@ -132,6 +132,16 @@
             }
         }
     }
+    
+    [self setTop:self.navigationController.navigationBar top:20.0];
+    [self setTop:self.tabBarController.tabBar top:524.0];
+}
+
+-(void)setTop:(UIView*) view top:(double) top
+{
+    CGRect tmpFrame = view.frame;
+    tmpFrame.origin.y =top;
+    view.frame = tmpFrame;
 }
 
 -(void)onBtnTouch
