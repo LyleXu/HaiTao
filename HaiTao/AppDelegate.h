@@ -22,7 +22,7 @@ NSString* wbtoken;
 @property (strong, nonatomic) NSString *wbtoken;
 @property (strong, nonatomic) NSString *wb_uid;
 
-//@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 //@property (strong, nonatomic) MainViewController *viewController;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
