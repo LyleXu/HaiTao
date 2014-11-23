@@ -7,19 +7,26 @@
 //
 
 #import "AppDelegate.h"
-
 @interface AppDelegate ()
 
 @end
 
-
 @implementation AppDelegate
-@synthesize wbtoken;
+@synthesize wbtoken,wb_uid,window,viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    
+//    self.window.rootViewController=[storyboard instantiateInitialViewController];
+//    
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -60,6 +67,7 @@
     return [TencentOAuth HandleOpenURL:url];
 }
 
+
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request
 {
     if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class])
@@ -82,18 +90,69 @@
     }
     else if ([response isKindOfClass:WBAuthorizeResponse.class])
     {
-        NSString *title = @"认证结果";
-        NSString *message = [NSString stringWithFormat:@"响应状态: %d\nresponse.userId: %@\nresponse.accessToken: %@\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode,[(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken], response.userInfo, response.requestUserInfo];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        
-        self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
-        
-        [alert show];
+//        NSString *title = @"认证结果";
+//        NSString *message = [NSString stringWithFormat:@"响应状态: %d\nresponse.userId: %@\nresponse.accessToken: %@\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode,[(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken], response.userInfo, response.requestUserInfo];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+//                                                        message:message
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"确定"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+
+        if((int)response.statusCode == 0)
+        {
+            self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
+            self.wb_uid = [(WBAuthorizeResponse *)response userID];
+            [self getWeiboUserInfo];
+        }else
+        {
+            NSString *title = @"认证结果";
+            NSString *message = [NSString stringWithFormat:@"授权失败 (%d)",(int)response.statusCode];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
+}
+
+- (void)getWeiboUserInfo {
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:2];
+    [params setObject:self.wbtoken forKey:@"access_token"];
+    [params setObject:self.wb_uid forKey:@"uid"];
+    NSLog(@"params:%@", params);
+    
+    [WBHttpRequest requestWithURL:@"https://api.weibo.com/2/users/show.json" httpMethod:@"GET" params:params delegate:self withTag:@"getUserInfo"];
+}
+
+- (void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result
+{
+    NSString *title = nil;
+    UIAlertView *alert = nil;
+    
+    
+    NSError *error;
+    NSData  *data = [result dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (json == nil)
+    {
+        NSLog(@"json parse failed \r\n");
+        return;
+    }
+    NSLog([json objectForKey:@"screen_name"]);
+    NSLog([json objectForKey:@"profile_image_url"]);
+    
+    [self.callDelegate callFromOtherPlace];
+    
+//    title = @"收到网络回调";
+//    alert = [[UIAlertView alloc] initWithTitle:title
+//                                       message:[NSString stringWithFormat:@"%@",result]
+//                                      delegate:nil
+//                             cancelButtonTitle:@"确定"
+//                             otherButtonTitles:nil];
+//    [alert show];
 }
 
 #pragma mark - Core Data stack

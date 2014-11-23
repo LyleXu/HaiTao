@@ -16,7 +16,6 @@ static NSString *kViewKey = @"viewKey";
 @synthesize btnLogin;
 @synthesize lblCountryPhoneCode, txtUser,txtPass;
 @synthesize dataArray;
-
 -(void)initImageClickEvent
 {
     //sina weibo
@@ -41,6 +40,9 @@ static NSString *kViewKey = @"viewKey";
                          @"Other_Info_2": @[@"obj1", @"obj2"],
                          @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
     [WeiboSDK sendRequest:request];
+    
+    AppDelegate * theAppdelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    theAppdelegate.callDelegate = self;
 }
 
 -(void)imageQQClicked
@@ -214,6 +216,18 @@ static NSString *kViewKey = @"viewKey";
     NSString *title = nil;
     UIAlertView *alert = nil;
     
+    
+    NSError *error;
+    NSData  *data = [result dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (json == nil)
+    {
+        NSLog(@"json parse failed \r\n");
+        return;
+    }
+    NSLog([json objectForKey:@"screen_name"]);
+    NSLog([json objectForKey:@"profile_image_url"]);
+    
     title = @"收到网络回调";
     alert = [[UIAlertView alloc] initWithTitle:title
                                        message:[NSString stringWithFormat:@"%@",result]
@@ -226,6 +240,13 @@ static NSString *kViewKey = @"viewKey";
 -(void)passValue:(NSString *)value
 {
     self.lblCountryPhoneCode.text = value;
+}
+
+-(void)callFromOtherPlace
+{
+    
+    MainTabBarController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    [self presentViewController:ctl animated:YES completion:nil];
 }
 
 - (IBAction)Login:(id)sender {

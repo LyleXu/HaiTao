@@ -10,7 +10,7 @@
         <!--Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" extendedLayoutIncludesOpaqueBars="YES" id="vXZ-lx-hvc" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -1526,7 +1526,7 @@
         <!--编辑个人资料-->
         <scene sceneID="gsx-MX-ZKf">
             <objects>
-                <tableViewController id="CEA-A1-MTu" customClass="UserInfoTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="userinfotableviewcontroller" id="CEA-A1-MTu" customClass="UserInfoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HTq-fM-QbV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2507,7 +2507,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="Wcx-8P-11F">
             <objects>
-                <tabBarController id="m6Z-Kf-w06" customClass="MainTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="m6Z-Kf-w06" customClass="MainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="J90-rL-Bw2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

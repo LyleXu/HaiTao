@@ -5,6 +5,7 @@
 //  Created by gtcc on 11/7/14.
 //  Copyright (c) 2014 home. All rights reserved.
 //
+#define DEVICE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import "MainTableViewController.h"
 #import "MaijiaTableViewCell.h"
@@ -134,7 +135,7 @@
     }
     
     [self setTop:self.navigationController.navigationBar top:20.0];
-    [self setTop:self.tabBarController.tabBar top:524.0];
+    [self setTop:self.tabBarController.tabBar top:DEVICE_HEIGHT - self.tabBarController.tabBar.bounds.size.height];
 }
 
 -(void)setTop:(UIView*) view top:(double) top

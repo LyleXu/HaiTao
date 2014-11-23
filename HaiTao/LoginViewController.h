@@ -11,9 +11,11 @@
 #import "CountryPhoneTableViewController.h"
 #import "PassValueDelegate.h"
 #import <TencentOpenAPI/TencentOAuth.h>
-
+#import "AppDelegate.h"
+#import "MainTabBarController.h"
+#import "CallDelegate.h"
 @protocol LoginViewControllerDelegate;
-@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate, WBHttpRequestDelegate,TencentSessionDelegate,PassValueDelegate> {
+@interface LoginViewController : UIViewController <UITableViewDataSource, UITextFieldDelegate, WBHttpRequestDelegate,TencentSessionDelegate,PassValueDelegate,CallDelegate> {
 	IBOutlet UITableView *loginTableView;
 	UIButton *btnLogin;
 	
