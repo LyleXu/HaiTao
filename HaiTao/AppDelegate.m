@@ -12,7 +12,8 @@
 @end
 
 @implementation AppDelegate
-@synthesize wbtoken,wb_uid,window,viewController;
+@synthesize wbtoken,wb_uid;
+//@synthesize window,viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -129,8 +130,7 @@
 
 - (void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result
 {
-    NSString *title = nil;
-    UIAlertView *alert = nil;
+  
     
     
     NSError *error;
@@ -141,11 +141,13 @@
         NSLog(@"json parse failed \r\n");
         return;
     }
-    NSLog([json objectForKey:@"screen_name"]);
-    NSLog([json objectForKey:@"profile_image_url"]);
+    //NSLog([json objectForKey:@"screen_name"]);
+    //NSLog([json objectForKey:@"profile_image_url"]);
     
     [self.callDelegate callFromOtherPlace];
     
+//    NSString *title = nil;
+//    UIAlertView *alert = nil;
 //    title = @"收到网络回调";
 //    alert = [[UIAlertView alloc] initWithTitle:title
 //                                       message:[NSString stringWithFormat:@"%@",result]

@@ -968,17 +968,27 @@
 			name = SBJson;
 			sourceTree = "<group>";
 		};
+		6D98A3171A21A02E00B23B46 /* ShopCart */ = {
+			isa = PBXGroup;
+			children = (
+				6D2A34941A1A362800E6615E /* ShopCartViewController.h */,
+				6D2A34951A1A362800E6615E /* ShopCartViewController.m */,
+				6D98A2DE1A201CE000B23B46 /* ShopCartTableViewCell.h */,
+				6D98A2DF1A201CE000B23B46 /* ShopCartTableViewCell.m */,
+			);
+			name = ShopCart;
+			sourceTree = "<group>";
+		};
 		6DCA1AF51A0CC687000E4E7E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				6D98A3171A21A02E00B23B46 /* ShopCart */,
 				6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */,
 				6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */,
 				6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */,
 				6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */,
 				6D77DFD51A1506BF00BDCE9E /* SellerViewController.h */,
 				6D77DFD61A1506BF00BDCE9E /* SellerViewController.m */,
-				6D2A34941A1A362800E6615E /* ShopCartViewController.h */,
-				6D2A34951A1A362800E6615E /* ShopCartViewController.m */,
 				6D2A349A1A1AB57300E6615E /* TagViewController.h */,
 				6D2A349B1A1AB57300E6615E /* TagViewController.m */,
 				6D2A349D1A1AB66100E6615E /* LocationViewController.h */,
@@ -987,8 +997,6 @@
 				6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */,
 				6D2A34C21A1B403600E6615E /* GoodsDetailViewController.h */,
 				6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */,
-				6D98A2DE1A201CE000B23B46 /* ShopCartTableViewCell.h */,
-				6D98A2DF1A201CE000B23B46 /* ShopCartTableViewCell.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
