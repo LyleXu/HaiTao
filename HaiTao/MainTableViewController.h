@@ -10,6 +10,7 @@
 #import "HYSegmentedControl.h"
 #import "SellerViewController.h"
 #import "GoodsDetailViewController.h"
+#import "POHorizontalList.h"
 @interface MainTableViewController : UIViewController
 @property (retain, nonatomic)  HYSegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UINavigationItem *mainNavigationItem;

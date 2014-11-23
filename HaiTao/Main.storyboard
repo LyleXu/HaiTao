@@ -305,7 +305,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="-3" y="442" width="150" height="21"/>
                                 </variation>
                             </label>
@@ -314,7 +314,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="170" y="442" width="150" height="21"/>
                                 </variation>
                             </label>
@@ -345,16 +345,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RIY-hq-2Zc" firstAttribute="leading" secondItem="vGZ-fd-49Q" secondAttribute="trailing" constant="5" id="35M-Vh-SJM"/>
+                            <constraint firstItem="1oo-9l-nas" firstAttribute="leading" secondItem="RIY-hq-2Zc" secondAttribute="trailing" constant="2" id="5kj-It-An6"/>
                             <constraint firstAttribute="centerX" secondItem="1fH-Cb-H00" secondAttribute="centerX" id="Bra-EZ-fu0"/>
                             <constraint firstItem="jHt-yj-eQG" firstAttribute="top" secondItem="t3k-0g-Isf" secondAttribute="bottom" constant="300" id="CgQ-HG-ofE"/>
-                            <constraint firstItem="1fH-Cb-H00" firstAttribute="top" secondItem="vGZ-fd-49Q" secondAttribute="bottom" constant="21" id="DIk-O9-8qm"/>
                             <constraint firstAttribute="centerX" secondItem="RIY-hq-2Zc" secondAttribute="centerX" id="DVG-Bu-1O1"/>
                             <constraint firstItem="Nrc-Xg-SJf" firstAttribute="leading" secondItem="9bd-Xm-aqD" secondAttribute="leadingMargin" id="Fxb-cy-cRS"/>
                             <constraint firstAttribute="centerX" secondItem="jHt-yj-eQG" secondAttribute="centerX" id="MWL-KZ-gMc"/>
                             <constraint firstItem="ZEy-Tc-FG5" firstAttribute="top" secondItem="1fH-Cb-H00" secondAttribute="bottom" constant="20" id="NT2-Xf-rQM"/>
-                            <constraint firstItem="1fH-Cb-H00" firstAttribute="top" secondItem="1oo-9l-nas" secondAttribute="bottom" constant="21" id="bCA-6p-PrK"/>
                             <constraint firstItem="bf6-ly-fLs" firstAttribute="trailing" secondItem="9bd-Xm-aqD" secondAttribute="trailingMargin" id="bJM-nn-Z8Z"/>
                             <constraint firstItem="Isb-MF-U9z" firstAttribute="trailing" secondItem="9bd-Xm-aqD" secondAttribute="trailingMargin" id="eON-LI-NZF"/>
+                            <constraint firstItem="1fH-Cb-H00" firstAttribute="top" secondItem="vGZ-fd-49Q" secondAttribute="bottom" constant="21" id="f2T-KY-LcI"/>
+                            <constraint firstItem="1fH-Cb-H00" firstAttribute="top" secondItem="1oo-9l-nas" secondAttribute="bottom" constant="21" id="hRf-9B-zqb"/>
                             <constraint firstItem="1fH-Cb-H00" firstAttribute="top" secondItem="RIY-hq-2Zc" secondAttribute="bottom" constant="15" id="hSH-Ah-uMb"/>
                             <constraint firstItem="02X-59-kFV" firstAttribute="leading" secondItem="9bd-Xm-aqD" secondAttribute="leadingMargin" constant="-16" id="kpt-gB-27R"/>
                             <constraint firstItem="02X-59-kFV" firstAttribute="top" secondItem="t3k-0g-Isf" secondAttribute="bottom" id="lhd-eA-669"/>
@@ -377,11 +379,13 @@
                                 <exclude reference="MWL-KZ-gMc"/>
                                 <exclude reference="eON-LI-NZF"/>
                                 <exclude reference="okE-S4-y0P"/>
+                                <exclude reference="35M-Vh-SJM"/>
                                 <exclude reference="DVG-Bu-1O1"/>
+                                <exclude reference="5kj-It-An6"/>
                                 <exclude reference="Fxb-cy-cRS"/>
                                 <exclude reference="Bra-EZ-fu0"/>
-                                <exclude reference="DIk-O9-8qm"/>
-                                <exclude reference="bCA-6p-PrK"/>
+                                <exclude reference="f2T-KY-LcI"/>
+                                <exclude reference="hRf-9B-zqb"/>
                                 <exclude reference="hSH-Ah-uMb"/>
                                 <exclude reference="bJM-nn-Z8Z"/>
                                 <exclude reference="NT2-Xf-rQM"/>
@@ -403,11 +407,13 @@
                                 <include reference="MWL-KZ-gMc"/>
                                 <include reference="eON-LI-NZF"/>
                                 <include reference="okE-S4-y0P"/>
+                                <include reference="35M-Vh-SJM"/>
                                 <include reference="DVG-Bu-1O1"/>
+                                <include reference="5kj-It-An6"/>
                                 <include reference="Fxb-cy-cRS"/>
                                 <include reference="Bra-EZ-fu0"/>
-                                <include reference="DIk-O9-8qm"/>
-                                <include reference="bCA-6p-PrK"/>
+                                <include reference="f2T-KY-LcI"/>
+                                <include reference="hRf-9B-zqb"/>
                                 <include reference="hSH-Ah-uMb"/>
                                 <include reference="bJM-nn-Z8Z"/>
                                 <include reference="NT2-Xf-rQM"/>
@@ -1820,18 +1826,13 @@
                                                         <rect key="frame" x="118" y="395" width="51" height="22"/>
                                                     </variation>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEA-fi-pCX">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="maijia.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60h-QI-5cK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="51" width="374" height="321"/>
+                                                        <rect key="frame" x="0.0" y="52" width="320" height="320"/>
                                                     </variation>
-                                                    <connections>
-                                                        <segue destination="HHb-Ua-S74" kind="show" id="Tp3-M2-oeB"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -1848,7 +1849,7 @@
                                                     <exclude reference="8KO-ju-rGL"/>
                                                     <exclude reference="hWW-Ln-us9"/>
                                                     <exclude reference="Erp-jA-JAT"/>
-                                                    <exclude reference="rEA-fi-pCX"/>
+                                                    <exclude reference="60h-QI-5cK"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1866,11 +1867,12 @@
                                                     <include reference="8KO-ju-rGL"/>
                                                     <include reference="hWW-Ln-us9"/>
                                                     <include reference="Erp-jA-JAT"/>
-                                                    <include reference="rEA-fi-pCX"/>
+                                                    <include reference="60h-QI-5cK"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="GoodsImageContainer" destination="60h-QI-5cK" id="1cD-wj-eYR"/>
                                             <outlet property="lblCommentsCount" destination="277-nV-O4J" id="i99-sn-iaY"/>
                                             <outlet property="lblGoodCount" destination="AAA-gz-OoB" id="CxF-An-Bfs"/>
                                             <outlet property="lblSellerDescription" destination="SiA-wP-TGo" id="drV-Vs-BXo"/>
@@ -2218,7 +2220,7 @@
         <!--Goods Detail View Controller-->
         <scene sceneID="ZyF-mt-Z5T">
             <objects>
-                <viewController id="HHb-Ua-S74" customClass="GoodsDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoodsDetailViewController" id="HHb-Ua-S74" customClass="GoodsDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k0z-Nd-8hy"/>
                         <viewControllerLayoutGuide type="bottom" id="6ea-E3-Lmt"/>
@@ -2877,7 +2879,6 @@
         <image name="feed.png" width="33" height="33"/>
         <image name="geren.png" width="33" height="33"/>
         <image name="login.png" width="644" height="989"/>
-        <image name="maijia.png" width="319" height="321"/>
         <image name="pinglun.png" width="51" height="17"/>
         <image name="shopcart.png" width="24" height="19"/>
         <image name="test10.png" width="213" height="153"/>
@@ -2896,7 +2897,4 @@
         <image name="xiaoxi.png" width="33" height="33"/>
         <image name="zan.png" width="52" height="17"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Tp3-M2-oeB"/>
-    </inferredMetricsTieBreakers>
 </document>

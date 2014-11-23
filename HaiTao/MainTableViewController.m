@@ -11,7 +11,7 @@
 #import "MaijiaTableViewCell.h"
 #import "YIFullScreenScroll.h"
 #import "ShopCartViewController.h"
-@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate>
+@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
 
@@ -58,11 +58,25 @@
         cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
-    cell.sellerAvatar.userInteractionEnabled = YES;
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageSellerAvatarClicked)];
-    [cell.sellerAvatar addGestureRecognizer:singleTap];
+    ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia.png"] text:@"maijia"];
+     ListItem *item2= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia2.png"] text:@"maijia2"];
+    NSMutableArray* goodsImageList = [[NSMutableArray alloc] initWithObjects: item1, item2, nil];
+    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList];
+    [list setDelegate:self];
+    [cell.GoodsImageContainer addSubview:list];
+//    cell.sellerAvatar.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageSellerAvatarClicked)];
+//    [cell.sellerAvatar addGestureRecognizer:singleTap];
     
     return cell;
+}
+
+#pragma mark  POHorizontalListDelegate
+
+- (void) didSelectItem:(ListItem *)item {
+    //NSLog(@"Horizontal List Item %@ selected", item.imageTitle);
+    GoodsDetailViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodsDetailViewController"];
+    [self.navigationController pushViewController:ctl animated:YES];
 }
 
 -(void)imageSellerAvatarClicked

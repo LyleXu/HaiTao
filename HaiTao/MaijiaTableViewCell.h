@@ -15,9 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgSellerPicture;
 @property (weak, nonatomic) IBOutlet UIButton *btnShare;
 @property (weak, nonatomic) IBOutlet UILabel *lblSellerDescription;
-@property (weak, nonatomic) IBOutlet UIImageView *imgGood;
 @property (weak, nonatomic) IBOutlet UILabel *lblGoodCount;
 @property (weak, nonatomic) IBOutlet UIImageView *imgComments;
 @property (weak, nonatomic) IBOutlet UILabel *lblCommentsCount;
+@property (weak, nonatomic) IBOutlet UIView *GoodsImageContainer;
 
 @end
