@@ -305,18 +305,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="-3" y="442" width="150" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_______________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oo-9l-nas">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="170" y="442" width="150" height="21"/>
-                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="KeJ-g2-Mkd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -372,6 +366,7 @@
                                 <exclude reference="1oo-9l-nas"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5kj-It-An6"/>
                                 <exclude reference="kpt-gB-27R"/>
                                 <exclude reference="lhd-eA-669"/>
                                 <exclude reference="uC0-gP-VZH"/>
@@ -379,10 +374,9 @@
                                 <exclude reference="MWL-KZ-gMc"/>
                                 <exclude reference="eON-LI-NZF"/>
                                 <exclude reference="okE-S4-y0P"/>
+                                <exclude reference="Fxb-cy-cRS"/>
                                 <exclude reference="35M-Vh-SJM"/>
                                 <exclude reference="DVG-Bu-1O1"/>
-                                <exclude reference="5kj-It-An6"/>
-                                <exclude reference="Fxb-cy-cRS"/>
                                 <exclude reference="Bra-EZ-fu0"/>
                                 <exclude reference="f2T-KY-LcI"/>
                                 <exclude reference="hRf-9B-zqb"/>
@@ -400,6 +394,7 @@
                                 <include reference="1oo-9l-nas"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5kj-It-An6"/>
                                 <include reference="kpt-gB-27R"/>
                                 <include reference="lhd-eA-669"/>
                                 <include reference="uC0-gP-VZH"/>
@@ -407,10 +402,9 @@
                                 <include reference="MWL-KZ-gMc"/>
                                 <include reference="eON-LI-NZF"/>
                                 <include reference="okE-S4-y0P"/>
+                                <include reference="Fxb-cy-cRS"/>
                                 <include reference="35M-Vh-SJM"/>
                                 <include reference="DVG-Bu-1O1"/>
-                                <include reference="5kj-It-An6"/>
-                                <include reference="Fxb-cy-cRS"/>
                                 <include reference="Bra-EZ-fu0"/>
                                 <include reference="f2T-KY-LcI"/>
                                 <include reference="hRf-9B-zqb"/>
@@ -2562,7 +2556,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="8" width="135" height="21"/>
+                                                        <rect key="frame" x="129" y="8" width="135" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="状态：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bru-aK-fJc">
@@ -2571,7 +2565,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="27" width="51" height="21"/>
+                                                        <rect key="frame" x="129" y="29" width="51" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现货" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TJ-R3-YXt">
@@ -2580,7 +2574,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="139" y="27" width="34" height="21"/>
+                                                        <rect key="frame" x="180" y="29" width="34" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数量：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwz-wQ-osX">
@@ -2589,7 +2583,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="88" y="49" width="51" height="21"/>
+                                                        <rect key="frame" x="129" y="51" width="51" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-NI-hic">
@@ -2598,7 +2592,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="129" y="45" width="30" height="30"/>
+                                                        <rect key="frame" x="170" y="47" width="30" height="30"/>
                                                     </variation>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2o-bA-Xe9">
@@ -2607,7 +2601,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="181" y="45" width="30" height="30"/>
+                                                        <rect key="frame" x="222" y="47" width="30" height="30"/>
                                                     </variation>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIv-nZ-Wjg">
@@ -2615,7 +2609,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="158" y="45" width="20" height="30"/>
+                                                        <rect key="frame" x="199" y="47" width="20" height="30"/>
                                                     </variation>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 550" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkI-bP-Ist">
@@ -2624,13 +2618,13 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="270" y="50" width="43" height="21"/>
+                                                        <rect key="frame" x="269" y="50" width="43" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdF-6n-ycZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="65" height="50"/>
+                                                        <rect key="frame" x="49" y="8" width="65" height="50"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
@@ -2739,6 +2733,18 @@
                                             <rect key="frame" x="232" y="3" width="80" height="30"/>
                                         </variation>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQl-mJ-FqB">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="全选">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="3" width="30" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="selectAll:" destination="I9h-jd-TCH" eventType="touchUpInside" id="zKC-qp-CuQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
@@ -2748,6 +2754,7 @@
                                         <exclude reference="4rI-bz-5sW"/>
                                         <exclude reference="mUt-oR-ZDU"/>
                                         <exclude reference="YFe-3l-K8e"/>
+                                        <exclude reference="KQl-mJ-FqB"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -2758,6 +2765,7 @@
                                         <include reference="4rI-bz-5sW"/>
                                         <include reference="mUt-oR-ZDU"/>
                                         <include reference="YFe-3l-K8e"/>
+                                        <include reference="KQl-mJ-FqB"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2779,6 +2787,9 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="table" destination="0hH-g5-zRy" id="aYE-oX-8fb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfG-lJ-ImK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

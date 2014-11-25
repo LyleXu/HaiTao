@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShopCartTableViewCell : UITableViewCell
+@interface ShopCartTableViewCell : UITableViewCell{
+    BOOL			m_checked;
+    UIImageView*	m_checkImageView;
+}
+- (void)setChecked:(BOOL)checked;
+-(void)creat;
 @property (weak, nonatomic) IBOutlet UIImageView *imageGoods;
 @property (weak, nonatomic) IBOutlet UILabel *lblGoodsName;
 @property (weak, nonatomic) IBOutlet UILabel *lblGoodsStatus;

@@ -30,12 +30,13 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    // 设置圆角半径
-    self.btnModifyUserInfo.layer.masksToBounds = YES;
-    self.btnModifyUserInfo.layer.cornerRadius = 4;
     
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:230 Titles:@[@"交易",@"购物车"] delegate:self] ;
     [self.view addSubview:segmentedControl];
+    
+    // 设置圆角半径
+    self.btnModifyUserInfo.layer.masksToBounds = YES;
+    self.btnModifyUserInfo.layer.cornerRadius = 4;
     
 //    // collection view
 //    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
@@ -175,9 +176,6 @@
 - (NSInteger)numberOfViewsInCollectionView:(PSCollectionView *)collectionView {
     return [self.items count];
 }
-
-
-
 
 - (void)loadDataSource {
     // Request

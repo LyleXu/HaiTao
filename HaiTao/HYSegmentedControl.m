@@ -1,11 +1,3 @@
-//
-//  HYSegmentedControl.m
-//  CustomSegControlView
-//
-//  Created by sxzw on 14-6-12.
-//  Copyright (c) 2014年 sxzw. All rights reserved.
-//
-
 #import "HYSegmentedControl.h"
 
 #define HYSegmentedControl_Height 20.0
@@ -25,6 +17,7 @@
 @end
 
 @implementation HYSegmentedControl
+@synthesize scrollView = _scrollView;
 
 - (id)initWithFrame:(CGRect)frame
 {

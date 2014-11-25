@@ -26,8 +26,20 @@
     if(!_cartItems)
     {
         _cartItems = [[NSArray alloc] initWithObjects:
-                      [[NSArray alloc] initWithObjects:@"Happy Bob", [[NSArray alloc] initWithObjects:@"2014款xxxxx",@"2013款xxxxx",nil],nil],
-                      [[NSArray alloc] initWithObjects:@"Sandy", [[NSArray alloc] initWithObjects:@"2015款xxxxx",nil],nil],
+                      [[NSArray alloc] initWithObjects:@"Happy Bob", [[NSArray alloc] initWithObjects:
+                                                                      [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2014款xxxxx",@"name",
+                                                                          @"NO",@"checked",
+                                                                          @"490",@"price",
+                                                                          @"1", @"amount",nil],
+                                                                      [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2013款xxxxxy",@"name",
+                                                                       @"NO",@"checked",
+                                                                       @"490",@"price",
+                                                                       @"1", @"amount",nil],nil],nil],
+                      [[NSArray alloc] initWithObjects:@"Sandy", [[NSArray alloc] initWithObjects:
+                                                                  [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2015款xxxxx",@"name",
+                                                                   @"NO",@"checked",
+                                                                   @"1100",@"price",
+                                                                   @"1", @"amount",nil],nil],nil],
                       nil];
     }
     
@@ -44,7 +56,7 @@
     return [self.cartItems[section][1] count];
 }
 
--(ShopCartTableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * tableIdentifier=@"shopcartcell";
     ShopCartTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
@@ -54,14 +66,41 @@
         // first load
         cell=[[ShopCartTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-    
-    NSString* item = self.cartItems[indexPath.section][1] [indexPath.row];
+    [cell creat];
+    NSString* item = self.cartItems[indexPath.section][1] [indexPath.row][@"name"];
     cell.lblGoodsName.text = item;
+    cell.lblPrice.text = self.cartItems[indexPath.section][1] [indexPath.row][@"price"];
     NSString* url = [NSString stringWithFormat:@"http://localhost/pic/test%d.png",(int)indexPath.row];
     NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     cell.imageGoods.image = [UIImage imageWithData:data];
     
+    NSMutableDictionary* dic = self.cartItems[indexPath.section][1][indexPath.row];
+    if ([[dic objectForKey:@"checked"] isEqualToString:@"NO"]) {
+        [dic setObject:@"NO" forKey:@"checked"];
+        [cell setChecked:NO];
+        
+    }else {
+        [dic setObject:@"YES" forKey:@"checked"];
+        [cell setChecked:YES];
+    }
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ShopCartTableViewCell *cell = (ShopCartTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    
+    NSMutableDictionary* dic = self.cartItems[indexPath.section][1][indexPath.row];
+    if ([[dic objectForKey:@"checked"] isEqualToString:@"NO"]) {
+        [dic setObject:@"YES" forKey:@"checked"];
+        [cell setChecked:YES];
+    }else {
+        [dic setObject:@"NO" forKey:@"checked"];
+        [cell setChecked:NO];
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -79,7 +118,7 @@
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *v_headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 48)];//创建一个视图（v_headerView）
-    UIImageView *v_headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 48, 48)];//创建一个UIimageView（v_headerImageView）
+    UIImageView *v_headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 48, 48)];//创建一个UIimageView（v_headerImageView）
     NSString* imageName = [NSString stringWithFormat:@"fans%d.png",(int)section];
     v_headerImageView.image = [UIImage imageNamed:imageName];//给v_headerImageView设置图片
     [v_headerView addSubview:v_headerImageView];//将v_headerImageView添加到创建的视图（v_headerView）中
@@ -126,5 +165,41 @@
     
     return v_footerView;//将视图（v_headerView）返回
     
+}
+- (IBAction)selectAll:(id)sender {
+    NSArray *anArrayOfIndexPath = [NSArray arrayWithArray:[self.table indexPathsForVisibleRows]];
+    for (int i = 0; i < [anArrayOfIndexPath count]; i++) {
+        NSIndexPath *indexPath= [anArrayOfIndexPath objectAtIndex:i];
+        ShopCartTableViewCell *cell = (ShopCartTableViewCell*)[self.table cellForRowAtIndexPath:indexPath];
+        NSUInteger row = [indexPath row];
+        NSLog(@"%lu",(unsigned long)row);
+        NSMutableDictionary *dic = self.cartItems[indexPath.section][1][row];
+        if ([[[(UIButton*)sender titleLabel] text] isEqualToString:@"全选"]) {
+            [dic setObject:@"YES" forKey:@"checked"];
+            [cell setChecked:YES];
+        }else {
+            [dic setObject:@"NO" forKey:@"checked"];
+            [cell setChecked:NO];
+        }
+    }
+    if ([[[(UIButton*)sender titleLabel] text] isEqualToString:@"全选"]){
+        for (id sellers in self.cartItems) {
+            for (NSDictionary *dic in sellers[1]) {
+                [dic setValue:@"YES" forKey:@"checked"];
+            }
+        }
+        
+        [(UIButton*)sender setTitle:@"取消" forState:UIControlStateNormal];
+    }else{
+        
+        for (id sellers in self.cartItems) {
+            for (NSDictionary *dic in sellers[1]) {
+                [dic setValue:@"NO" forKey:@"checked"];
+            }
+        }
+      
+        [(UIButton*)sender setTitle:@"全选" forState:UIControlStateNormal];
+    }
+
 }
 @end

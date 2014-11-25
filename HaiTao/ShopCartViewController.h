@@ -10,4 +10,5 @@
 
 @interface ShopCartViewController : UIViewController
 @property (strong,nonatomic) NSArray* cartItems;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 @end

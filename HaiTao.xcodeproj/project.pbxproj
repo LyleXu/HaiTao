@@ -153,6 +153,8 @@
 		6D98A31E1A22071A00B23B46 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D98A31A1A22071A00B23B46 /* ListItem.m */; };
 		6D98A31F1A22071A00B23B46 /* POHorizontalList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D98A31C1A22071A00B23B46 /* POHorizontalList.m */; };
 		6D98A3211A2223DD00B23B46 /* maijia2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D98A3201A2223DD00B23B46 /* maijia2@2x.png */; };
+		6DB71BFC1A24BFD200625612 /* Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFA1A24BFD200625612 /* Selected@2x.png */; };
+		6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFB1A24BFD200625612 /* Unselected@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -427,6 +429,8 @@
 		6D98A31C1A22071A00B23B46 /* POHorizontalList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POHorizontalList.m; path = POHorizontalList/POHorizontalList.m; sourceTree = "<group>"; };
 		6D98A31D1A22071A00B23B46 /* POHorizontalListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POHorizontalListDelegate.h; path = POHorizontalList/POHorizontalListDelegate.h; sourceTree = "<group>"; };
 		6D98A3201A2223DD00B23B46 /* maijia2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maijia2@2x.png"; path = "resources/Test/maijia2@2x.png"; sourceTree = "<group>"; };
+		6DB71BFA1A24BFD200625612 /* Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Selected@2x.png"; path = "resources/Selected@2x.png"; sourceTree = "<group>"; };
+		6DB71BFB1A24BFD200625612 /* Unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unselected@2x.png"; path = "resources/Unselected@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -674,6 +678,8 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DB71BFA1A24BFD200625612 /* Selected@2x.png */,
+				6DB71BFB1A24BFD200625612 /* Unselected@2x.png */,
 				6D2A34A61A1B38D200E6615E /* toShopCart.png */,
 				6D8812791A1A125500C863C2 /* shopcart@2x.png */,
 				6D77E02D1A15AD7000BDCE9E /* settings@2x.png */,
@@ -1160,6 +1166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D2A34A71A1B38D200E6615E /* toShopCart.png in Resources */,
+				6DB71BFC1A24BFD200625612 /* Selected@2x.png in Resources */,
 				6DCA1B821A1380D0000E4E7E /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				6D8812571A18FE1000C863C2 /* blackArrow.png in Resources */,
 				6D77E0171A15A37C00BDCE9E /* chat_bottom_keyboard_nor.png in Resources */,
@@ -1221,6 +1228,7 @@
 				6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */,
 				6D6164DA1A15F04900DF1B14 /* Default.png in Resources */,
 				6DCA1B2D1A1100FB000E4E7E /* Back_button@2x.png in Resources */,
+				6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */,
 				6D6164DB1A15F04900DF1B14 /* Default@2x.png in Resources */,
 				6DCA1B391A1100FB000E4E7E /* weibo@2x.png in Resources */,
 				6D8812581A18FE1000C863C2 /* blackArrow@2x.png in Resources */,
