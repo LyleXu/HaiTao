@@ -29,17 +29,20 @@
                       [[NSArray alloc] initWithObjects:@"Happy Bob", [[NSArray alloc] initWithObjects:
                                                                       [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2014款xxxxx",@"name",
                                                                           @"NO",@"checked",
-                                                                          @"490",@"price",
-                                                                          @"1", @"amount",nil],
+                                                                          @"550",@"price",
+                                                                          @"1", @"amount",
+                                                                          @"test0.png",@"pic",nil],
                                                                       [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2013款xxxxxy",@"name",
                                                                        @"NO",@"checked",
-                                                                       @"490",@"price",
-                                                                       @"1", @"amount",nil],nil],nil],
+                                                                       @"430",@"price",
+                                                                       @"1", @"amount",
+                                                                       @"test1.png",@"pic",nil],nil],nil],
                       [[NSArray alloc] initWithObjects:@"Sandy", [[NSArray alloc] initWithObjects:
-                                                                  [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2015款xxxxx",@"name",
+                                                                  [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"2014款xxxxx",@"name",
                                                                    @"NO",@"checked",
-                                                                   @"1100",@"price",
-                                                                   @"1", @"amount",nil],nil],nil],
+                                                                   @"430",@"price",
+                                                                   @"1", @"amount",
+                                                                   @"test3.png",@"pic",nil],nil],nil],
                       nil];
     }
     
@@ -70,9 +73,10 @@
     NSString* item = self.cartItems[indexPath.section][1] [indexPath.row][@"name"];
     cell.lblGoodsName.text = item;
     cell.lblPrice.text = self.cartItems[indexPath.section][1] [indexPath.row][@"price"];
-    NSString* url = [NSString stringWithFormat:@"http://localhost/pic/test%d.png",(int)indexPath.row];
-    NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-    cell.imageGoods.image = [UIImage imageWithData:data];
+    //NSString* url = [NSString stringWithFormat:@"http://localhost/pic/test%d.png",(int)indexPath.row];
+    //NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+    //cell.imageGoods.image = [UIImage imageWithData:data];
+    cell.imageGoods.image = [UIImage imageNamed:self.cartItems[indexPath.section][1][indexPath.row][@"pic"]];
     
     NSMutableDictionary* dic = self.cartItems[indexPath.section][1][indexPath.row];
     if ([[dic objectForKey:@"checked"] isEqualToString:@"NO"]) {
@@ -148,7 +152,10 @@
     [v_lblFotter setShadowOffset:CGSizeMake(0, 1)];//设置v_headerLab的字体投影的位置
     //设置每组的的标题
     
-    v_lblFotter.text = @"已选择1件商品";
+    if(section == 0)
+        v_lblFotter.text = @"已选择2件商品";
+    else
+        v_lblFotter.text =@"已选择1件商品";
     [v_footerView addSubview:v_lblFotter];
     
     
@@ -160,7 +167,10 @@
     [v_lblTotal setShadowOffset:CGSizeMake(0, 1)];//设置v_headerLab的字体投影的位置
     //设置每组的的标题
     
-    v_lblTotal.text = @"总计: 980";
+     if(section == 0)
+         v_lblTotal.text = @"总计: 980";
+    else
+        v_lblTotal.text = @"总计: 430";
     [v_footerView addSubview:v_lblTotal];
     
     return v_footerView;//将视图（v_headerView）返回

@@ -58,8 +58,8 @@ static NSString *const cellIdentifier=@"QQChart";
 {
     [super viewDidLoad];
     
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
-    [self.navigationController.navigationBar addSubview:segmentedControl];
+//    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
+//    [self.navigationController.navigationBar addSubview:segmentedControl];
     
     //self.title=@"QQ chat";
     //self.view.backgroundColor=[UIColor whiteColor];

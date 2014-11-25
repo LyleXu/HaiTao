@@ -155,6 +155,8 @@
 		6D98A3211A2223DD00B23B46 /* maijia2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D98A3201A2223DD00B23B46 /* maijia2@2x.png */; };
 		6DB71BFC1A24BFD200625612 /* Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFA1A24BFD200625612 /* Selected@2x.png */; };
 		6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFB1A24BFD200625612 /* Unselected@2x.png */; };
+		6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */; };
+		6DB71C031A2541D500625612 /* PrivateChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71C021A2541D500625612 /* PrivateChatListCell.m */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -431,6 +433,10 @@
 		6D98A3201A2223DD00B23B46 /* maijia2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maijia2@2x.png"; path = "resources/Test/maijia2@2x.png"; sourceTree = "<group>"; };
 		6DB71BFA1A24BFD200625612 /* Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Selected@2x.png"; path = "resources/Selected@2x.png"; sourceTree = "<group>"; };
 		6DB71BFB1A24BFD200625612 /* Unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unselected@2x.png"; path = "resources/Unselected@2x.png"; sourceTree = "<group>"; };
+		6DB71BFE1A25412800625612 /* PrivateChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatListViewController.h; sourceTree = "<group>"; };
+		6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatListViewController.m; sourceTree = "<group>"; };
+		6DB71C011A2541D500625612 /* PrivateChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatListCell.h; sourceTree = "<group>"; };
+		6DB71C021A2541D500625612 /* PrivateChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatListCell.m; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -766,6 +772,10 @@
 				6D77DFE61A159C6800BDCE9E /* PrivateChat */,
 				6D77DFE31A15955400BDCE9E /* MessageViewController.h */,
 				6D77DFE41A15955400BDCE9E /* MessageViewController.m */,
+				6DB71BFE1A25412800625612 /* PrivateChatListViewController.h */,
+				6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */,
+				6DB71C011A2541D500625612 /* PrivateChatListCell.h */,
+				6DB71C021A2541D500625612 /* PrivateChatListCell.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -1303,6 +1313,7 @@
 				6D6164B91A15F01600DF1B14 /* UIImage+Cut.m in Sources */,
 				6D88124B1A18FDFA00C863C2 /* SDWebImageManager.m in Sources */,
 				6D77DFCD1A14FC5100BDCE9E /* GoodsTableViewCell.m in Sources */,
+				6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */,
 				6D6164E11A15FE4F00DF1B14 /* MarkLocationViewController.m in Sources */,
 				6D98A3051A20CDD300B23B46 /* SBJsonParser.m in Sources */,
 				6D8812471A18FDFA00C863C2 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1336,6 +1347,7 @@
 				6D88124A1A18FDFA00C863C2 /* SDWebImageDownloader.m in Sources */,
 				6DCA1B681A125897000E4E7E /* YIFullScreenScroll.m in Sources */,
 				6D2A34A21A1AB7D000E6615E /* ReleaseGoodsViewController.m in Sources */,
+				6DB71C031A2541D500625612 /* PrivateChatListCell.m in Sources */,
 				6D6164A91A15EFF300DF1B14 /* CustomImagePickerController.m in Sources */,
 				6DCA1B671A125897000E4E7E /* UIView+YIFullScreenScroll.m in Sources */,
 				6D77DFCA1A14F94700BDCE9E /* SearchViewController.m in Sources */,

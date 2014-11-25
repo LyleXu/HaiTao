@@ -1156,6 +1156,103 @@
             </objects>
             <point key="canvasLocation" x="6438" y="1389"/>
         </scene>
+        <!--Private Chat List View Controller-->
+        <scene sceneID="4Kg-Lq-G5c">
+            <objects>
+                <viewController id="B7L-Ke-QG1" customClass="PrivateChatListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hs2-ER-sJy"/>
+                        <viewControllerLayoutGuide type="bottom" id="dkf-cU-Gxf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DKW-ZE-OV1">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kcv-gz-Hb2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pricatechatlistcell" rowHeight="51" id="Dtm-wZ-Eke" customClass="PrivateChatListCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dtm-wZ-Eke" id="jfJ-L5-5pO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SellerAvatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="tOB-q4-HgY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="31" y="0.0" width="48" height="48"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winston" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SQ-AO-fxw">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="102" y="0.0" width="63" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天你早走？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLz-I3-P9M">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="102" y="23" width="102" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="tOB-q4-HgY"/>
+                                                    <exclude reference="3SQ-AO-fxw"/>
+                                                    <exclude reference="fLz-I3-P9M"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="tOB-q4-HgY"/>
+                                                    <include reference="3SQ-AO-fxw"/>
+                                                    <include reference="fLz-I3-P9M"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageUser" destination="tOB-q4-HgY" id="pc0-Ik-oN4"/>
+                                            <outlet property="lblLastMessage" destination="fLz-I3-P9M" id="4Vc-bR-ZrB"/>
+                                            <outlet property="lblName" destination="3SQ-AO-fxw" id="23X-0s-k1e"/>
+                                            <segue destination="krm-tI-BCF" kind="show" id="ge1-eB-nF6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="B7L-Ke-QG1" id="nYz-LI-Kk4"/>
+                                    <outlet property="delegate" destination="B7L-Ke-QG1" id="XKR-CJ-v9o"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="kcv-gz-Hb2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="kcv-gz-Hb2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="GqO-Rf-601"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrZ-fL-aAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4179" y="1109"/>
+        </scene>
         <!--Message View Controller-->
         <scene sceneID="lEw-w9-E6V">
             <objects>
@@ -1173,7 +1270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOj-jA-Uds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4281" y="1052"/>
+            <point key="canvasLocation" x="4806" y="1130"/>
         </scene>
         <!--Hello Bob-->
         <scene sceneID="Lme-dd-Ixe">
@@ -2826,7 +2923,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="krm-tI-BCF" kind="relationship" relationship="rootViewController" id="CDG-BP-kSg"/>
+                        <segue destination="B7L-Ke-QG1" kind="relationship" relationship="rootViewController" id="Ekf-sU-oKK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLJ-12-hWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
