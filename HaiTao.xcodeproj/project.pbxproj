@@ -158,6 +158,8 @@
 		6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */; };
 		6DB71C031A2541D500625612 /* PrivateChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71C021A2541D500625612 /* PrivateChatListCell.m */; };
 		6DB71C051A2557D500625612 /* maijia3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71C041A2557D500625612 /* maijia3@2x.png */; };
+		6DB71C081A26002900625612 /* SearchTagUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71C071A26002900625612 /* SearchTagUserViewController.m */; };
+		6DB71C0A1A26248000625612 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71C091A26248000625612 /* search@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -439,6 +441,9 @@
 		6DB71C011A2541D500625612 /* PrivateChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatListCell.h; sourceTree = "<group>"; };
 		6DB71C021A2541D500625612 /* PrivateChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatListCell.m; sourceTree = "<group>"; };
 		6DB71C041A2557D500625612 /* maijia3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maijia3@2x.png"; path = "resources/Test/maijia3@2x.png"; sourceTree = "<group>"; };
+		6DB71C061A26002900625612 /* SearchTagUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTagUserViewController.h; sourceTree = "<group>"; };
+		6DB71C071A26002900625612 /* SearchTagUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTagUserViewController.m; sourceTree = "<group>"; };
+		6DB71C091A26248000625612 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "resources/search@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -686,6 +691,7 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DB71C091A26248000625612 /* search@2x.png */,
 				6DB71BFA1A24BFD200625612 /* Selected@2x.png */,
 				6DB71BFB1A24BFD200625612 /* Unselected@2x.png */,
 				6D2A34A61A1B38D200E6615E /* toShopCart.png */,
@@ -733,6 +739,8 @@
 				6D77DFC91A14F94700BDCE9E /* SearchViewController.m */,
 				6D77DFCB1A14FC5100BDCE9E /* GoodsTableViewCell.h */,
 				6D77DFCC1A14FC5100BDCE9E /* GoodsTableViewCell.m */,
+				6DB71C061A26002900625612 /* SearchTagUserViewController.h */,
+				6DB71C071A26002900625612 /* SearchTagUserViewController.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1226,6 +1234,7 @@
 				6DCA1B2E1A1100FB000E4E7E /* camera-icon@2x.png in Resources */,
 				6D77DFD41A1500E200BDCE9E /* chaopin3@2x.png in Resources */,
 				6D77E01B1A15A37C00BDCE9E /* chat_bottom_textfield.png in Resources */,
+				6DB71C0A1A26248000625612 /* search@2x.png in Resources */,
 				6D8812761A18FE8100C863C2 /* CellView.xib in Resources */,
 				6D77E0261A15A37C00BDCE9E /* toolbar_bottom_bar.png in Resources */,
 				6D77E0221A15A37C00BDCE9E /* chatto_bg_focused.png in Resources */,
@@ -1309,6 +1318,7 @@
 				6D98A3061A20CDD300B23B46 /* SBJsonStreamParser.m in Sources */,
 				6D2A349C1A1AB57300E6615E /* TagViewController.m in Sources */,
 				6D98A30C1A20CDD300B23B46 /* SBJsonStreamWriterState.m in Sources */,
+				6DB71C081A26002900625612 /* SearchTagUserViewController.m in Sources */,
 				6D6164BA1A15F01600DF1B14 /* UIImage+Resize.m in Sources */,
 				6D8812491A18FDFA00C863C2 /* SDWebImageDecoder.m in Sources */,
 				6D8812771A18FE8100C863C2 /* PSCollectionView.m in Sources */,

@@ -15,11 +15,23 @@
 @implementation SearchViewController
 @synthesize segmentedControl,isSearching;
 
--(void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:64 Titles:@[@"标签",@"特卖",@"最新",@"最热"] delegate:self] ;
-    [self.view addSubview:segmentedControl];
+    [super viewWillAppear:YES];
+    
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:270 height:44 Titles:@[@"标签",@"特卖",@"最新",@"最热"] delegate:self] ;
+    [self.navigationController.navigationBar addSubview:segmentedControl];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    
+    for (UIView * subviews1 in self.navigationController.navigationBar.subviews) {
+        if ([subviews1 isKindOfClass:[HYSegmentedControl class]]) {
+            [subviews1 removeFromSuperview];
+        }
+    }
 }
 
 - (IBAction)cancelSearch:(id)sender {
