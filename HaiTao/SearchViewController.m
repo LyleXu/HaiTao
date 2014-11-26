@@ -13,7 +13,7 @@
 
 
 @implementation SearchViewController
-@synthesize segmentedControl;
+@synthesize segmentedControl,isSearching;
 
 -(void)viewDidLoad
 {
@@ -44,6 +44,47 @@
     }
     
     return cell;
+}
+
+
+//#pragma mark -
+//#pragma mark Content Filtering
+//
+//- (void)filterContentForSearchText:(NSString*)searchText
+//{
+//    NSPredicate* p = [NSPredicate predicateWithBlock:
+//                      ^BOOL(id obj, NSDictionary *d) {
+//                          CBook* s = obj;
+//                          NSStringCompareOptions options = NSCaseInsensitiveSearch;
+//                          return ([s.title rangeOfString:searchText
+//                                                 options:options].location != NSNotFound);
+//                      }];
+//    NSMutableArray* filteredData = [NSMutableArray new];
+//    // sectionData is an array of arrays
+//    // for every array ...
+//    for (NSMutableArray* arr in self.sectionData) {
+//        // generate an array of strings passing the search criteria
+//        [filteredData addObject: [arr filteredArrayUsingPredicate:p]];
+//    }
+//    self.filteredListData = filteredData;
+//    
+//    isSearching = YES;
+//}
+//
+//#pragma search display controller delegate
+//- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+//{
+//    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//    
+//    [self filterContentForSearchText:searchString];
+//    
+//    // Return YES to cause the search result table view to be reloaded.
+//    return YES;
+//}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    isSearching = NO;
 }
 
 @end

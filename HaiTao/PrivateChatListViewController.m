@@ -16,7 +16,7 @@
 @synthesize segmentedControl;
 -(void)viewWillAppear:(BOOL)animated
 {
-        self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 height:44 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
 
         [self.navigationController.navigationBar addSubview:segmentedControl];
 }

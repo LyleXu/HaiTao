@@ -15,7 +15,7 @@
 @property (strong, nonatomic)UIView *bottomLineView;
 
 @end
-
+CGFloat NewHYSegmentedControl_Height;
 @implementation HYSegmentedControl
 @synthesize scrollView = _scrollView;
 
@@ -30,16 +30,34 @@
 
 - (id)initWithOriginY:(CGFloat)y Titles:(NSArray *)titles delegate:(id)delegate
 {
-    return [self initWithOriginY:y width:0 Titles:titles delegate:delegate];
+    return [self initWithOriginY:y width:0 height:0 Titles:titles delegate:delegate];
 }
 
 - (id)initWithOriginY:(CGFloat)y width:(CGFloat)width Titles:(NSArray *)titles delegate:(id)delegate
+{
+    return [self initWithOriginY:y width:width height:0 Titles:titles delegate:delegate];
+}
+
+- (id)initWithOriginY:(CGFloat)y height:(CGFloat) height Titles:(NSArray *)titles delegate:(id)delegate
+{
+     return [self initWithOriginY:y width:0 height:height Titles:titles delegate:delegate];
+}
+
+- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width height:(CGFloat) height Titles:(NSArray *)titles delegate:(id)delegate
 {
     if(width == 0)
     {
         width = HYSegmentedControl_Width;
     }
-    CGRect rect4View = CGRectMake(.0f, y, width, HYSegmentedControl_Height);
+    if(height == 0)
+    {
+        NewHYSegmentedControl_Height = HYSegmentedControl_Height;
+    }else
+    {
+        NewHYSegmentedControl_Height = height;
+    }
+    
+    CGRect rect4View = CGRectMake(.0f, y, width, NewHYSegmentedControl_Height);
     if (self = [super initWithFrame:rect4View]) {
         
         self.backgroundColor = UIColorFromRGBValue(0xf3f3f3);
@@ -63,13 +81,13 @@
         _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         _scrollView.backgroundColor = self.backgroundColor;
         _scrollView.userInteractionEnabled = YES;
-        _scrollView.contentSize = CGSizeMake([titles count]*width4btn, HYSegmentedControl_Height);
+        _scrollView.contentSize = CGSizeMake([titles count]*width4btn, NewHYSegmentedControl_Height);
         _scrollView.showsHorizontalScrollIndicator = NO;
         
         for (int i = 0; i<[titles count]; i++) {
             
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(i*width4btn, .0f, width4btn, HYSegmentedControl_Height);
+            btn.frame = CGRectMake(i*width4btn, .0f, width4btn, NewHYSegmentedControl_Height);
             [btn setTitleColor:UIColorFromRGBValue(0x999999) forState:UIControlStateNormal];
             btn.titleLabel.font = [UIFont systemFontOfSize:14];
             [btn setTitleColor:UIColorFromRGBValue(0x454545) forState:UIControlStateSelected];
@@ -87,8 +105,8 @@
         //
         //  lineView
         //
-        CGFloat height4Line = HYSegmentedControl_Height/3.0f;
-        CGFloat originY = (HYSegmentedControl_Height - height4Line)/2;
+        CGFloat height4Line = NewHYSegmentedControl_Height/3.0f;
+        CGFloat originY = (NewHYSegmentedControl_Height - height4Line)/2;
         for (int i = 1; i<[titles count]; i++) {
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(i*width4btn-1.0f, originY, 1.0f, height4Line)];
             lineView.backgroundColor = UIColorFromRGBValue(0xcccccc);
@@ -98,7 +116,7 @@
         //
         //  bottom lineView
         //
-        _bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(5.0f, HYSegmentedControl_Height-1, width4btn-10.0f, 1.0f)];
+        _bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(5.0f, NewHYSegmentedControl_Height-1, width4btn-10.0f, 1.0f)];
         _bottomLineView.backgroundColor = UIColorFromRGBValue(0x454545);
         [_scrollView addSubview:_bottomLineView];
         

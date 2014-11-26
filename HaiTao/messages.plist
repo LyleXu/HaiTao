@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>content</key>
-		<string>喂，2B！</string>
+		<string>喂！</string>
 		<key>icon</key>
 		<string>icon01.jpg</string>
 		<key>time</key>
@@ -24,7 +24,7 @@
 	</dict>
 	<dict>
 		<key>content</key>
-		<string>你妹夫啊，你才2B！说，什么事？</string>
+		<string>你妹夫啊！说，什么事？</string>
 		<key>icon</key>
 		<string>icon02.jpg</string>
 		<key>time</key>
@@ -84,7 +84,7 @@
 	</dict>
 	<dict>
 		<key>content</key>
-		<string>你妈B的！！！滚！！！</string>
+		<string>滚！！！</string>
 		<key>icon</key>
 		<string>icon02.jpg</string>
 		<key>time</key>

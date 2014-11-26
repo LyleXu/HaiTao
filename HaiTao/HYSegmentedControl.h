@@ -11,8 +11,10 @@
 @interface HYSegmentedControl : UIView
 
 @property (assign, nonatomic) id<HYSegmentedControlDelegate>delegate;
-- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width Titles:(NSArray *)titles delegate:(id)delegate;
 - (id)initWithOriginY:(CGFloat)y Titles:(NSArray *)titles delegate:(id)delegate;
+- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width Titles:(NSArray *)titles delegate:(id)delegate;
+- (id)initWithOriginY:(CGFloat)y height:(CGFloat)height Titles:(NSArray *)titles delegate:(id)delegate;
+- (id)initWithOriginY:(CGFloat)y width:(CGFloat)width height:(CGFloat)height Titles:(NSArray *)titles delegate:(id)delegate;
 
 - (void)changeSegmentedControlWithIndex:(NSInteger)index;
 

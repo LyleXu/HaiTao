@@ -12,4 +12,5 @@
 @interface SearchViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet HYSegmentedControl* segmentedControl;
+@property (nonatomic, assign) BOOL isSearching;
 @end

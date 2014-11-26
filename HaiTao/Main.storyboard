@@ -441,13 +441,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KfQ-7d-JSe">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="20" width="280" height="44"/>
-                                </variation>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-99-QVs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -519,35 +512,28 @@
                                     <outlet property="delegate" destination="Tce-Gh-z3d" id="DEn-Pi-7ZH"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-sa-ej8">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-B9-6oD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="280" y="27" width="30" height="30"/>
+                                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 </variation>
                                 <connections>
-                                    <action selector="cancelSearch:" destination="Tce-Gh-z3d" eventType="touchUpInside" id="2mR-sy-mfo"/>
-                                    <action selector="returnPreviousPage:" destination="2dB-yi-UvH" eventType="touchUpInside" id="9mN-LI-KXt"/>
+                                    <outlet property="delegate" destination="Tce-Gh-z3d" id="UA0-Du-etG"/>
                                 </connections>
-                            </button>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="KfQ-7d-JSe"/>
                                 <exclude reference="5qB-99-QVs"/>
-                                <exclude reference="C1c-sa-ej8"/>
+                                <exclude reference="vcx-B9-6oD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="KfQ-7d-JSe"/>
                                 <include reference="5qB-99-QVs"/>
-                                <include reference="C1c-sa-ej8"/>
+                                <include reference="vcx-B9-6oD"/>
                             </mask>
                         </variation>
                     </view>
@@ -556,12 +542,21 @@
                     </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="searchBar" destination="KfQ-7d-JSe" id="Zfw-CD-fP3"/>
+                        <outlet property="searchDisplayController" destination="JZY-7v-ObM" id="Prw-C0-Kla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6D5-Hi-dmp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JZY-7v-ObM">
+                    <connections>
+                        <outlet property="delegate" destination="Tce-Gh-z3d" id="fU9-8n-OD5"/>
+                        <outlet property="searchBar" destination="vcx-B9-6oD" id="40V-Yi-gY0"/>
+                        <outlet property="searchContentsController" destination="Tce-Gh-z3d" id="PMO-NJ-lMd"/>
+                        <outlet property="searchResultsDataSource" destination="Tce-Gh-z3d" id="C7v-fi-7oF"/>
+                        <outlet property="searchResultsDelegate" destination="Tce-Gh-z3d" id="6Pa-as-wqe"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3540" y="123"/>
+            <point key="canvasLocation" x="3826.5" y="-31"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="hoe-7W-ELN">
@@ -1167,11 +1162,11 @@
                     <view key="view" contentMode="scaleToFill" id="DKW-ZE-OV1">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kcv-gz-Hb2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kcv-gz-Hb2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pricatechatlistcell" rowHeight="51" id="Dtm-wZ-Eke" customClass="PrivateChatListCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pricatechatlistcell" id="Dtm-wZ-Eke" customClass="PrivateChatListCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dtm-wZ-Eke" id="jfJ-L5-5pO">
@@ -1221,12 +1216,12 @@
                                             <outlet property="imageUser" destination="tOB-q4-HgY" id="pc0-Ik-oN4"/>
                                             <outlet property="lblLastMessage" destination="fLz-I3-P9M" id="4Vc-bR-ZrB"/>
                                             <outlet property="lblName" destination="3SQ-AO-fxw" id="23X-0s-k1e"/>
-                                            <segue destination="krm-tI-BCF" kind="show" id="ge1-eB-nF6"/>
+                                            <segue destination="krm-tI-BCF" kind="show" id="f5O-qi-zgt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="B7L-Ke-QG1" id="nYz-LI-Kk4"/>

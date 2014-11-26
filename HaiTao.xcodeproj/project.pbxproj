@@ -157,6 +157,7 @@
 		6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFB1A24BFD200625612 /* Unselected@2x.png */; };
 		6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */; };
 		6DB71C031A2541D500625612 /* PrivateChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71C021A2541D500625612 /* PrivateChatListCell.m */; };
+		6DB71C051A2557D500625612 /* maijia3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71C041A2557D500625612 /* maijia3@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -437,6 +438,7 @@
 		6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatListViewController.m; sourceTree = "<group>"; };
 		6DB71C011A2541D500625612 /* PrivateChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatListCell.h; sourceTree = "<group>"; };
 		6DB71C021A2541D500625612 /* PrivateChatListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateChatListCell.m; sourceTree = "<group>"; };
+		6DB71C041A2557D500625612 /* maijia3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maijia3@2x.png"; path = "resources/Test/maijia3@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -738,6 +740,7 @@
 		6D77DFCE1A1500C100BDCE9E /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				6DB71C041A2557D500625612 /* maijia3@2x.png */,
 				6D98A3201A2223DD00B23B46 /* maijia2@2x.png */,
 				6D98A2E61A20309F00B23B46 /* fans0@2x.png */,
 				6D2A34A81A1B3B0200E6615E /* test0.png */,
@@ -1256,6 +1259,7 @@
 				6D88125C1A18FE1000C863C2 /* grayArrow@2x.png in Resources */,
 				6D6164CF1A15F04900DF1B14 /* camera_album.png in Resources */,
 				6DCA1B3A1A1100FB000E4E7E /* weixin@2x.png in Resources */,
+				6DB71C051A2557D500625612 /* maijia3@2x.png in Resources */,
 				6D77DFD21A1500E200BDCE9E /* chaopin1@2x.png in Resources */,
 				6D2A34BE1A1B3B0200E6615E /* test9.png in Resources */,
 				6D2A34BF1A1B3B0200E6615E /* test10.png in Resources */,

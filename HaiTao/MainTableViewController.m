@@ -60,7 +60,8 @@
     
     ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia.png"] text:@"maijia"];
      ListItem *item2= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia2.png"] text:@"maijia2"];
-    NSMutableArray* goodsImageList = [[NSMutableArray alloc] initWithObjects: item1, item2, nil];
+    ListItem *item3= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia3.png"] text:@"maijia3"];
+    NSMutableArray* goodsImageList = [[NSMutableArray alloc] initWithObjects: item1, item2,item3, nil];
     POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList];
     [list setDelegate:self];
     [cell.GoodsImageContainer addSubview:list];
