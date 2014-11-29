@@ -11,8 +11,10 @@
 #import "MaijiaTableViewCell.h"
 #import "YIFullScreenScroll.h"
 #import "ShopCartViewController.h"
-@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate>
+#import "AWActionSheet.h"
+@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+@property (strong, nonatomic) NSArray* actionSheetItems;
 @end
 
 @implementation MainTableViewController
@@ -20,6 +22,7 @@
     YIFullScreenScroll* _fullScreenDelegate;
 }
 @synthesize segmentedControl;
+@synthesize actionSheetItems = _actionSheetItems;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,6 +71,12 @@
 //    cell.sellerAvatar.userInteractionEnabled = YES;
 //    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageSellerAvatarClicked)];
 //    [cell.sellerAvatar addGestureRecognizer:singleTap];
+    
+    // set Share button's style
+    cell.btnShare.layer.borderWidth = 1;
+    cell.btnShare.layer.masksToBounds = YES;
+    cell.btnShare.layer.cornerRadius = 4;
+    
     
     return cell;
 }
@@ -201,6 +210,44 @@
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
 {
     [_fullScreenDelegate scrollViewDidScrollToTop:scrollView];
+}
+
+-(NSArray*)actionSheetItems
+{
+    if(_actionSheetItems == nil)
+    {
+        _actionSheetItems = [[NSArray alloc] initWithObjects:
+                             [[NSArray alloc] initWithObjects:@"QQ空间", @"share_Qzone.png", nil],
+                             [[NSArray alloc] initWithObjects:@"新浪微博", @"weibo.png", nil],
+                             [[NSArray alloc] initWithObjects:@"微信", @"weixin.png", nil],
+                             nil];
+    }
+    return _actionSheetItems;
+}
+
+#pragma AWActionShee Delegate
+-(int)numberOfItemsInActionSheet
+{
+    return (int)self.actionSheetItems.count;
+}
+
+-(AWActionSheetCell *)cellForActionAtIndex:(NSInteger)index
+{
+    AWActionSheetCell* cell = [[AWActionSheetCell alloc] init];
+    
+    cell.iconView.image = [UIImage imageNamed:self.actionSheetItems[index][1]];
+    cell.titleLabel.text = self.actionSheetItems[index][0];
+    cell.index = (int)index;
+    return cell;
+}
+
+-(void)DidTapOnItemAtIndex:(NSInteger)index title:(NSString *)name
+{
+    NSLog(@"tap on %d",(int)index);
+}
+- (IBAction)shareTo:(id)sender {
+    AWActionSheet *sheet = [[AWActionSheet alloc] initWithIconSheetDelegate:self ItemCount:[self numberOfItemsInActionSheet]];
+    [sheet show];
 }
 
 /*

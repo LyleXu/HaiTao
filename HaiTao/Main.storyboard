@@ -554,6 +554,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2BQ-T1-4oG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J0l-Qm-fFm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-1e-3Cr">
@@ -1267,6 +1268,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dkf-cU-Gxf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DKW-ZE-OV1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kcv-gz-Hb2">
@@ -2021,9 +2023,33 @@
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60h-QI-5cK">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxI-LT-Eci">
+                                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" title="分享">
+                                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="247" y="8" width="60" height="22"/>
+                                                            </variation>
+                                                            <connections>
+                                                                <action selector="shareTo:" destination="Bca-gx-ykG" eventType="touchUpInside" id="7xL-eq-qcJ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="vxI-LT-Eci"/>
+                                                        </mask>
+                                                    </variation>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="52" width="320" height="320"/>
+                                                        <mask key="subviews">
+                                                            <include reference="vxI-LT-Eci"/>
+                                                        </mask>
                                                     </variation>
                                                 </view>
                                             </subviews>
@@ -2066,6 +2092,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="GoodsImageContainer" destination="60h-QI-5cK" id="1cD-wj-eYR"/>
+                                            <outlet property="btnShare" destination="vxI-LT-Eci" id="DOp-rH-lSY"/>
                                             <outlet property="lblCommentsCount" destination="277-nV-O4J" id="i99-sn-iaY"/>
                                             <outlet property="lblGoodCount" destination="AAA-gz-OoB" id="CxF-An-Bfs"/>
                                             <outlet property="lblSellerDescription" destination="SiA-wP-TGo" id="drV-Vs-BXo"/>
