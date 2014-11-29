@@ -29,6 +29,8 @@
     
     _fullScreenDelegate = [[YIFullScreenScroll alloc] initWithViewController:self];
     _fullScreenDelegate.shouldShowUIBarsOnScrollUp = YES;
+    
+    self.tabBarController.tabBar.frame = CGRectMake(0, 530, 320, 38);
 }
 
 - (void)didReceiveMemoryWarning {

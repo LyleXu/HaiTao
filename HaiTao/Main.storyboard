@@ -2052,6 +2052,21 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="So Good!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-xu-nL5">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="42" y="418" width="82" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fans1.png" translatesAutoresizingMaskIntoConstraints="NO" id="N7e-Fh-n6c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="418" width="22" height="22"/>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -2069,6 +2084,8 @@
                                                     <exclude reference="hWW-Ln-us9"/>
                                                     <exclude reference="Erp-jA-JAT"/>
                                                     <exclude reference="60h-QI-5cK"/>
+                                                    <exclude reference="Hhz-xu-nL5"/>
+                                                    <exclude reference="N7e-Fh-n6c"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -2087,6 +2104,8 @@
                                                     <include reference="hWW-Ln-us9"/>
                                                     <include reference="Erp-jA-JAT"/>
                                                     <include reference="60h-QI-5cK"/>
+                                                    <include reference="Hhz-xu-nL5"/>
+                                                    <include reference="N7e-Fh-n6c"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
