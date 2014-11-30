@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *sellerAvatar;
 @property (weak, nonatomic) IBOutlet UIButton *btnSellerName;
 @property (weak, nonatomic) IBOutlet UILabel *lblSellerLocation;
-@property (weak, nonatomic) IBOutlet UIButton *btnShare;
 @property (weak, nonatomic) IBOutlet UILabel *lblSellerDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lblGoodCount;
 @property (weak, nonatomic) IBOutlet UILabel *lblCommentsCount;

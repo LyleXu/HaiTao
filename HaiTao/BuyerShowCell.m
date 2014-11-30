@@ -9,5 +9,5 @@
 #import "BuyerShowCell.h"
 
 @implementation BuyerShowCell
-@synthesize buyerAvatar,btnBuyerName,btnBuyerShare,btnBuyerTag1,btnBuyerTag2,buyerGoodsImageContainer;
+@synthesize buyerAvatar,btnBuyerName,btnBuyerTag1,btnBuyerTag2,buyerGoodsImageContainer;
 @end

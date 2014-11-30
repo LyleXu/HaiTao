@@ -69,7 +69,7 @@
     for (int i=0; i<10; i++) {
        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //Seller id
          @"Happy Bob", @"name",//Seller name
-         @"SellerAvatar.png",@"sellerAvatar", //Seller avatar
+         @"fans4.png",@"sellerAvatar", //Seller avatar
          @"巴黎",  @"location",                //Seller Location
          [[NSArray alloc] initWithObjects:@"maijia.png",@"maijia2.png",@"maijia3.png", nil], @"goodsPics", //Goods pics
          @"Nice Gift", @"description", //Goods Description,

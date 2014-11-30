@@ -9,7 +9,7 @@
 #import "MaijiaTableViewCell.h"
 
 @implementation MaijiaTableViewCell
-@synthesize btnSellerName,lblCommentsCount,lblGoodCount,lblSellerDescription,lblSellerLocation,btnShare,sellerAvatar,GoodsImageContainer,btnComment,btnTag1,btnTag2,btnTag3,btnZan;
+@synthesize btnSellerName,lblCommentsCount,lblGoodCount,lblSellerDescription,lblSellerLocation,sellerAvatar,GoodsImageContainer,btnComment,btnTag1,btnTag2,btnTag3,btnZan;
 
 -(void)roundedImagesWithBorder:(UIImageView *)view :(NSString *)image
 {

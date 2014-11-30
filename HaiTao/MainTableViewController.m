@@ -128,8 +128,7 @@ int CurrentSelectedSegmentedControlIndex = 0;
     [self InitGoodsContainer:cell.GoodsImageContainer GoodsPics:sellerGoodsInfo[@"goodsPics"]];
     
     // set Share button's style
-    [self InitRoundCornerButton:cell.btnShare];
-    
+    [self InitRoundCornerButton:cell.GoodsImageContainer];
 }
 
 -(void)InitBuyerShowCell:(BuyerShowCell*) cell BuyerShowGoodsInfo:(NSDictionary*) buyerShowGoodsInfo
@@ -140,17 +139,25 @@ int CurrentSelectedSegmentedControlIndex = 0;
     
     [cell.btnBuyerTag1 setTitle:buyerShowGoodsInfo[@"tags"][0] forState:UIControlStateNormal];
     [cell.btnBuyerTag2 setTitle:buyerShowGoodsInfo[@"tags"][1] forState:UIControlStateNormal];
-
-    [self InitRoundCornerButton:cell.btnBuyerShare];
+    
     [self InitComments:cell CommentItems:buyerShowGoodsInfo[@"comments"] LastLocationY:407];
     [self InitGoodsContainer:cell.buyerGoodsImageContainer GoodsPics:buyerShowGoodsInfo[@"goodsPics"]];
+    [self InitRoundCornerButton:cell.buyerGoodsImageContainer];
 }
 
--(void)InitRoundCornerButton:(UIButton*) button
+-(void)InitRoundCornerButton:(UIView*)parent
 {
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(247, 8, 60, 22)];
+    [button setTitle:@"分 享" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor whiteColor]];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(shareTo:) forControlEvents:UIControlEventTouchUpInside];
+    
     button.layer.borderWidth = 1;
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = 4;
+    
+    [parent addSubview:button];
 }
 
 -(void)InitGoodsContainer:(UIView*)picContainter GoodsPics:(NSArray*)picNames
