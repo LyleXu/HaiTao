@@ -173,8 +173,6 @@ CGFloat NewHYSegmentedControl_Height;
     }
 }
 
-
-#warning ////// index 从 0 开始
 // delegete method
 - (void)changeSegmentedControlWithIndex:(NSInteger)index
 {

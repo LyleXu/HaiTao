@@ -154,6 +154,7 @@
 		6D98A31E1A22071A00B23B46 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D98A31A1A22071A00B23B46 /* ListItem.m */; };
 		6D98A31F1A22071A00B23B46 /* POHorizontalList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D98A31C1A22071A00B23B46 /* POHorizontalList.m */; };
 		6D98A3211A2223DD00B23B46 /* maijia2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D98A3201A2223DD00B23B46 /* maijia2@2x.png */; };
+		6DA25EAD1A2AEE16006B8574 /* BuyerShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA25EAC1A2AEE16006B8574 /* BuyerShowCell.m */; };
 		6DB71BFC1A24BFD200625612 /* Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFA1A24BFD200625612 /* Selected@2x.png */; };
 		6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71BFB1A24BFD200625612 /* Unselected@2x.png */; };
 		6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */; };
@@ -437,6 +438,8 @@
 		6D98A31C1A22071A00B23B46 /* POHorizontalList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POHorizontalList.m; path = POHorizontalList/POHorizontalList.m; sourceTree = "<group>"; };
 		6D98A31D1A22071A00B23B46 /* POHorizontalListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POHorizontalListDelegate.h; path = POHorizontalList/POHorizontalListDelegate.h; sourceTree = "<group>"; };
 		6D98A3201A2223DD00B23B46 /* maijia2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maijia2@2x.png"; path = "resources/Test/maijia2@2x.png"; sourceTree = "<group>"; };
+		6DA25EAB1A2AEE16006B8574 /* BuyerShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyerShowCell.h; sourceTree = "<group>"; };
+		6DA25EAC1A2AEE16006B8574 /* BuyerShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyerShowCell.m; sourceTree = "<group>"; };
 		6DB71BFA1A24BFD200625612 /* Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Selected@2x.png"; path = "resources/Selected@2x.png"; sourceTree = "<group>"; };
 		6DB71BFB1A24BFD200625612 /* Unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unselected@2x.png"; path = "resources/Unselected@2x.png"; sourceTree = "<group>"; };
 		6DB71BFE1A25412800625612 /* PrivateChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateChatListViewController.h; sourceTree = "<group>"; };
@@ -1060,6 +1063,8 @@
 				6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */,
 				6D2A34C21A1B403600E6615E /* GoodsDetailViewController.h */,
 				6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */,
+				6DA25EAB1A2AEE16006B8574 /* BuyerShowCell.h */,
+				6DA25EAC1A2AEE16006B8574 /* BuyerShowCell.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1329,6 +1334,7 @@
 				6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */,
 				6D98A3151A218CD200B23B46 /* MainViewController.m in Sources */,
 				6D98A3061A20CDD300B23B46 /* SBJsonStreamParser.m in Sources */,
+				6DA25EAD1A2AEE16006B8574 /* BuyerShowCell.m in Sources */,
 				6D2A349C1A1AB57300E6615E /* TagViewController.m in Sources */,
 				6D98A30C1A20CDD300B23B46 /* SBJsonStreamWriterState.m in Sources */,
 				6DB71C081A26002900625612 /* SearchTagUserViewController.m in Sources */,

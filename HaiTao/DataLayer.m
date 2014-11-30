@@ -84,4 +84,24 @@
     return [items copy];
 }
 
++(NSArray*)GetBuyerGoodsItems
+{
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    for (int i=0; i<10; i++) {
+        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //Seller id
+                               @"CANDY", @"name",//Seller name
+                               @"fans1.png",@"buyerAvatar", //Seller avatar
+                               [[NSArray alloc] initWithObjects:@"maijia2.png",@"maijia3.png",@"maijia.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"#连衣裙",@"#潮品", nil], @"tags",// Goods Tags
+                               [[NSArray alloc] initWithObjects:[[NSArray alloc]   initWithObjects:@"comment1",@"fans1.png",@"质量不错，毕竟是大牌，卖家@ Happy Bob 也很细心，下次还会光顾 ：-）。", nil],
+                                                                               [[NSArray alloc]   initWithObjects:@"comment2",@"fans2.png",@"东西很不错，很稀饭，O(n_n)O, 下次还会来哦 :-)。", nil],nil] //Goods Comments
+                               , @"comments",
+                               nil];
+        
+        [items addObject:item];
+    }
+    
+    return [items copy];
+}
+
 @end

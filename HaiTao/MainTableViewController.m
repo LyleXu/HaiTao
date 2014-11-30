@@ -13,10 +13,14 @@
 #import "ShopCartViewController.h"
 #import "AWActionSheet.h"
 #import "DataLayer.h"
+#import "BuyerShowCell.h"
+
+int CurrentSelectedSegmentedControlIndex = 0;
 @interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSArray* actionSheetItems;
 @property (strong, nonatomic) NSArray* sellerGoodsItems;
+@property (strong, nonatomic) NSArray* buyerGoodsItems;
 @end
 
 @implementation MainTableViewController
@@ -26,6 +30,7 @@
 @synthesize segmentedControl;
 @synthesize actionSheetItems = _actionSheetItems;
 @synthesize sellerGoodsItems = _sellerGoodsItems;
+@synthesize buyerGoodsItems = _buyerGoodsItems;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,6 +50,15 @@
     return _sellerGoodsItems;
 }
 
+-(NSArray*)buyerGoodsItems
+{
+    if(_buyerGoodsItems == nil)
+    {
+        _buyerGoodsItems = [DataLayer GetBuyerGoodsItems];
+    }
+    return _buyerGoodsItems;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,68 +75,127 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return 10;
+    return CurrentSelectedSegmentedControlIndex == 0 ? self.sellerGoodsItems.count : self.buyerGoodsItems.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * tableIdentifier=@"MaijiaCell";
-    MaijiaTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-    
-    if(cell==nil)
+    NSString * tableIdentifier= CurrentSelectedSegmentedControlIndex ==0 ? @"MaijiaCell" : @"BuyerShowCell";
+    if(CurrentSelectedSegmentedControlIndex == 0)
     {
-        // first load
-        cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+       MaijiaTableViewCell*  cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self InitSellerGoodsCell:cell SellerGoodInfo:self.sellerGoodsItems[indexPath.row]];
+        
+        return cell;
+    }else
+    {
+        BuyerShowCell*  cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[BuyerShowCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self InitBuyerShowCell:cell BuyerShowGoodsInfo:self.buyerGoodsItems[indexPath.row]];
+        
+        return cell;
     }
-    
-    [self InitSellerGoodsCell:cell SellerGoodInfo:self.sellerGoodsItems[indexPath.row]];
-    
-    return cell;
 }
 
 -(void)InitSellerGoodsCell:(MaijiaTableViewCell*) cell SellerGoodInfo:(NSDictionary*) sellerGoodsInfo
 {
-    cell.btnSellerName.titleLabel.text = sellerGoodsInfo[@"name"];
-    cell.sellerAvatar.imageView.image = [UIImage imageNamed:sellerGoodsInfo[@"sellerAvatar"]];
+    [cell.btnSellerName setTitle:sellerGoodsInfo[@"name"] forState:UIControlStateNormal];
+    [cell.sellerAvatar setImage:[UIImage imageNamed:sellerGoodsInfo[@"sellerAvatar"]] forState:UIControlStateNormal];
     cell.sellerAvatar.layer.borderWidth = 0;
     cell.lblSellerLocation.text = sellerGoodsInfo[@"location"];
     cell.lblSellerDescription.text = sellerGoodsInfo[@"description"];
 
-    cell.btnTag1.titleLabel.text = sellerGoodsInfo[@"tags"][0];
-    cell.btnTag2.titleLabel.text = sellerGoodsInfo[@"tags"][1];
-    cell.btnTag3.titleLabel.text = sellerGoodsInfo[@"tags"][2];
+    [cell.btnTag1 setTitle:sellerGoodsInfo[@"tags"][0] forState:UIControlStateNormal];
+    [cell.btnTag2 setTitle:sellerGoodsInfo[@"tags"][1] forState:UIControlStateNormal];
+    [cell.btnTag3 setTitle:sellerGoodsInfo[@"tags"][0] forState:UIControlStateNormal];
     
-    CGFloat lastLocationY = 417;
-    CGFloat commentAvatarHeight = 22;
-    for (id item in sellerGoodsInfo[@"comments"]) {
-        UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(4, lastLocationY + 1, commentAvatarHeight, commentAvatarHeight)];
-        imageView.image = [UIImage imageNamed:item[1]];
-        
-        [cell addSubview:imageView];
-        
-        UILabel* lblComment = [[UILabel alloc] initWithFrame:CGRectMake( commentAvatarHeight + 10, lastLocationY + 1, 200, commentAvatarHeight)];
-        lblComment.text = item[2];
-        [cell addSubview:lblComment];
-        
-        lastLocationY = lastLocationY + commentAvatarHeight;
-    }
+    [self InitComments:cell CommentItems:sellerGoodsInfo[@"comments"] LastLocationY:417];
     
     // good pics
+    [self InitGoodsContainer:cell.GoodsImageContainer GoodsPics:sellerGoodsInfo[@"goodsPics"]];
+    
+    // set Share button's style
+    [self InitRoundCornerButton:cell.btnShare];
+    
+}
+
+-(void)InitBuyerShowCell:(BuyerShowCell*) cell BuyerShowGoodsInfo:(NSDictionary*) buyerShowGoodsInfo
+{
+    [cell.btnBuyerName setTitle:buyerShowGoodsInfo[@"name"] forState:UIControlStateNormal];
+    [cell.buyerAvatar setImage:[UIImage imageNamed:buyerShowGoodsInfo[@"buyerAvatar"]] forState:UIControlStateNormal];
+    cell.buyerAvatar.layer.borderWidth = 0;
+    
+    [cell.btnBuyerTag1 setTitle:buyerShowGoodsInfo[@"tags"][0] forState:UIControlStateNormal];
+    [cell.btnBuyerTag2 setTitle:buyerShowGoodsInfo[@"tags"][1] forState:UIControlStateNormal];
+
+    [self InitRoundCornerButton:cell.btnBuyerShare];
+    [self InitComments:cell CommentItems:buyerShowGoodsInfo[@"comments"] LastLocationY:407];
+    [self InitGoodsContainer:cell.buyerGoodsImageContainer GoodsPics:buyerShowGoodsInfo[@"goodsPics"]];
+}
+
+-(void)InitRoundCornerButton:(UIButton*) button
+{
+    button.layer.borderWidth = 1;
+    button.layer.masksToBounds = YES;
+    button.layer.cornerRadius = 4;
+}
+
+-(void)InitGoodsContainer:(UIView*)picContainter GoodsPics:(NSArray*)picNames
+{
     NSMutableArray* goodsImageList = [[NSMutableArray alloc] init];
-    for (NSString* goodsPicName in sellerGoodsInfo[@"goodsPics"]) {  // get goods pics
+    for (NSString* goodsPicName in picNames) {  // get goods pics
         ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:goodsPicName] text:@"maijia"];
         [goodsImageList addObject:item1];
     }
     
     POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList];
     [list setDelegate:self];
-    [cell.GoodsImageContainer addSubview:list];
+    [picContainter addSubview:list];
+}
+
+-(void)InitComments:(UIView*)cell CommentItems:(NSArray*)comments LastLocationY:(CGFloat)lastLocationY
+{
+    CGFloat commentAvatarHeight = 22;
     
-    // set Share button's style
-    cell.btnShare.layer.borderWidth = 1;
-    cell.btnShare.layer.masksToBounds = YES;
-    cell.btnShare.layer.cornerRadius = 4;
-    
+    for (id item in comments) {
+        UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(4, lastLocationY + 1, commentAvatarHeight, commentAvatarHeight)];
+        imageView.image = [UIImage imageNamed:item[1]];
+        
+        [cell addSubview:imageView];
+        
+        UILabel* lblComment = [[UILabel alloc] init];
+        lblComment.font = [UIFont systemFontOfSize:14];
+        lblComment.numberOfLines = 0;
+        lblComment.lineBreakMode = NSLineBreakByCharWrapping;
+        CGFloat height = [self GetLabelHeightByContent:item[2]];
+        lblComment.frame = CGRectMake(commentAvatarHeight + 10, lastLocationY + 1, 280, height);
+        lblComment.text = item[2];
+        [cell addSubview:lblComment];
+        
+        lastLocationY = lastLocationY + height;
+    }
+}
+
+-(CGFloat)GetLabelHeightByContent:(NSString*)labelStr
+{
+    CGSize labelSize = {0, 0};
+    labelSize = [labelStr sizeWithFont:[UIFont systemFontOfSize:14]
+                     constrainedToSize:CGSizeMake(280.0, 5000)
+                         lineBreakMode:NSLineBreakByWordWrapping];
+    return labelSize.height;
 }
 
 #pragma mark  POHorizontalListDelegate
@@ -145,12 +218,9 @@
 //
 - (void)hySegmentedControlSelectAtIndex:(NSInteger)index
 {
-    if(index == 0)
-    {
-        // Maijia shang pin
-    }else{
-        // Maijia Show
-    }
+    CurrentSelectedSegmentedControlIndex = (int)index;
+    
+    [self.mainTableView reloadData];
 }
 
 

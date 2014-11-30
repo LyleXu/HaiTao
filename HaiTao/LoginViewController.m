@@ -225,8 +225,8 @@ static NSString *kViewKey = @"viewKey";
         NSLog(@"json parse failed \r\n");
         return;
     }
-    NSLog([json objectForKey:@"screen_name"]);
-    NSLog([json objectForKey:@"profile_image_url"]);
+   // NSLog([json objectForKey:@"screen_name"]);
+   // NSLog([json objectForKey:@"profile_image_url"]);
     
     title = @"收到网络回调";
     alert = [[UIAlertView alloc] initWithTitle:title
