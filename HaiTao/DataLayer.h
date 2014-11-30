@@ -10,4 +10,5 @@
 
 @interface DataLayer : NSObject
 +(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
++(NSArray*)GetSellerGoodsItems;
 @end

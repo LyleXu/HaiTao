@@ -1901,15 +1901,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NT3-lS-Yh8" id="SPN-lv-1Z7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Bob" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-pi-gEa">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="64" y="14" width="87" height="21"/>
-                                                    </variation>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-gz-OoB">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1993,7 +1984,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="SellerAvatar.png" backgroundImage="SellerAvatar.png">
+                                                    <state key="normal" title="Button" image="SellerAvatar.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2052,25 +2043,22 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="So Good!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-xu-nL5">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-UY-CaV">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="Happy Bob">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="42" y="418" width="82" height="21"/>
+                                                        <rect key="frame" x="64" y="10" width="78" height="30"/>
                                                     </variation>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fans1.png" translatesAutoresizingMaskIntoConstraints="NO" id="N7e-Fh-n6c">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="418" width="22" height="22"/>
-                                                    </variation>
-                                                </imageView>
+                                                    <connections>
+                                                        <segue destination="P8c-Z1-MLn" kind="show" id="aNs-nQ-Ulc"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <variation key="default">
                                                 <mask key="subviews">
-                                                    <exclude reference="E4w-pi-gEa"/>
                                                     <exclude reference="AAA-gz-OoB"/>
                                                     <exclude reference="277-nV-O4J"/>
                                                     <exclude reference="6Wq-Gg-HRK"/>
@@ -2084,13 +2072,11 @@
                                                     <exclude reference="hWW-Ln-us9"/>
                                                     <exclude reference="Erp-jA-JAT"/>
                                                     <exclude reference="60h-QI-5cK"/>
-                                                    <exclude reference="Hhz-xu-nL5"/>
-                                                    <exclude reference="N7e-Fh-n6c"/>
+                                                    <exclude reference="2Pb-UY-CaV"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
-                                                    <include reference="E4w-pi-gEa"/>
                                                     <include reference="AAA-gz-OoB"/>
                                                     <include reference="277-nV-O4J"/>
                                                     <include reference="6Wq-Gg-HRK"/>
@@ -2104,19 +2090,24 @@
                                                     <include reference="hWW-Ln-us9"/>
                                                     <include reference="Erp-jA-JAT"/>
                                                     <include reference="60h-QI-5cK"/>
-                                                    <include reference="Hhz-xu-nL5"/>
-                                                    <include reference="N7e-Fh-n6c"/>
+                                                    <include reference="2Pb-UY-CaV"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="GoodsImageContainer" destination="60h-QI-5cK" id="1cD-wj-eYR"/>
+                                            <outlet property="btnComment" destination="Erp-jA-JAT" id="dC7-cq-7w4"/>
+                                            <outlet property="btnSellerName" destination="2Pb-UY-CaV" id="dK8-1I-yeD"/>
                                             <outlet property="btnShare" destination="vxI-LT-Eci" id="DOp-rH-lSY"/>
+                                            <outlet property="btnTag1" destination="D1y-FM-PM0" id="QHv-ys-0NK"/>
+                                            <outlet property="btnTag2" destination="J0V-gI-xc4" id="FF1-wE-Dap"/>
+                                            <outlet property="btnTag3" destination="Blj-jn-hQN" id="4cb-hz-jLr"/>
+                                            <outlet property="btnZan" destination="hWW-Ln-us9" id="s5N-BO-0zB"/>
                                             <outlet property="lblCommentsCount" destination="277-nV-O4J" id="i99-sn-iaY"/>
                                             <outlet property="lblGoodCount" destination="AAA-gz-OoB" id="CxF-An-Bfs"/>
                                             <outlet property="lblSellerDescription" destination="SiA-wP-TGo" id="drV-Vs-BXo"/>
                                             <outlet property="lblSellerLocation" destination="6Wq-Gg-HRK" id="0uF-Kf-1aH"/>
-                                            <outlet property="lblSellerName" destination="E4w-pi-gEa" id="TNY-6p-SUG"/>
+                                            <outlet property="sellerAvatar" destination="8KO-ju-rGL" id="nsf-3v-NIb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3175,4 +3166,7 @@
         <image name="xiaoxi.png" width="33" height="33"/>
         <image name="zan.png" width="52" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kmt-wt-m5a"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -12,9 +12,11 @@
 #import "YIFullScreenScroll.h"
 #import "ShopCartViewController.h"
 #import "AWActionSheet.h"
+#import "DataLayer.h"
 @interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSArray* actionSheetItems;
+@property (strong, nonatomic) NSArray* sellerGoodsItems;
 @end
 
 @implementation MainTableViewController
@@ -23,6 +25,7 @@
 }
 @synthesize segmentedControl;
 @synthesize actionSheetItems = _actionSheetItems;
+@synthesize sellerGoodsItems = _sellerGoodsItems;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +34,15 @@
     _fullScreenDelegate.shouldShowUIBarsOnScrollUp = YES;
     
     self.tabBarController.tabBar.frame = CGRectMake(0, 530, 320, 38);
+}
+
+-(NSArray*)sellerGoodsItems
+{
+    if(_sellerGoodsItems == nil)
+    {
+        _sellerGoodsItems = [DataLayer GetSellerGoodsItems];
+    }
+    return _sellerGoodsItems;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,24 +75,54 @@
         cell=[[MaijiaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
-    ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia.png"] text:@"maijia"];
-     ListItem *item2= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia2.png"] text:@"maijia2"];
-    ListItem *item3= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:@"maijia3.png"] text:@"maijia3"];
-    NSMutableArray* goodsImageList = [[NSMutableArray alloc] initWithObjects: item1, item2,item3, nil];
+    [self InitSellerGoodsCell:cell SellerGoodInfo:self.sellerGoodsItems[indexPath.row]];
+    
+    return cell;
+}
+
+-(void)InitSellerGoodsCell:(MaijiaTableViewCell*) cell SellerGoodInfo:(NSDictionary*) sellerGoodsInfo
+{
+    cell.btnSellerName.titleLabel.text = sellerGoodsInfo[@"name"];
+    cell.sellerAvatar.imageView.image = [UIImage imageNamed:sellerGoodsInfo[@"sellerAvatar"]];
+    cell.sellerAvatar.layer.borderWidth = 0;
+    cell.lblSellerLocation.text = sellerGoodsInfo[@"location"];
+    cell.lblSellerDescription.text = sellerGoodsInfo[@"description"];
+
+    cell.btnTag1.titleLabel.text = sellerGoodsInfo[@"tags"][0];
+    cell.btnTag2.titleLabel.text = sellerGoodsInfo[@"tags"][1];
+    cell.btnTag3.titleLabel.text = sellerGoodsInfo[@"tags"][2];
+    
+    CGFloat lastLocationY = 417;
+    CGFloat commentAvatarHeight = 22;
+    for (id item in sellerGoodsInfo[@"comments"]) {
+        UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(4, lastLocationY + 1, commentAvatarHeight, commentAvatarHeight)];
+        imageView.image = [UIImage imageNamed:item[1]];
+        
+        [cell addSubview:imageView];
+        
+        UILabel* lblComment = [[UILabel alloc] initWithFrame:CGRectMake( commentAvatarHeight + 10, lastLocationY + 1, 200, commentAvatarHeight)];
+        lblComment.text = item[2];
+        [cell addSubview:lblComment];
+        
+        lastLocationY = lastLocationY + commentAvatarHeight;
+    }
+    
+    // good pics
+    NSMutableArray* goodsImageList = [[NSMutableArray alloc] init];
+    for (NSString* goodsPicName in sellerGoodsInfo[@"goodsPics"]) {  // get goods pics
+        ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:goodsPicName] text:@"maijia"];
+        [goodsImageList addObject:item1];
+    }
+    
     POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList];
     [list setDelegate:self];
     [cell.GoodsImageContainer addSubview:list];
-//    cell.sellerAvatar.userInteractionEnabled = YES;
-//    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageSellerAvatarClicked)];
-//    [cell.sellerAvatar addGestureRecognizer:singleTap];
     
     // set Share button's style
     cell.btnShare.layer.borderWidth = 1;
     cell.btnShare.layer.masksToBounds = YES;
     cell.btnShare.layer.cornerRadius = 4;
     
-    
-    return cell;
 }
 
 #pragma mark  POHorizontalListDelegate
