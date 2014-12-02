@@ -7,13 +7,25 @@
 //
 
 #import "SearchViewController.h"
-
-@interface SearchViewController() <UITableViewDataSource,UITableViewDelegate>
+#import "DataLayer.h"
+#import "POHorizontalList.h"
+@interface SearchViewController() <UITableViewDataSource,UITableViewDelegate,POHorizontalListDelegate>
+@property (strong, nonatomic) NSArray* tagsItems;
 @end
 
 
 @implementation SearchViewController
 @synthesize segmentedControl,isSearching;
+
+-(NSArray*)tagsItems
+{
+    if(_tagsItems == nil)
+    {
+        _tagsItems = [DataLayer GetAllGoodsByTags];
+    }
+    
+    return _tagsItems;
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -41,7 +53,7 @@
 #pragma Tableview delegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.tagsItems.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -55,9 +67,23 @@
         cell=[[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
+    [self InitGoodsContainer:cell.GoodsImageContainer GoodsPics:self.tagsItems[indexPath.row][@"goodsPics"]];
+    
     return cell;
 }
 
+-(void)InitGoodsContainer:(UIView*)picContainter GoodsPics:(NSArray*)picNames
+{
+    NSMutableArray* goodsImageList = [[NSMutableArray alloc] init];
+    for (NSString* goodsPicName in picNames) {  // get goods pics
+        ListItem *item1= [[ListItem alloc] initWithFrame:CGRectZero image:[UIImage imageNamed:goodsPicName] text:@"ffff"];
+        [goodsImageList addObject:item1];
+    }
+    
+    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 82.0) title:@"eee" items:goodsImageList Distance_between_items:0.0];
+    [list setDelegate:self];
+    [picContainter addSubview:list];
+}
 
 //#pragma mark -
 //#pragma mark Content Filtering

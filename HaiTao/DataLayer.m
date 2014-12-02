@@ -63,6 +63,7 @@
     return theString;
 }
 
+// Main page Seller goods info
 +(NSArray*)GetSellerGoodsItems
 {
     NSMutableArray* items = [[NSMutableArray alloc] init];
@@ -84,12 +85,13 @@
     return [items copy];
 }
 
+// main page buyer show info
 +(NSArray*)GetBuyerGoodsItems
 {
     NSMutableArray* items = [[NSMutableArray alloc] init];
     for (int i=0; i<10; i++) {
         NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //Seller id
-                               @"CANDY", @"name",//Seller name
+                               @"CANDY", @"name",//buyer name
                                @"fans1.png",@"buyerAvatar", //Seller avatar
                                [[NSArray alloc] initWithObjects:@"maijia2.png",@"maijia3.png",@"maijia.png", nil], @"goodsPics", //Goods pics
                                [[NSArray alloc] initWithObjects:@"#连衣裙",@"#潮品", nil], @"tags",// Goods Tags
@@ -97,6 +99,42 @@
                                                                                [[NSArray alloc]   initWithObjects:@"comment2",@"fans2.png",@"东西很不错，很稀饭，O(n_n)O, 下次还会来哦 :-)。", nil],nil] //Goods Comments
                                , @"comments",
                                nil];
+        
+        [items addObject:item];
+    }
+    
+    return [items copy];
+}
+
++(NSArray*)GetAllGoodsByTags
+{
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    for (int i=0; i<2; i++) {
+        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"#潮品", @"name",//tag name
+                               [[NSArray alloc] initWithObjects:@"test1.png",@"test2.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"#街拍", @"name",//tag name
+                               [[NSArray alloc] initWithObjects:@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"#CHANEL", @"name",//tag name
+                               [[NSArray alloc] initWithObjects:@"test7.png",@"test8.png",@"test9.png", nil], @"goodsPics", //Goods pics
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                 @"#PRADA", @"name",//tag name
+                 [[NSArray alloc] initWithObjects:@"test10.png",@"test11.png",@"test12.png", nil], @"goodsPics", //Goods pics
+                 nil];
         
         [items addObject:item];
     }

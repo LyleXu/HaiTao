@@ -168,7 +168,7 @@ int CurrentSelectedSegmentedControlIndex = 0;
         [goodsImageList addObject:item1];
     }
     
-    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList];
+    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 320.0) title:@"abc" items:goodsImageList Distance_between_items:0.0];
     [list setDelegate:self];
     [picContainter addSubview:list];
 }

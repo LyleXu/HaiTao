@@ -24,10 +24,11 @@
 
         CALayer *roundCorner = [imageView layer];
         [roundCorner setMasksToBounds:YES];
-        [roundCorner setCornerRadius:8.0];
+        //[roundCorner setCornerRadius:8.0];
         //[roundCorner setBorderColor:[UIColor blackColor].CGColor];
         //[roundCorner setBorderWidth:1.0];
-        imageView.contentMode = UIViewContentModeCenter;
+        //imageView.contentMode = UIViewContentModeCenter;
+        
         
         UILabel *title = [[UILabel alloc] init];
         [title setBackgroundColor:[UIColor clearColor]];
@@ -36,7 +37,12 @@
         [title setText:imageTitle];
         
         //imageRect = CGRectMake(0.0, 0.0, 72.0, 72.0);
-        imageRect = CGRectMake(0.0, 0.0, 320.0, 320.0);
+        
+        CGImageRef imageref = [image CGImage];
+        CGFloat width = CGImageGetWidth(imageref);
+        CGFloat height = CGImageGetHeight(imageref);
+        imageRect = CGRectMake(0, 0, width/2.0, height/2.0 );
+       // imageRect = CGRectMake(0.0, 0.0, frame.size.width, frame.size.height);
         //textRect = CGRectMake(0.0, imageRect.origin.y + imageRect.size.height + 10.0, 80.0, 20.0);
         
         //[title setFrame:textRect];

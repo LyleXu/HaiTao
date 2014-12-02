@@ -14,8 +14,8 @@
 #define DISTANCE_BETWEEN_ITEMS  0.0
 //#define LEFT_PADDING            15.0
 #define LEFT_PADDING            0.0
-//#define ITEM_WIDTH              72.0
-#define ITEM_WIDTH              320.0
+#define ITEM_WIDTH              72.0
+//#define ITEM_WIDTH              320.0
 #define TITLE_HEIGHT            40.0
 
 @interface POHorizontalList : UIView <UIScrollViewDelegate> {
@@ -23,9 +23,11 @@
 }
 
 @property (nonatomic, retain) UIScrollView *scrollView;
-
+@property CGFloat distance_between_items;
+@property CGFloat left_padding;
+@property CGFloat item_width;
 @property (nonatomic, assign) id<POHorizontalListDelegate> delegate;
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title items:(NSMutableArray *)items;
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title items:(NSMutableArray *)items Distance_between_items:(CGFloat)distance;
 
 @end

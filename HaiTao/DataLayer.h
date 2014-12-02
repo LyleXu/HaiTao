@@ -12,4 +12,5 @@
 +(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;
++(NSArray*)GetAllGoodsByTags;
 @end

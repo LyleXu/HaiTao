@@ -9,29 +9,35 @@
 #import "POHorizontalList.h"
 
 @implementation POHorizontalList
+@synthesize item_width,left_padding,distance_between_items;
 
-- (id)initWithFrame:(CGRect)frame title:(NSString *)title items:(NSMutableArray *)items
+- (id)initWithFrame:(CGRect)frame title:(NSString *)title items:(NSMutableArray *)items Distance_between_items:(CGFloat)distance
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        
+        distance_between_items = distance;
         //self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, TITLE_HEIGHT, self.frame.size.width, self.frame.size.height)];
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0, self.frame.size.width, self.frame.size.height)];
 
-        CGSize pageSize = CGSizeMake(ITEM_WIDTH, self.scrollView.frame.size.height);
+        //CGSize pageSize = CGSizeMake(ITEM_WIDTH, self.scrollView.frame.size.height);
         NSUInteger page = 0;
         
+        CGFloat totalWidth = 0;
+        
         for(ListItem *item in items) {
-            [item setFrame:CGRectMake(LEFT_PADDING + (pageSize.width + DISTANCE_BETWEEN_ITEMS) * page++, 0, pageSize.width, pageSize.height)];
+            CGSize pageSize = CGSizeMake(item.image.size.width/2.0, self.scrollView.frame.size.height);
+            [item setFrame:CGRectMake(LEFT_PADDING + totalWidth + (distance_between_items) * page++, 0, pageSize.width, pageSize.height)];
             
             UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemTapped:)];
             [item addGestureRecognizer:singleFingerTap];
 
             [self.scrollView addSubview:item];
+            
+            totalWidth += pageSize.width;
         }
         
-        self.scrollView.contentSize = CGSizeMake(LEFT_PADDING + (pageSize.width + DISTANCE_BETWEEN_ITEMS) * [items count], pageSize.height);
+        self.scrollView.contentSize = CGSizeMake(LEFT_PADDING + totalWidth +  distance_between_items * [items count], self.scrollView.frame.size.height);
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.showsVerticalScrollIndicator = NO;
         self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;

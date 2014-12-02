@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GoodsTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *chaopin1;
-@property (weak, nonatomic) IBOutlet UIImageView *chaopin2;
-@property (weak, nonatomic) IBOutlet UIImageView *chaopin3;
+
+@property (weak, nonatomic) IBOutlet UIView *GoodsImageContainer;
 
 @end

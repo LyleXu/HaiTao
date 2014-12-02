@@ -9,5 +9,5 @@
 #import "GoodsTableViewCell.h"
 
 @implementation GoodsTableViewCell
-
+@synthesize GoodsImageContainer;
 @end
