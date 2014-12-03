@@ -1964,7 +1964,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-6P-BFE">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="F5385AC5-73EE-4269-9D8D-DCF08148BBE0">
+                                                    <state key="normal" title="Button" image="F2D840C8-04A7-46EC-896D-1D7D622BAF77">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2157,7 +2157,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="9AE8A41A-F3D1-4175-9C88-6DC50B88D610">
+                                                    <state key="normal" title="Button" image="ED517781-FF12-4962-8431-588820878269">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2610,7 +2610,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SellerAvatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-YN-0ye">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="72" width="51" height="52"/>
+                                    <rect key="frame" x="12" y="72" width="34" height="34"/>
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopcart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-QM-fkJ">
@@ -2625,7 +2625,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="76" y="87" width="87" height="21"/>
+                                    <rect key="frame" x="54" y="78" width="87" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="巴黎" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaT-Vb-odh">
@@ -2634,27 +2634,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="270" y="87" width="34" height="21"/>
+                                    <rect key="frame" x="275" y="72" width="34" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location.png" translatesAutoresizingMaskIntoConstraints="NO" id="BVU-sm-r0Q">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="254" y="86" width="14" height="24"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a42-8d-db8">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="12" y="364" width="68" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品价格" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-A6-rup">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品价格:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYE-A6-rup">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -2670,9 +2664,9 @@
                                     <rect key="frame" x="98" y="393" width="48" height="21"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品类型" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-X3-wtO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品类型:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ae9-X3-wtO">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -2681,11 +2675,11 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="单品" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54M-aZ-t8p">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="98" y="422" width="34" height="21"/>
+                                    <rect key="frame" x="88" y="422" width="34" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="现货" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDl-Cz-K9l">
@@ -2694,7 +2688,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.13333334029999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="148" y="422" width="34" height="21"/>
+                                    <rect key="frame" x="122" y="422" width="34" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可预订" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-CL-fpe">
@@ -2703,7 +2697,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="422" width="51" height="21"/>
+                                    <rect key="frame" x="154" y="422" width="51" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2P-Nw-WPp">
@@ -2712,7 +2706,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="134" y="422" width="6" height="21"/>
+                                    <rect key="frame" x="116" y="423" width="6" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUO-FF-YzI">
@@ -2721,7 +2715,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="186" y="423" width="6" height="21"/>
+                                    <rect key="frame" x="145" y="423" width="6" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5b-C2-zSN">
@@ -2801,11 +2795,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHx-wp-vrx">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="加入购物车">
+                                <state key="normal" title="加入购物车" image="toShopCart.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="240" y="419" width="80" height="24"/>
+                                    <rect key="frame" x="214" y="418" width="95" height="24"/>
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a39-bK-7Es">
@@ -2817,10 +2811,16 @@
                                     <rect key="frame" x="250" y="453" width="10" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sxp-pX-8Ym">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maijia.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sxp-pX-8Ym">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="156" width="240" height="200"/>
+                                    <rect key="frame" x="12" y="114" width="297" height="222"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location.png" translatesAutoresizingMaskIntoConstraints="NO" id="BVU-sm-r0Q">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="259" y="72" width="14" height="24"/>
                                 </variation>
                             </imageView>
                         </subviews>
@@ -2831,7 +2831,6 @@
                                 <exclude reference="Zk0-QM-fkJ"/>
                                 <exclude reference="834-hn-65p"/>
                                 <exclude reference="yaT-Vb-odh"/>
-                                <exclude reference="BVU-sm-r0Q"/>
                                 <exclude reference="a42-8d-db8"/>
                                 <exclude reference="eYE-A6-rup"/>
                                 <exclude reference="o8g-Wn-qNY"/>
@@ -2852,6 +2851,7 @@
                                 <exclude reference="wHx-wp-vrx"/>
                                 <exclude reference="a39-bK-7Es"/>
                                 <exclude reference="Sxp-pX-8Ym"/>
+                                <exclude reference="BVU-sm-r0Q"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2860,7 +2860,6 @@
                                 <include reference="Zk0-QM-fkJ"/>
                                 <include reference="834-hn-65p"/>
                                 <include reference="yaT-Vb-odh"/>
-                                <include reference="BVU-sm-r0Q"/>
                                 <include reference="a42-8d-db8"/>
                                 <include reference="eYE-A6-rup"/>
                                 <include reference="o8g-Wn-qNY"/>
@@ -2881,10 +2880,22 @@
                                 <include reference="wHx-wp-vrx"/>
                                 <include reference="a39-bK-7Es"/>
                                 <include reference="Sxp-pX-8Ym"/>
+                                <include reference="BVU-sm-r0Q"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btnToShopCart" destination="wHx-wp-vrx" id="px6-sT-Hdc"/>
+                        <outlet property="imgGoods" destination="Sxp-pX-8Ym" id="pjv-uy-UCl"/>
+                        <outlet property="imgSellerAvatar" destination="Pgc-YN-0ye" id="j9p-PW-O4X"/>
+                        <outlet property="lblCanPreOrder" destination="RwU-CL-fpe" id="PCP-w0-22U"/>
+                        <outlet property="lblGoodsStatus" destination="LDl-Cz-K9l" id="s14-mQ-dFr"/>
+                        <outlet property="lblGoodsType" destination="54M-aZ-t8p" id="s9l-we-PoJ"/>
+                        <outlet property="lblLocation" destination="yaT-Vb-odh" id="Dhx-G4-mt5"/>
+                        <outlet property="lblPrice" destination="o8g-Wn-qNY" id="zxI-aI-msD"/>
+                        <outlet property="lblSellerName" destination="834-hn-65p" id="dfY-WI-KgY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAl-Et-8fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3278,7 +3289,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="9AE8A41A-F3D1-4175-9C88-6DC50B88D610" width="98" height="98">
+        <image name="Back_button.png" width="11" height="21"/>
+        <image name="ED517781-FF12-4962-8431-588820878269" width="98" height="98">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3969,8 +3981,7 @@ b594n4ufj5+in62ftp+7n8Ofxp/Ln9qf3p/ln+2f+p//oAGgA6AIoBCgE6AYoCCgI6A1oDigPQAAAAAA
 AAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAAKA/A
 </mutableData>
         </image>
-        <image name="Back_button.png" width="11" height="21"/>
-        <image name="F5385AC5-73EE-4269-9D8D-DCF08148BBE0" width="34" height="34">
+        <image name="F2D840C8-04A7-46EC-896D-1D7D622BAF77" width="34" height="34">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4111,6 +4122,7 @@ AAAAAAAAAAAAAAAAABw/A
         <image name="feed.png" width="33" height="33"/>
         <image name="geren.png" width="33" height="33"/>
         <image name="login.png" width="644" height="989"/>
+        <image name="maijia.png" width="319" height="321"/>
         <image name="pinglun.png" width="51" height="17"/>
         <image name="search.png" width="18" height="18"/>
         <image name="shopcart.png" width="24" height="19"/>
@@ -4124,6 +4136,7 @@ AAAAAAAAAAAAAAAAABw/A
         <image name="test7.png" width="112" height="75"/>
         <image name="test8.png" width="105" height="71"/>
         <image name="test9.png" width="83" height="77"/>
+        <image name="toShopCart.png" width="158" height="48"/>
         <image name="weibo.png" width="60" height="60"/>
         <image name="weixin.png" width="60" height="60"/>
         <image name="xiaoxi.png" width="33" height="33"/>

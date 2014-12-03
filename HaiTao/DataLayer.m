@@ -251,5 +251,28 @@
     return [items copy];
 }
 
++(NSDictionary*)GetGoodsInfoById:(NSString*)goodsId
+{
+    NSDictionary* info = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          @"1",@"id",
+                          @"Chanel连衣裙",@"name",
+                          @"maijia.png",@"goodsPic",
+                          @"Happy Bob", @"sellerName",
+                          @"SellerAvatar.png", @"sellerAvatarName",
+                          @"巴黎",@"location",
+                          @"¥3430",@"price",
+                          @"单品",@"goodsType",
+                          @"现货",@"goodsStatus",
+                          @"可订货",@"canPreOrder",
+                          @"1341",@"zanCount",
+                          @"341",@"commentCount",
+                          @"8",@"goodsCountInCart",
+                          @"Nice gift",@"goodsDescription",
+                          [[NSArray alloc] initWithObjects:@"#连衣裙",@"#潮品", nil], @"tags",// Goods Tags
+                          [[NSArray alloc] initWithObjects:[[NSArray alloc]   initWithObjects:@"comment1",@"fans1.png",@"So good!!!", nil], nil] //Goods Comments
+                          , @"comments",
+                           nil];
+    return info;
+}
 
 @end

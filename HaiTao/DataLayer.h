@@ -16,4 +16,5 @@
 +(NSArray*)GetAllGoodsBySpecialSelling;
 +(NSArray*)GetAllGoodsByNewArrival;
 +(NSArray*)GetAllGoodsByHot;
++(NSDictionary*)GetGoodsInfoById:(NSString*)goodsId;
 @end
