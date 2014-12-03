@@ -9,8 +9,16 @@
 #import "SearchViewController.h"
 #import "DataLayer.h"
 #import "POHorizontalList.h"
-@interface SearchViewController() <UITableViewDataSource,UITableViewDelegate,POHorizontalListDelegate>
+#import "SpecialSellingCell.h"
+#import "NewArrivalCell.h"
+#import "HotCell.h"
+int CurrentSelectedSegmentedControlIndexOfSearch = 0;
+
+@interface SearchViewController() <UITableViewDataSource,UITableViewDelegate,POHorizontalListDelegate,HYSegmentedControlDelegate>
 @property (strong, nonatomic) NSArray* tagsItems;
+@property (strong, nonatomic) NSArray* specialSellingItems;
+@property (strong, nonatomic) NSArray* newArrivalItems;
+@property (strong, nonatomic) NSArray* hotItems;
 @end
 
 
@@ -25,6 +33,36 @@
     }
     
     return _tagsItems;
+}
+
+-(NSArray*)specialSellingItems
+{
+    if(_specialSellingItems == nil)
+    {
+        _specialSellingItems = [DataLayer GetAllGoodsBySpecialSelling];
+    }
+    
+    return _specialSellingItems;
+}
+
+-(NSArray*)newArrivalItems
+{
+    if(_newArrivalItems == nil)
+    {
+        _newArrivalItems = [DataLayer GetAllGoodsByNewArrival];
+    }
+    
+    return _newArrivalItems;
+}
+
+-(NSArray*)hotItems
+{
+    if(_hotItems == nil)
+    {
+        _hotItems = [DataLayer GetAllGoodsByHot];
+    }
+    
+    return _hotItems;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -58,26 +96,74 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * tableIdentifier=@"SearchCell";
-    GoodsTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    NSString * tableIdentifier= [self GetIdentifiers][CurrentSelectedSegmentedControlIndexOfSearch];
     
-    if(cell==nil)
+    if(CurrentSelectedSegmentedControlIndexOfSearch == 0)
     {
-        // first load
-        cell=[[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        GoodsTableViewCell* cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self SetupCell:cell ItemInfo:self.tagsItems[indexPath.row] PicContainer:cell.GoodsImageContainer];
+        
+        return cell;
+    }else if(CurrentSelectedSegmentedControlIndexOfSearch ==1)
+    {
+        SpecialSellingCell * cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[SpecialSellingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self SetupCell:cell ItemInfo:self.specialSellingItems[indexPath.row] PicContainer:cell.GoodsImageContainer];
+        
+        return cell;
+    }else if(CurrentSelectedSegmentedControlIndexOfSearch ==2)
+    {
+        NewArrivalCell * cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[NewArrivalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self SetupCell:cell ItemInfo:self.newArrivalItems[indexPath.row] PicContainer:cell.GoodsImageContainer];
+        
+        return cell;
+    }else{
+        HotCell * cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+        
+        if(cell==nil)
+        {
+            // first load
+            cell=[[HotCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+        }
+        
+        [self SetupCell:cell ItemInfo:self.hotItems[indexPath.row] PicContainer:cell.GoodsImageContainer];
+        
+        return cell;
     }
-    
+}
+
+-(void)SetupCell:(UITableViewCell*)cell ItemInfo:(NSDictionary*)item PicContainer:(UIView*)picContainer
+{
     UILabel* lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 21)];
     [lblTitle setTextColor:[UIColor blueColor]];
     CGAffineTransform matrix = CGAffineTransformMake(1, 0, tanf(-20 * (CGFloat)M_PI / 180), 1, 0, 0);
     lblTitle.transform = matrix;
     lblTitle.font = [UIFont systemFontOfSize:14];
-    lblTitle.text = self.tagsItems[indexPath.row][@"name"];
+    lblTitle.text = item[@"name"];
     [cell addSubview:lblTitle];
     
-    [self InitGoodsContainer:cell.GoodsImageContainer GoodsPics:self.tagsItems[indexPath.row][@"goodsPics"]];
-    
-    return cell;
+    [self InitGoodsContainer:picContainer GoodsPics:item[@"goodsPics"]];
+
 }
 
 -(void)InitGoodsContainer:(UIView*)picContainter GoodsPics:(NSArray*)picNames
@@ -97,6 +183,20 @@
 - (void) didSelectItem:(ListItem *)item
 {
     
+}
+
+#pragma HYSegmentedControlDelegate
+- (void)hySegmentedControlSelectAtIndex:(NSInteger)index
+{
+    CurrentSelectedSegmentedControlIndexOfSearch = (int)index;
+    
+    [self.mainTableView reloadData];
+}
+
+-(NSArray*)GetIdentifiers
+{
+    NSArray* identifiers = [[NSArray alloc] initWithObjects:@"TagsCell",@"SpecialSellingCell",@"NewArrivalCell",@"HotCell", nil];
+    return identifiers;
 }
 
 //#pragma mark -

@@ -13,4 +13,7 @@
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;
 +(NSArray*)GetAllGoodsByTags;
++(NSArray*)GetAllGoodsBySpecialSelling;
++(NSArray*)GetAllGoodsByNewArrival;
++(NSArray*)GetAllGoodsByHot;
 @end

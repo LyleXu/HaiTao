@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic,retain) IBOutlet HYSegmentedControl* segmentedControl;
 @property (nonatomic, assign) BOOL isSearching;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
