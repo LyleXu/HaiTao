@@ -329,7 +329,7 @@
                                 </prototypes>
                                 <sections/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="k0U-yp-gxe" id="00b-nY-OC3"/>
@@ -441,11 +441,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-99-QVs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-99-QVs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="83" id="lgp-lL-1v2" customClass="GoodsTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="105" id="lgp-lL-1v2" customClass="GoodsTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgp-lL-1v2" id="7iX-Ht-tFG">
@@ -455,7 +455,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="336" height="82"/>
+                                                        <rect key="frame" x="0.0" y="22" width="336" height="82"/>
                                                     </variation>
                                                 </view>
                                             </subviews>
@@ -1486,7 +1486,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcR-Qu-L9d">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button" image="test4.">
+                                <state key="normal" title="Button" image="test4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -1874,7 +1874,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-6P-BFE">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="1BFCFDA8-47ED-4C56-8998-F8B34162EDCE">
+                                                    <state key="normal" title="Button" image="4E726B7C-5F54-4A31-974A-C36BBCEB40A7">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2067,7 +2067,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="C0E5E419-42E0-404B-8B8F-379F5B26E84A">
+                                                    <state key="normal" title="Button" image="EFF0E181-7857-41AD-8B26-05ED6CB03A91">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2340,7 +2340,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-0y-fOL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button" image="test4.">
+                                <state key="normal" title="Button" image="test4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -3188,7 +3188,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1BFCFDA8-47ED-4C56-8998-F8B34162EDCE" width="34" height="34">
+        <image name="4E726B7C-5F54-4A31-974A-C36BBCEB40A7" width="34" height="34">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3317,7 +3317,7 @@ AAAAAAAAAAAAAAAAABw/A
 </mutableData>
         </image>
         <image name="Back_button.png" width="11" height="21"/>
-        <image name="C0E5E419-42E0-404B-8B8F-379F5B26E84A" width="98" height="98">
+        <image name="EFF0E181-7857-41AD-8B26-05ED6CB03A91" width="98" height="98">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4028,7 +4028,7 @@ AAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAAKA/A
         <image name="test11.png" width="76" height="77"/>
         <image name="test12.png" width="117" height="77"/>
         <image name="test2.png" width="96" height="78"/>
-        <image name="test4." width="644" height="989"/>
+        <image name="test4.png" width="84" height="78"/>
         <image name="test5.png" width="58" height="74"/>
         <image name="test6.png" width="66" height="77"/>
         <image name="test7.png" width="112" height="75"/>

@@ -50,7 +50,7 @@
     [self.searchBar resignFirstResponder];
 }
 
-#pragma Tableview delegate
+#pragma Tableview datasource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.tagsItems.count;
@@ -67,6 +67,14 @@
         cell=[[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
+    UILabel* lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 21)];
+    [lblTitle setTextColor:[UIColor blueColor]];
+    CGAffineTransform matrix = CGAffineTransformMake(1, 0, tanf(-20 * (CGFloat)M_PI / 180), 1, 0, 0);
+    lblTitle.transform = matrix;
+    lblTitle.font = [UIFont systemFontOfSize:14];
+    lblTitle.text = self.tagsItems[indexPath.row][@"name"];
+    [cell addSubview:lblTitle];
+    
     [self InitGoodsContainer:cell.GoodsImageContainer GoodsPics:self.tagsItems[indexPath.row][@"goodsPics"]];
     
     return cell;
@@ -80,9 +88,15 @@
         [goodsImageList addObject:item1];
     }
     
-    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 82.0) title:@"eee" items:goodsImageList Distance_between_items:0.0];
+    POHorizontalList* list = [[POHorizontalList alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 82.0) title:@"aaa" items:goodsImageList Distance_between_items:5.0];
     [list setDelegate:self];
     [picContainter addSubview:list];
+}
+
+#pragma POHorizontalListDelegate
+- (void) didSelectItem:(ListItem *)item
+{
+    
 }
 
 //#pragma mark -

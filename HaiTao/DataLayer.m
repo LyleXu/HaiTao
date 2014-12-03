@@ -109,17 +109,17 @@
 +(NSArray*)GetAllGoodsByTags
 {
     NSMutableArray* items = [[NSMutableArray alloc] init];
-    for (int i=0; i<2; i++) {
+    for (int i=0; i<1; i++) {
         NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#潮品", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test1.png",@"test2.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test0.png",@"test1.png",@"test3.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#街拍", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test2.png",@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];

@@ -26,7 +26,7 @@
         CGFloat totalWidth = 0;
         
         for(ListItem *item in items) {
-            CGSize pageSize = CGSizeMake(item.image.size.width/2.0, self.scrollView.frame.size.height);
+            CGSize pageSize = CGSizeMake(item.image.size.width, self.scrollView.frame.size.height);
             [item setFrame:CGRectMake(LEFT_PADDING + totalWidth + (distance_between_items) * page++, 0, pageSize.width, pageSize.height)];
             
             UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemTapped:)];
