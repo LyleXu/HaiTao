@@ -36,6 +36,14 @@ static NSString *const cellIdentifier=@"QQChart";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.tabBarController.tabBar.hidden = YES;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 -(void)keyboardShow:(NSNotification *)note
@@ -58,14 +66,8 @@ static NSString *const cellIdentifier=@"QQChart";
 {
     [super viewDidLoad];
     
-//    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
-//    [self.navigationController.navigationBar addSubview:segmentedControl];
-    
-    //self.title=@"QQ chat";
-    //self.view.backgroundColor=[UIColor whiteColor];
-    
     //add UItableView
-    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-108) style:UITableViewStylePlain];
+    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-44) style:UITableViewStylePlain];
     [self.tableView registerClass:[ChartCell class] forCellReuseIdentifier:cellIdentifier];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     self.tableView.allowsSelection = NO;
@@ -76,7 +78,7 @@ static NSString *const cellIdentifier=@"QQChart";
     
     //add keyBorad
     
-    self.keyBordView=[[KeyBordVIew alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-108, self.view.frame.size.width, 44)];
+    self.keyBordView=[[KeyBordVIew alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44)];
     self.keyBordView.delegate=self;
     [self.view addSubview:self.keyBordView];
     //初始化数据
