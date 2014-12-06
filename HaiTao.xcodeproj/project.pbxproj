@@ -113,6 +113,8 @@
 		6D86E2631A2F330400E991E9 /* SpecialSellingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E2621A2F330400E991E9 /* SpecialSellingCell.m */; };
 		6D86E2661A2F331900E991E9 /* NewArrivalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E2651A2F331900E991E9 /* NewArrivalCell.m */; };
 		6D86E2691A2F332500E991E9 /* HotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E2681A2F332500E991E9 /* HotCell.m */; };
+		6D86E26C1A328CC800E991E9 /* MessageNotificatioinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E26B1A328CC800E991E9 /* MessageNotificatioinCell.m */; };
+		6D86E26F1A328CF500E991E9 /* MessageZanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D86E26E1A328CF500E991E9 /* MessageZanCell.m */; };
 		6D8812471A18FDFA00C863C2 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812341A18FDFA00C863C2 /* MKAnnotationView+WebCache.m */; };
 		6D8812481A18FDFA00C863C2 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8812361A18FDFA00C863C2 /* SDImageCache.m */; };
 		6D8812491A18FDFA00C863C2 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D88123A1A18FDFA00C863C2 /* SDWebImageDecoder.m */; };
@@ -363,6 +365,10 @@
 		6D86E2651A2F331900E991E9 /* NewArrivalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewArrivalCell.m; sourceTree = "<group>"; };
 		6D86E2671A2F332500E991E9 /* HotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotCell.h; sourceTree = "<group>"; };
 		6D86E2681A2F332500E991E9 /* HotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotCell.m; sourceTree = "<group>"; };
+		6D86E26A1A328CC800E991E9 /* MessageNotificatioinCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNotificatioinCell.h; sourceTree = "<group>"; };
+		6D86E26B1A328CC800E991E9 /* MessageNotificatioinCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNotificatioinCell.m; sourceTree = "<group>"; };
+		6D86E26D1A328CF500E991E9 /* MessageZanCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageZanCell.h; sourceTree = "<group>"; };
+		6D86E26E1A328CF500E991E9 /* MessageZanCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageZanCell.m; sourceTree = "<group>"; };
 		6D8812331A18FDFA00C863C2 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "PSCollectionView/SDWebImage/MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		6D8812341A18FDFA00C863C2 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "PSCollectionView/SDWebImage/MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		6D8812351A18FDFA00C863C2 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = PSCollectionView/SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
@@ -812,6 +818,10 @@
 				6DB71BFF1A25412800625612 /* PrivateChatListViewController.m */,
 				6DB71C011A2541D500625612 /* PrivateChatListCell.h */,
 				6DB71C021A2541D500625612 /* PrivateChatListCell.m */,
+				6D86E26A1A328CC800E991E9 /* MessageNotificatioinCell.h */,
+				6D86E26B1A328CC800E991E9 /* MessageNotificatioinCell.m */,
+				6D86E26D1A328CF500E991E9 /* MessageZanCell.h */,
+				6D86E26E1A328CF500E991E9 /* MessageZanCell.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -1373,6 +1383,7 @@
 				6D8812471A18FDFA00C863C2 /* MKAnnotationView+WebCache.m in Sources */,
 				6D98A3091A20CDD300B23B46 /* SBJsonStreamParserState.m in Sources */,
 				6D98A31F1A22071A00B23B46 /* POHorizontalList.m in Sources */,
+				6D86E26C1A328CC800E991E9 /* MessageNotificatioinCell.m in Sources */,
 				6D77DFF31A159D1500BDCE9E /* NSString+DocumentPath.m in Sources */,
 				6D6164AC1A15EFF300DF1B14 /* IphoneScreen.m in Sources */,
 				6D98A30A1A20CDD300B23B46 /* SBJsonStreamWriter.m in Sources */,
@@ -1416,6 +1427,7 @@
 				6D98A30B1A20CDD300B23B46 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				6D77DFD71A1506BF00BDCE9E /* SellerViewController.m in Sources */,
 				6D98A3081A20CDD300B23B46 /* SBJsonStreamParserAdapter.m in Sources */,
+				6D86E26F1A328CF500E991E9 /* MessageZanCell.m in Sources */,
 				6D98A3121A20CE6C00B23B46 /* NSObject+SBJson.m in Sources */,
 				6D98A30F1A20CDD300B23B46 /* SBJsonWriter.m in Sources */,
 			);

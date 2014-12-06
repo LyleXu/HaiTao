@@ -17,4 +17,7 @@
 +(NSArray*)GetAllGoodsByNewArrival;
 +(NSArray*)GetAllGoodsByHot;
 +(NSDictionary*)GetGoodsInfoById:(NSString*)goodsId;
++(NSArray*)GetMessagePrivateChatList:(NSString*)userId;
++(NSArray*)GetMessageNotificationList:(NSString*)userId;
++(NSArray*)GetMessageZanList:(NSString*)userId;
 @end

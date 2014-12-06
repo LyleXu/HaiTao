@@ -275,4 +275,117 @@
     return info;
 }
 
++(NSArray*)GetMessagePrivateChatList:(NSString*)userId
+{
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    for (int i=0; i<3; i++) {
+        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"Winston", @"name",
+                               @"fans2.png",@"avatar",
+                               @"你今天早走？", @"lastMsg",
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+             @"Andy", @"name",
+             @"fans3.png",@"avatar",
+             @"Hi, 这款最低多少钱？", @"lastMsg",
+             nil];
+    
+        [items addObject:item];
+    
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+             @"Bob", @"name",
+             @"fans4.png",@"avatar",
+             @"Hi, 能交个朋友吗？", @"lastMsg",
+             nil];
+    
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+             @"Justin", @"name",
+             @"fans1.png",@"avatar",
+             @"我出新专辑了！", @"lastMsg",
+             nil];
+    
+        [items addObject:item];
+    }
+    
+    return [items copy];
+}
+
++(NSArray*)GetMessageNotificationList:(NSString*)userId
+{
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    for (int i=0; i<3; i++) {
+        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"Winston Leong", @"name",
+                               @"fans2.png",@"avatar",
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Andy", @"name",
+                 @"fans3.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Bob", @"name",
+                 @"fans4.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Justin", @"name",
+                 @"fans1.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+    }
+    
+    return [items copy];
+}
+
++(NSArray*)GetMessageZanList:(NSString*)userId
+{
+    NSMutableArray* items = [[NSMutableArray alloc] init];
+    for (int i=0; i<3; i++) {
+        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
+                               @"Winston", @"name",
+                               @"fans2.png",@"avatar",
+                               nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Andy", @"name",
+                 @"fans3.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Bob", @"name",
+                 @"fans4.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+        
+        item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"2", @"id",     //tag id
+                 @"Justin", @"name",
+                 @"fans1.png",@"avatar",
+                 nil];
+        
+        [items addObject:item];
+    }
+    
+    return [items copy];
+}
+
+
 @end

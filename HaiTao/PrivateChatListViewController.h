@@ -11,4 +11,5 @@
 #import "HYSegmentedControl.h"
 @interface PrivateChatListViewController : UIViewController
 @property (retain, nonatomic)  HYSegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
