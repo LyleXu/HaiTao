@@ -17,3 +17,10 @@
 #import <Foundation/Foundation.h>
 #endif
 
+#pragma mark - 设备型号识别
+#define is_IOS_7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+#pragma mark - 硬件
+#define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+

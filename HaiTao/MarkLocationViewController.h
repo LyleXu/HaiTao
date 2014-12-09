@@ -11,4 +11,7 @@
 @interface MarkLocationViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageMarkLocation;
+@property (weak, nonatomic) IBOutlet UILabel *lbltest;
+
+@property (strong, nonatomic) UIImage* imgCaptured;
 @end

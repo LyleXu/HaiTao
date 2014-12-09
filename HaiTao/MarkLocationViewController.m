@@ -19,6 +19,8 @@
     [self.navigationItem setRightBarButtonItem:barButtonItem];
     
     self.navigationItem.title = @"标记标签";
+    
+    self.imageMarkLocation.image = self.imgCaptured;
 }
 
 -(void)toNextPage

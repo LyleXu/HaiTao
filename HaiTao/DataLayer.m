@@ -387,5 +387,16 @@
     return [items copy];
 }
 
++(NSArray*)GetAllTags
+{
+    NSMutableArray* items = [[NSMutableArray alloc] initWithObjects:@"Chanel",@"LV",@"Prada",@"gucci",@"micheal kros",@"Fendi",@"Hermes",@"Burberry", nil];
+    return [items copy];
+}
+
++(NSArray*)GetAllLocations
+{
+    NSMutableArray* items = [[NSMutableArray alloc] initWithObjects:@"上海",@"北京","Prada",@"gucci",@"micheal kros",@"Fendi",@"Hermes",@"Burberry", nil];
+    return [items copy];
+}
 
 @end

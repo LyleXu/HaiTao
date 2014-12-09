@@ -761,7 +761,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fsu-kF-wrV">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                    <rect key="frame" x="0.0" y="94" width="320" height="210"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击图片，标记名称，标签和地点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wa-X8-BiU">
@@ -770,15 +770,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="33" y="287" width="255" height="21"/>
+                                    <rect key="frame" x="33" y="324" width="255" height="21"/>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-ni-dnE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名 称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN0-ni-dnE">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="112" y="86" width="97" height="30"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5X-8Du">
@@ -787,10 +787,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="60" y="170" width="30" height="30"/>
+                                    <rect key="frame" x="62" y="224" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="2dB-yi-UvH" kind="presentation" id="cef-DK-MNh"/>
+                                    <segue destination="2dB-yi-UvH" kind="presentation" id="o8x-RL-qiY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtU-Uj-VAq">
@@ -799,7 +799,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="226" y="170" width="30" height="30"/>
+                                    <rect key="frame" x="231" y="224" width="30" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="Vq1-1D-j2U" kind="presentation" id="oRg-ZL-rdS"/>
@@ -1198,60 +1198,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LZ5-ES-6fi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="28" width="279" height="44"/>
-                                </variation>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s98-vq-oLr">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="284" y="35" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="returnPreviousPage:" destination="2dB-yi-UvH" eventType="touchUpInside" id="XJ8-uP-prv"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sDV-eY-33o">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="scaleAspectFill" id="c3v-9z-jc3">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2dB-yi-UvH" id="QmM-zM-A4L"/>
+                                    </connections>
+                                </searchBar>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="73" width="320" height="501"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="2dB-yi-UvH" id="XMt-KJ-LJ2"/>
                                     <outlet property="delegate" destination="2dB-yi-UvH" id="fd4-9g-dZc"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOA-W3-R81">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="选择标签" id="mxD-jf-Pkp">
+                                        <barButtonItem key="rightBarButtonItem" title="X" id="UpQ-sA-wkn">
+                                            <connections>
+                                                <action selector="returnPreviousPage:" destination="2dB-yi-UvH" id="xuQ-s1-Xkd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="LZ5-ES-6fi"/>
-                                <exclude reference="s98-vq-oLr"/>
                                 <exclude reference="sDV-eY-33o"/>
+                                <exclude reference="hOA-W3-R81"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="LZ5-ES-6fi"/>
-                                <include reference="s98-vq-oLr"/>
                                 <include reference="sDV-eY-33o"/>
+                                <include reference="hOA-W3-R81"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="7X3-Dh-V4c"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="currentSearchBar" destination="c3v-9z-jc3" id="j2i-4h-e4m"/>
+                        <outlet property="mainTableView" destination="sDV-eY-33o" id="ehx-BZ-iZK"/>
+                        <outlet property="searchDisplayController" destination="EQi-1a-hgL" id="v53-mE-zMJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaP-dl-iKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="EQi-1a-hgL">
+                    <connections>
+                        <outlet property="delegate" destination="2dB-yi-UvH" id="zie-OY-fNU"/>
+                        <outlet property="searchBar" destination="c3v-9z-jc3" id="ygc-5z-ECr"/>
+                        <outlet property="searchContentsController" destination="2dB-yi-UvH" id="ars-M8-eog"/>
+                        <outlet property="searchResultsDataSource" destination="2dB-yi-UvH" id="bxU-z6-9xr"/>
+                        <outlet property="searchResultsDelegate" destination="2dB-yi-UvH" id="TmB-6B-e0h"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="6472.5" y="776"/>
+            <point key="canvasLocation" x="6171" y="727"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="kqw-Ka-33X">
@@ -2024,7 +2039,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-6P-BFE">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="68B9C44C-8D15-4AAD-98FA-1C8DBBD58C50">
+                                                    <state key="normal" title="Button" image="2F004B87-BB16-4422-BDCC-8E6C813A5EBC">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2217,7 +2232,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="AEF9F610-6B79-47D0-BDC0-E148D8D7D6AB">
+                                                    <state key="normal" title="Button" image="693E1E14-6605-4230-9E00-5A0C6F43726D">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -3349,7 +3364,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="68B9C44C-8D15-4AAD-98FA-1C8DBBD58C50" width="34" height="34">
+        <image name="2F004B87-BB16-4422-BDCC-8E6C813A5EBC" width="34" height="34">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3477,7 +3492,7 @@ thu7G8MbxhvLG9ob3hvlG+0b+hv/HAEcAxwIHBAcExwYHCAcIxw1HDgcPQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAABw/A
 </mutableData>
         </image>
-        <image name="AEF9F610-6B79-47D0-BDC0-E148D8D7D6AB" width="98" height="98">
+        <image name="693E1E14-6605-4230-9E00-5A0C6F43726D" width="98" height="98">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

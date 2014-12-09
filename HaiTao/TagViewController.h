@@ -10,4 +10,6 @@
 
 @interface TagViewController : UIViewController
 @property (strong,nonatomic) NSArray* items;
+@property (weak, nonatomic) IBOutlet UISearchBar *currentSearchBar;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end

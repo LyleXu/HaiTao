@@ -561,6 +561,8 @@
 		6D61649D1A15EF9800DF1B14 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				6D2A349A1A1AB57300E6615E /* TagViewController.h */,
+				6D2A349B1A1AB57300E6615E /* TagViewController.m */,
 				6D61649E1A15EFAA00DF1B14 /* CustomPickerAndFilter */,
 				6D6164DC1A15F08A00DF1B14 /* CameraViewController.h */,
 				6D6164DD1A15F08A00DF1B14 /* CameraViewController.m */,
@@ -1083,8 +1085,6 @@
 				6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */,
 				6D77DFD51A1506BF00BDCE9E /* SellerViewController.h */,
 				6D77DFD61A1506BF00BDCE9E /* SellerViewController.m */,
-				6D2A349A1A1AB57300E6615E /* TagViewController.h */,
-				6D2A349B1A1AB57300E6615E /* TagViewController.m */,
 				6D2A349D1A1AB66100E6615E /* LocationViewController.h */,
 				6D2A349E1A1AB66100E6615E /* LocationViewController.m */,
 				6D2A34A01A1AB7D000E6615E /* ReleaseGoodsViewController.h */,

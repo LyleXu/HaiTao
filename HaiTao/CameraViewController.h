@@ -15,4 +15,5 @@
 {
     IBOutlet UIImageView *imageView;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imgTest;
 @end

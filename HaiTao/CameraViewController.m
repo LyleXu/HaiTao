@@ -50,9 +50,9 @@
 }
 - (void)imageFitlerProcessDone:(UIImage *)image //图片处理完
 {
-    //[imageView setImage:image];
+    //self.imgTest.image = image;
     MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
-    mlController.imageMarkLocation.image = image;
+    mlController.imgCaptured = [image copy];
     [self.navigationController pushViewController:mlController animated:YES];
     //[self presentViewController:mlController animated:YES completion:nil];
 }

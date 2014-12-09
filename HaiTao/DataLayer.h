@@ -10,14 +10,21 @@
 
 @interface DataLayer : NSObject
 +(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
+
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;
+
 +(NSArray*)GetAllGoodsByTags;
 +(NSArray*)GetAllGoodsBySpecialSelling;
 +(NSArray*)GetAllGoodsByNewArrival;
 +(NSArray*)GetAllGoodsByHot;
+
 +(NSDictionary*)GetGoodsInfoById:(NSString*)goodsId;
+
 +(NSArray*)GetMessagePrivateChatList:(NSString*)userId;
 +(NSArray*)GetMessageNotificationList:(NSString*)userId;
 +(NSArray*)GetMessageZanList:(NSString*)userId;
+
++(NSArray*)GetAllTags;
++(NSArray*)GetAllLocations;
 @end
