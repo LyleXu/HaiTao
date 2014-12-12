@@ -9,7 +9,7 @@
 #import "TagViewController.h"
 #import "DataLayer.h"
 typedef void (^SearchReusltHandler)(NSArray*);
-@interface TagViewController()<UITableViewDataSource>
+@interface TagViewController()<UITableViewDataSource,UISearchBarDelegate,UISearchDisplayDelegate>
 {
     NSUInteger searchCounter;
     NSUInteger currentlyDisplaySearchID;
@@ -32,17 +32,19 @@ typedef void (^SearchReusltHandler)(NSArray*);
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.results = self.items;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return self.results.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * tableIdentifier=@"tagcell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    UITableViewCell *cell=[self.mainTableView dequeueReusableCellWithIdentifier:tableIdentifier];
     
     if(cell==nil)
     {
@@ -50,19 +52,22 @@ typedef void (^SearchReusltHandler)(NSArray*);
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
-    cell.textLabel.text = self.items[indexPath.row];
+    NSString* tagName =self.results[indexPath.row];
+    cell.textLabel.text = tagName;
     
     return cell;
 
 }
-- (IBAction)returnPreviousPage:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self dismissViewControllerAnimated:true completion:^{
+        [self.delegate passValue:self.results[indexPath.row]];
+    }];
 }
 
-#pragma Searchbar delegate
-
-- (void) searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)searchText {
-    [self doSearch: searchText];
+- (IBAction)returnPreviousPage:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)doSearch:(NSString*)searchText
@@ -74,54 +79,13 @@ typedef void (^SearchReusltHandler)(NSArray*);
         return;
     }
     
-    ++searchCounter;
-    NSUInteger searchID = searchCounter;
-    __block BOOL searchResultsReturned = NO;
-    //[self setLoading:YES];
-    
-    [self performSearchForQuery:searchText withResultsHandler:^(NSArray* searchResults) {
-        NSAssert(!searchResultsReturned, @"JCAutocompletingSearchController: delegate called results handler more than once for the same search execution.");
-        searchResultsReturned = YES;
-        
-        if (searchID >= currentlyDisplaySearchID) {
-            currentlyDisplaySearchID = searchID;
-            if (searchResults) {
-                self.results = searchResults;
-                [self.mainTableView reloadData];
-            }
-        } else {
-            NSLog(@"JCAutocompletingSearchController: received out-of-order search results; ignoring. (currently displayed: %i, searchID: %i", currentlyDisplaySearchID, searchID);
-        }
-    }];
+    self.results = [self.items filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText]];
 }
 
-- (void)performSearchForQuery:(NSString*)query withResultsHandler:(SearchReusltHandler)resultsHandler
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    // Simulate the asynchronicity and delay of a web request...
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray* possibleItems = self.items;
-        
-        NSMutableArray* predicates = [NSMutableArray new];
-        for (__strong NSString* queryPart in [query componentsSeparatedByString:@" "]) {
-            if (queryPart && (queryPart = [queryPart stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]).length > 0) {
-                [predicates addObject:[NSPredicate predicateWithFormat:@"SELF like[cd] %@", [NSString stringWithFormat:@"%@*", queryPart]]];
-            }
-        }
-        NSPredicate* predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
-        
-        NSArray* matchedItems = [possibleItems filteredArrayUsingPredicate:predicate];
-        NSMutableArray* results = [NSMutableArray new];
-        for (NSString* item in matchedItems) {
-            [results addObject:@{@"label": item}];
-        }
-        
-        double delayInSeconds = 0.4;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            resultsHandler(results);
-        });
-    });
-    
+    [self doSearch: searchString];
+    return YES;
 }
 
 //searchBar开始编辑时改变取消按钮的文字
@@ -166,18 +130,9 @@ typedef void (^SearchReusltHandler)(NSArray*);
     
     return YES;
 }
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self handleSearch:searchBar];
-}
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self handleSearch:searchBar];
-}
-
-- (void)handleSearch:(UISearchBar *)searchBar {
-    //NSLog(@"User searched for %@", searchBar.text);
-    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.results = self.items;
 }
 
 @end

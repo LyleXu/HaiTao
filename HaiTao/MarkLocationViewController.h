@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MarkLocationViewController : UIViewController
+#import "PassValueDelegate.h"
+@interface MarkLocationViewController : UIViewController<PassValueDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageMarkLocation;
 @property (weak, nonatomic) IBOutlet UILabel *lbltest;
