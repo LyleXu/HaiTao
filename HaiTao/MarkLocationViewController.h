@@ -11,7 +11,10 @@
 @interface MarkLocationViewController : UIViewController<PassValueDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageMarkLocation;
-@property (weak, nonatomic) IBOutlet UILabel *lbltest;
+@property (weak, nonatomic) IBOutlet UIButton *btnTag;
+@property (weak, nonatomic) IBOutlet UIButton *btnLocation;
 
 @property (strong, nonatomic) UIImage* imgCaptured;
+
+@property (strong, nonatomic) NSMutableArray* tagLocations;
 @end

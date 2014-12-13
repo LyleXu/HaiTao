@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gp9-28-ras">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -781,25 +781,25 @@
                                     <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5X-8Du">
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-5X-8Du">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="标签">
+                                <state key="normal" title="标签" image="icon_brand.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="62" y="224" width="30" height="30"/>
+                                    <rect key="frame" x="62" y="224" width="34" height="34"/>
                                 </variation>
                                 <connections>
                                     <action selector="addNewTag:" destination="gp9-28-ras" eventType="touchUpInside" id="6DZ-zm-QSw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtU-Uj-VAq">
+                            <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtU-Uj-VAq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="地点">
+                                <state key="normal" title="地点" image="icon_Location.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="231" y="224" width="30" height="30"/>
+                                    <rect key="frame" x="218" y="224" width="34" height="34"/>
                                 </variation>
                                 <connections>
                                     <segue destination="Vq1-1D-j2U" kind="presentation" id="oRg-ZL-rdS"/>
@@ -828,6 +828,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnLocation" destination="XtU-Uj-VAq" id="btr-wj-i2f"/>
+                        <outlet property="btnTag" destination="eu5-5X-8Du" id="puw-Ye-3JM"/>
                         <outlet property="imageMarkLocation" destination="fsu-kF-wrV" id="EOf-1O-jkZ"/>
                     </connections>
                 </viewController>
@@ -2048,7 +2050,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-6P-BFE">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="2BCF7B33-D331-401E-89B7-4F2FD7D985B6">
+                                                    <state key="normal" title="Button" image="3669A8B8-7765-4132-97F2-9E54C60A4AE3">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2241,7 +2243,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="614AAC32-2C46-4329-B7F3-736CBB35F36E">
+                                                    <state key="normal" title="Button" image="4252CEA0-AEF6-4B92-ADB7-7106BD0B3DE9">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -3373,7 +3375,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2BCF7B33-D331-401E-89B7-4F2FD7D985B6" width="34" height="34">
+        <image name="3669A8B8-7765-4132-97F2-9E54C60A4AE3" width="34" height="34">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3501,7 +3503,7 @@ thu7G8MbxhvLG9ob3hvlG+0b+hv/HAEcAxwIHBAcExwYHCAcIxw1HDgcPQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAABw/A
 </mutableData>
         </image>
-        <image name="614AAC32-2C46-4329-B7F3-736CBB35F36E" width="98" height="98">
+        <image name="4252CEA0-AEF6-4B92-ADB7-7106BD0B3DE9" width="98" height="98">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4205,6 +4207,8 @@ AAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAAKA/A
         <image name="faxian.png" width="33" height="33"/>
         <image name="feed.png" width="33" height="33"/>
         <image name="geren.png" width="33" height="33"/>
+        <image name="icon_Location.png" width="56" height="56"/>
+        <image name="icon_brand.png" width="56" height="56"/>
         <image name="login.png" width="644" height="989"/>
         <image name="maijia.png" width="319" height="321"/>
         <image name="pinglun.png" width="51" height="17"/>

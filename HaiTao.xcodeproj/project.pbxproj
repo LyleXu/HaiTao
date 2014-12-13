@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D2371E31A3C01CD008B8B44 /* icon_brand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */; };
+		6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */; };
+		6D2371E81A3C7D6C008B8B44 /* big_biaoqian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */; };
 		6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A34951A1A362800E6615E /* ShopCartViewController.m */; };
 		6D2A349C1A1AB57300E6615E /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349B1A1AB57300E6615E /* TagViewController.m */; };
 		6D2A349F1A1AB66100E6615E /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349E1A1AB66100E6615E /* LocationViewController.m */; };
@@ -216,6 +219,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_brand@2x.png"; path = "resources/icon_brand@2x.png"; sourceTree = "<group>"; };
+		6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_Location@2x.png"; path = "resources/icon_Location@2x.png"; sourceTree = "<group>"; };
+		6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "big_biaoqian@2x.png"; path = "resources/big_biaoqian@2x.png"; sourceTree = "<group>"; };
 		6D2A34941A1A362800E6615E /* ShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartViewController.h; sourceTree = "<group>"; };
 		6D2A34951A1A362800E6615E /* ShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartViewController.m; sourceTree = "<group>"; };
 		6D2A349A1A1AB57300E6615E /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
@@ -717,6 +723,9 @@
 		6D6A432A1A05E5690005B35F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */,
+				6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */,
+				6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */,
 				6D86E2451A2E1A2D00E991E9 /* toShopCart.png */,
 				6D86E23F1A2E15B000E991E9 /* settings@2x.png */,
 				6D86E2401A2E15B000E991E9 /* shopcart@2x.png */,
@@ -1247,6 +1256,7 @@
 				6D6164E61A16637A00DF1B14 /* goodsImage@2x.png in Resources */,
 				6D86E2601A2E1BF300E991E9 /* test12@2x.png in Resources */,
 				6DCA1B2F1A1100FB000E4E7E /* close_button@2x.png in Resources */,
+				6D2371E31A3C01CD008B8B44 /* icon_brand@2x.png in Resources */,
 				6D88125B1A18FE1000C863C2 /* grayArrow.png in Resources */,
 				6D86E2421A2E15B000E991E9 /* settings@2x.png in Resources */,
 				6D86E25D1A2E1BF300E991E9 /* test9@2x.png in Resources */,
@@ -1272,6 +1282,7 @@
 				6D6164D11A15F04900DF1B14 /* camera_btn_ok.png in Resources */,
 				6DCA1B381A1100FB000E4E7E /* siliao@2x.png in Resources */,
 				6D77DFD31A1500E200BDCE9E /* chaopin2@2x.png in Resources */,
+				6D2371E81A3C7D6C008B8B44 /* big_biaoqian@2x.png in Resources */,
 				6DCA1B331A1100FB000E4E7E /* login.png in Resources */,
 				6D86E2551A2E1BF300E991E9 /* test1@2x.png in Resources */,
 				6D77DFDF1A150DAF00BDCE9E /* fans3@2x.png in Resources */,
@@ -1313,6 +1324,7 @@
 				6D77E01D1A15A37C00BDCE9E /* chat_bottom_up_press.png in Resources */,
 				6D88125D1A18FE1000C863C2 /* whiteArrow.png in Resources */,
 				6D86E2571A2E1BF300E991E9 /* test3@2x.png in Resources */,
+				6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */,
 				6D86E25F1A2E1BF300E991E9 /* test11@2x.png in Resources */,
 				6D6164D31A15F04900DF1B14 /* camera_button_switch_camera.png in Resources */,
 				6D5F172C1A2B6208003B18CB /* share_Qzone@2x.png in Resources */,
