@@ -20,4 +20,6 @@
 @property (strong, nonatomic) NSMutableArray* tagLocations;
 
 @property (strong, nonatomic) CLLocationManager* locationManager;
+
+@property (strong, nonatomic) UIView* backgroundView;
 @end

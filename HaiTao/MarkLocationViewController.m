@@ -12,7 +12,7 @@
 
 
 @implementation MarkLocationViewController
-@synthesize imageMarkLocation,locationManager;
+@synthesize imageMarkLocation,locationManager,backgroundView;
 bool isDisplayedTagandLocation = NO;
 
 -(NSMutableArray*)tagLocations
@@ -48,6 +48,23 @@ bool isDisplayedTagandLocation = NO;
     self.btnTag.hidden = YES;
 
     [self startLocation];
+    
+    self.backgroundView = [[UIView alloc] init];
+    self.backgroundView.frame = CGRectMake(0, 64,320,504);
+    self.backgroundView.backgroundColor = [UIColor colorWithRed:(40/255.0f) green:(40/255.0f) blue:(40/255.0f) alpha:1.0f];
+    self.backgroundView.alpha = 0.4;
+    [self.view addSubview:self.backgroundView];
+    
+    self.backgroundView.hidden = YES;
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.backgroundView addGestureRecognizer:singleFingerTap];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+        [self HideTagLocation];
 }
 
 -(void)imageMarkLocationClicked
@@ -70,13 +87,22 @@ bool isDisplayedTagandLocation = NO;
         } completion:nil];
         
         isDisplayedTagandLocation = YES;
-    }else
-    {
-        self.btnLocation.hidden = YES;
-        self.btnTag.hidden = YES;
         
-        isDisplayedTagandLocation = NO;
+        self.backgroundView.hidden = NO;
+        
+        self.imageMarkLocation.alpha = 0.4;
+    }else {
+        [self HideTagLocation];
     }
+}
+
+-(void)HideTagLocation
+{
+    self.btnLocation.hidden = YES;
+    self.btnTag.hidden = YES;
+    self.backgroundView.hidden = YES;
+    isDisplayedTagandLocation = NO;
+    self.imageMarkLocation.alpha = 1;
 }
 
 - (IBAction)addNewTag:(id)sender {
