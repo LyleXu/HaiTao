@@ -12,7 +12,7 @@
 
 
 @implementation MarkLocationViewController
-@synthesize imageMarkLocation;
+@synthesize imageMarkLocation,locationManager;
 bool isDisplayedTagandLocation = NO;
 
 -(NSMutableArray*)tagLocations
@@ -46,6 +46,8 @@ bool isDisplayedTagandLocation = NO;
     
     self.btnLocation.hidden = YES;
     self.btnTag.hidden = YES;
+
+    [self startLocation];
 }
 
 -(void)imageMarkLocationClicked
@@ -136,5 +138,42 @@ bool isDisplayedTagandLocation = NO;
         NSLog(@"You only can have 5 tags");
     }
 }
+
+
+//开始定位
+-(void)startLocation{
+
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 10.0f;
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)//6
+        [self.locationManager requestWhenInUseAuthorization];
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+//定位代理经纬度回调
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    
+    [locationManager stopUpdatingLocation];
+    NSLog(@"location ok");
+    
+    NSLog(@"%@",[NSString stringWithFormat:@"经度:%3.5f\n纬度:%3.5f",newLocation.coordinate.latitude,newLocation.coordinate.longitude]);
+    
+    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        for (CLPlacemark * placemark in placemarks) {
+            
+            NSDictionary *test = [placemark addressDictionary];
+            //  Country(国家)  State(城市)  SubLocality(区)
+            NSLog(@"%@", [test objectForKey:@"State"]);
+        }
+    }];
+    
+}
+
 
 @end

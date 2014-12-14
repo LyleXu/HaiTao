@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PassValueDelegate.h"
-@interface MarkLocationViewController : UIViewController<PassValueDelegate>
+#import <CoreLocation/CoreLocation.h>
+@interface MarkLocationViewController : UIViewController<PassValueDelegate,CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageMarkLocation;
 @property (weak, nonatomic) IBOutlet UIButton *btnTag;
@@ -17,4 +18,6 @@
 @property (strong, nonatomic) UIImage* imgCaptured;
 
 @property (strong, nonatomic) NSMutableArray* tagLocations;
+
+@property (strong, nonatomic) CLLocationManager* locationManager;
 @end

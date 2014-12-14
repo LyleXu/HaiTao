@@ -10,6 +10,7 @@
 		6D2371E31A3C01CD008B8B44 /* icon_brand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */; };
 		6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */; };
 		6D2371E81A3C7D6C008B8B44 /* big_biaoqian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */; };
+		6D23721C1A3C89F4008B8B44 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D23721B1A3C89F4008B8B44 /* CoreLocation.framework */; };
 		6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A34951A1A362800E6615E /* ShopCartViewController.m */; };
 		6D2A349C1A1AB57300E6615E /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349B1A1AB57300E6615E /* TagViewController.m */; };
 		6D2A349F1A1AB66100E6615E /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349E1A1AB66100E6615E /* LocationViewController.m */; };
@@ -222,6 +223,7 @@
 		6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_brand@2x.png"; path = "resources/icon_brand@2x.png"; sourceTree = "<group>"; };
 		6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_Location@2x.png"; path = "resources/icon_Location@2x.png"; sourceTree = "<group>"; };
 		6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "big_biaoqian@2x.png"; path = "resources/big_biaoqian@2x.png"; sourceTree = "<group>"; };
+		6D23721B1A3C89F4008B8B44 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6D2A34941A1A362800E6615E /* ShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartViewController.h; sourceTree = "<group>"; };
 		6D2A34951A1A362800E6615E /* ShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartViewController.m; sourceTree = "<group>"; };
 		6D2A349A1A1AB57300E6615E /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D23721C1A3C89F4008B8B44 /* CoreLocation.framework in Frameworks */,
 				6DCA1B6E1A1258E2000E4E7E /* Foundation.framework in Frameworks */,
 				6D77E0031A159E6300BDCE9E /* AVFoundation.framework in Frameworks */,
 				6D77E0011A159E5A00BDCE9E /* AudioToolbox.framework in Frameworks */,
@@ -1142,6 +1145,7 @@
 		6DCA1B701A137F67000E4E7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D23721B1A3C89F4008B8B44 /* CoreLocation.framework */,
 				6D77E0021A159E6300BDCE9E /* AVFoundation.framework */,
 				6D77E0001A159E5A00BDCE9E /* AudioToolbox.framework */,
 				6DCA1B811A1380D0000E4E7E /* TencentOpenApi_IOS_Bundle.bundle */,
