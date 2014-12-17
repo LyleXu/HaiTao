@@ -33,10 +33,6 @@
     // 设置圆角半径
     self.btnFocus.layer.masksToBounds = YES;
     self.btnFocus.layer.cornerRadius = 4;
-    
-    // segment control
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:230 Titles:@[@"最新商品",@"最IN商品"] delegate:self] ;
-    [self.view addSubview:segmentedControl];
 
     // remove the segment control in the navigation bar
 //    for (UIView *views in self.navigationController.navigationBar.subviews) {
@@ -79,6 +75,15 @@
 //        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
 //    }
 
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // segment control
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:230 Titles:@[@"最新商品",@"最IN商品"] delegate:self] ;
+    [self.view addSubview:segmentedControl];
 }
 
 - (void) refreshTable

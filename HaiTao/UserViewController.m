@@ -11,7 +11,7 @@
 #import "PSCollectionViewCell.h"
 #import "CellView.h"
 #import "UIImageView+WebCache.h"
-@interface UserViewController()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate,HYSegmentedControlDelegate>
+@interface UserViewController()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate>
 
 @end
 
@@ -30,9 +30,6 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:230 Titles:@[@"交易",@"购物车"] delegate:self] ;
-    [self.view addSubview:segmentedControl];
     
     // 设置圆角半径
     self.btnModifyUserInfo.layer.masksToBounds = YES;
@@ -68,6 +65,14 @@
 //        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
 //    }
 
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:240 Titles:@[@"交易",@"购物车"] delegate:self] ;
+    [self.view addSubview:segmentedControl];
 }
 
 - (void) refreshTable

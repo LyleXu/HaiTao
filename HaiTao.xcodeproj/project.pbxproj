@@ -11,6 +11,7 @@
 		6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */; };
 		6D2371E81A3C7D6C008B8B44 /* big_biaoqian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */; };
 		6D23721C1A3C89F4008B8B44 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D23721B1A3C89F4008B8B44 /* CoreLocation.framework */; };
+		6D23721F1A4084F2008B8B44 /* HYSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D23721E1A4084F2008B8B44 /* HYSegmentedControl.m */; };
 		6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A34951A1A362800E6615E /* ShopCartViewController.m */; };
 		6D2A349C1A1AB57300E6615E /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349B1A1AB57300E6615E /* TagViewController.m */; };
 		6D2A349F1A1AB66100E6615E /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349E1A1AB66100E6615E /* LocationViewController.m */; };
@@ -175,7 +176,6 @@
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
-		6DCA1B131A0E0455000E4E7E /* HYSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B121A0E0455000E4E7E /* HYSegmentedControl.m */; };
 		6DCA1B181A0E5CD2000E4E7E /* CountryPhoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B171A0E5CD2000E4E7E /* CountryPhoneTableViewController.m */; };
 		6DCA1B2D1A1100FB000E4E7E /* Back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA1B1D1A1100FB000E4E7E /* Back_button@2x.png */; };
 		6DCA1B2E1A1100FB000E4E7E /* camera-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA1B1E1A1100FB000E4E7E /* camera-icon@2x.png */; };
@@ -224,6 +224,8 @@
 		6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_Location@2x.png"; path = "resources/icon_Location@2x.png"; sourceTree = "<group>"; };
 		6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "big_biaoqian@2x.png"; path = "resources/big_biaoqian@2x.png"; sourceTree = "<group>"; };
 		6D23721B1A3C89F4008B8B44 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D23721D1A4084F2008B8B44 /* HYSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSegmentedControl.h; sourceTree = "<group>"; };
+		6D23721E1A4084F2008B8B44 /* HYSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSegmentedControl.m; sourceTree = "<group>"; };
 		6D2A34941A1A362800E6615E /* ShopCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartViewController.h; sourceTree = "<group>"; };
 		6D2A34951A1A362800E6615E /* ShopCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartViewController.m; sourceTree = "<group>"; };
 		6D2A349A1A1AB57300E6615E /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
@@ -481,8 +483,6 @@
 		6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		6DCA1B001A0D36DD000E4E7E /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		6DCA1B011A0D36DD000E4E7E /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		6DCA1B111A0E0455000E4E7E /* HYSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSegmentedControl.h; sourceTree = "<group>"; };
-		6DCA1B121A0E0455000E4E7E /* HYSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSegmentedControl.m; sourceTree = "<group>"; };
 		6DCA1B161A0E5CD1000E4E7E /* CountryPhoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryPhoneTableViewController.h; sourceTree = "<group>"; };
 		6DCA1B171A0E5CD2000E4E7E /* CountryPhoneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryPhoneTableViewController.m; sourceTree = "<group>"; };
 		6DCA1B191A0F3375000E4E7E /* PassValueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassValueDelegate.h; sourceTree = "<group>"; };
@@ -1112,8 +1112,8 @@
 		6DCA1B101A0E040F000E4E7E /* HYSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				6DCA1B111A0E0455000E4E7E /* HYSegmentedControl.h */,
-				6DCA1B121A0E0455000E4E7E /* HYSegmentedControl.m */,
+				6D23721D1A4084F2008B8B44 /* HYSegmentedControl.h */,
+				6D23721E1A4084F2008B8B44 /* HYSegmentedControl.m */,
 			);
 			name = HYSegmentedControl;
 			sourceTree = "<group>";
@@ -1376,6 +1376,7 @@
 				6D6164B81A15F01600DF1B14 /* UIImage+Alpha.m in Sources */,
 				6D8812481A18FDFA00C863C2 /* SDImageCache.m in Sources */,
 				6D88126C1A18FE2200C863C2 /* PullPsCollectionView.m in Sources */,
+				6D23721F1A4084F2008B8B44 /* HYSegmentedControl.m in Sources */,
 				6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */,
 				6D86E2661A2F331900E991E9 /* NewArrivalCell.m in Sources */,
 				6D98A3151A218CD200B23B46 /* MainViewController.m in Sources */,
@@ -1437,7 +1438,6 @@
 				6D98A2EC1A20CC3000B23B46 /* DataLayer.m in Sources */,
 				6D61649A1A15DAD800DF1B14 /* SettingsViewController.m in Sources */,
 				6D2A349F1A1AB66100E6615E /* LocationViewController.m in Sources */,
-				6DCA1B131A0E0455000E4E7E /* HYSegmentedControl.m in Sources */,
 				6D8812691A18FE2200C863C2 /* EGORefreshTableHeaderView.m in Sources */,
 				6D88126D1A18FE2200C863C2 /* PullTableView.m in Sources */,
 				6D98A30B1A20CDD300B23B46 /* SBJsonStreamWriterAccumulator.m in Sources */,

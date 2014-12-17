@@ -16,7 +16,7 @@
 #import "BuyerShowCell.h"
 
 int CurrentSelectedSegmentedControlIndex = 0;
-@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,HYSegmentedControlDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate>
+@interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate,HYSegmentedControlDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @property (strong, nonatomic) NSArray* actionSheetItems;
 @property (strong, nonatomic) NSArray* sellerGoodsItems;
@@ -230,7 +230,6 @@ int CurrentSelectedSegmentedControlIndex = 0;
     [self.mainTableView reloadData];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -248,14 +247,7 @@ int CurrentSelectedSegmentedControlIndex = 0;
     [btn addTarget:self action:@selector(onBtnTouch) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     [self.navigationItem setRightBarButtonItem:barButtonItem];
-    
-    // segment control
-    UIView* segmentContainer = [[UIView alloc] initWithFrame:CGRectMake(40, 24, 260, 20)];
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:240 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self] ;
-    //[self.navigationController.navigationBar addSubview:segmentedControl];
-    [segmentContainer addSubview:self.segmentedControl];
-     [self.navigationController.navigationBar addSubview:segmentContainer];
-    
+
     if (self.toolbarItems.count == 0) {
         [self.navigationController setToolbarHidden:YES animated:animated];
     }
@@ -307,6 +299,11 @@ int CurrentSelectedSegmentedControlIndex = 0;
     
     // set on viewDidAppear, if using tabBarController
     [_fullScreenDelegate layoutTabBarController];
+    
+    UIView* container = [[UIView alloc] initWithFrame:CGRectMake(50, 24, 220, 20)];
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:220 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self];
+    [container addSubview:self.segmentedControl];
+    [self.navigationController.navigationBar addSubview:container];
 }
 
 #pragma mark -
