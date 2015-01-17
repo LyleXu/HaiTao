@@ -1,4 +1,6 @@
 #import "LoginViewController.h"
+#import "DataLayer.h"
+#import "SBJson/SBJson.h"
 #define kLeftMargin				20.0
 #define kRightMargin			20.0
 
@@ -250,7 +252,15 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (IBAction)Login:(id)sender {
-
+    NSString* returnString = @"{\"s\":\"1\"}";
+    NSMutableDictionary* result1 = [returnString JSONValue];
+    NSLog(@"%@",returnString);
+    int test = [result1[@"s"] intValue];
+    
+    
+    BOOL result = [DataLayer Login:self.txtUser.text pwd:self.txtPass.text];
+    MainTabBarController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+    [self presentViewController:ctl animated:YES completion:nil];
 }
 
 - (IBAction)returnLoginPage:(id)sender {

@@ -7,7 +7,7 @@
 //
 
 #import "CameraViewController.h"
-
+#import "DataLayer.h"
 @implementation CameraViewController
 
 -(void)showCamera
@@ -50,11 +50,14 @@
 }
 - (void)imageFitlerProcessDone:(UIImage *)image //图片处理完
 {
-    //self.imgTest.image = image;
-    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
-    mlController.imgCaptured = [image copy];
-    [self.navigationController pushViewController:mlController animated:YES];
-    //[self presentViewController:mlController animated:YES completion:nil];
+//
+//    //self.imgTest.image = image;
+//    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
+//    mlController.imgCaptured = [image copy];
+//    [self.navigationController pushViewController:mlController animated:YES];
+//    //[self presentViewController:mlController animated:YES completion:nil];
 }
+
+
 
 @end

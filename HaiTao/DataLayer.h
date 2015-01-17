@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DataLayer : NSObject
-+(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
+
++(int)Login:(NSString*)phone pwd:(NSString*)password;
++(int)uploadImage:(NSString*)serverURL img:(UIImage*)image;
++(NSMutableDictionary *)FetchDataFromWebByGet:(NSString* )url;
 
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;

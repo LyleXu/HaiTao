@@ -17,6 +17,7 @@
 		6D2A349F1A1AB66100E6615E /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A349E1A1AB66100E6615E /* LocationViewController.m */; };
 		6D2A34A21A1AB7D000E6615E /* ReleaseGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */; };
 		6D2A34C41A1B403600E6615E /* GoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */; };
+		6D2E09BA1A68DC4400E71B68 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E09B91A68DC4400E71B68 /* RegisterViewController.m */; };
 		6D5F172C1A2B6208003B18CB /* share_Qzone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D5F172B1A2B6208003B18CB /* share_Qzone@2x.png */; };
 		6D61649A1A15DAD800DF1B14 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6164991A15DAD800DF1B14 /* SettingsViewController.m */; };
 		6D6164A91A15EFF300DF1B14 /* CustomImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6164A21A15EFF300DF1B14 /* CustomImagePickerController.m */; };
@@ -236,6 +237,9 @@
 		6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseGoodsViewController.m; sourceTree = "<group>"; };
 		6D2A34C21A1B403600E6615E /* GoodsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailViewController.h; sourceTree = "<group>"; };
 		6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailViewController.m; sourceTree = "<group>"; };
+		6D2E09B81A68DC4400E71B68 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		6D2E09B91A68DC4400E71B68 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		6D2E09BB1A69475400E71B68 /* Constraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constraint.h; sourceTree = "<group>"; };
 		6D5F172B1A2B6208003B18CB /* share_Qzone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "share_Qzone@2x.png"; path = "resources/share_Qzone@2x.png"; sourceTree = "<group>"; };
 		6D6164981A15DAD800DF1B14 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		6D6164991A15DAD800DF1B14 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -690,6 +694,7 @@
 				6D6164E31A164DE900DF1B14 /* MainTabBarController.m */,
 				6D98A3131A218CD200B23B46 /* MainViewController.h */,
 				6D98A3141A218CD200B23B46 /* MainViewController.m */,
+				6D2E09BB1A69475400E71B68 /* Constraint.h */,
 			);
 			path = HaiTao;
 			sourceTree = "<group>";
@@ -1127,6 +1132,8 @@
 				6D6A42E71A05BE6C0005B35F /* LoginViewController.h */,
 				6D6A42E81A05BE6C0005B35F /* LoginViewController.m */,
 				6D98A3161A2196F800B23B46 /* CallDelegate.h */,
+				6D2E09B81A68DC4400E71B68 /* RegisterViewController.h */,
+				6D2E09B91A68DC4400E71B68 /* RegisterViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1366,6 +1373,7 @@
 				6D8812781A18FE8100C863C2 /* PSCollectionViewCell.m in Sources */,
 				6D77E0311A15BB4000BDCE9E /* UserInfoTableViewController.m in Sources */,
 				6D88126B1A18FE2200C863C2 /* MessageInterceptor.m in Sources */,
+				6D2E09BA1A68DC4400E71B68 /* RegisterViewController.m in Sources */,
 				6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */,
 				6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */,
 				6D6164DE1A15F08A00DF1B14 /* CameraViewController.m in Sources */,

@@ -8,9 +8,9 @@
 
 #import "DataLayer.h"
 #import "SBJson/SBJson.h"
+#import "Constraint.h"
 #define ServerHost @"Localhost"
 #define ServiceAddress @""
-
 
 @implementation DataLayer
 
@@ -51,7 +51,7 @@
     return jsonString;
 }
 
-+(NSMutableString*)FetchDataFromWebByGet:(NSString *)url
++(NSMutableDictionary*)FetchDataFromWebByGet:(NSString *)url
 {
     NSError *theError = nil;
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -59,8 +59,65 @@
     [request setHTTPMethod:@"GET"];
     NSURLResponse *theResponse =[[NSURLResponse alloc]init];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&theError];
-    NSMutableString *theString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
-    return theString;
+    NSMutableString *jsonString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
+    
+    NSMutableDictionary *jsonDic = [jsonString  JSONValue];
+    
+    return jsonDic;
+}
+
++(int)uploadImage:(NSString*)serverURL img:(UIImage*)image
+{
+    /*
+     turning the image into a NSData object
+     getting the image back out of the UIImageView
+     setting the quality to 90
+     */
+    
+    NSData *imageData = UIImageJPEGRepresentation(image, 90);    
+    // setting up the request object now
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:serverURL]];
+    [request setHTTPMethod:@"POST"];
+    
+    /*
+     add some header info now
+     we always need a boundary when we post a file
+     also we need to set the content type
+     
+     You might want to generate a random boundary.. this is just the same
+     as my output from wireshark on a valid html post
+     */
+    NSString *boundary = @"---------------------------14737809831466499882746641449";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    /*
+     now lets create the body of the post
+     */
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition: form-data; name=\"Filedata\"; filename=\"test.jpeg\";\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[NSData dataWithData:imageData]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    // setting the body of the post to the reqeust
+    [request setHTTPBody:body];
+    
+    // now lets make the connection to the web
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",returnString);
+    NSMutableDictionary* result = [returnString JSONValue];
+    return [result[@"s"] intValue];
+}
+
++(int)Login:(NSString*)phone pwd:(NSString*)password
+{
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@&n=%@&p=%@",SERVER_INTERFACE_PREFIX,phone,password];
+    
+    NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
+    return [[result objectForKey:@"s"] intValue];
 }
 
 // Main page Seller goods info
