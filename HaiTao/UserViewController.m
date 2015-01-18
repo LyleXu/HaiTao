@@ -11,6 +11,8 @@
 #import "PSCollectionViewCell.h"
 #import "CellView.h"
 #import "UIImageView+WebCache.h"
+#import "Utility.h"
+#import "DataLayer.h"
 @interface UserViewController()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate>
 
 @end
@@ -35,6 +37,16 @@
     self.btnModifyUserInfo.layer.masksToBounds = YES;
     self.btnModifyUserInfo.layer.cornerRadius = 4;
     
+    // username
+    NSMutableDictionary* userInfo = [DataLayer GetUserInfo];
+    int returnCode = [userInfo[@"s"] intValue];
+    if(returnCode == 1)
+    {
+        self.navigationItem.title = userInfo[@"i"][@"nn"];
+    }else
+    {
+        
+    }
 //    // collection view
 //    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
 //    [self.view addSubview:collectionView];

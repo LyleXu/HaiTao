@@ -1,6 +1,8 @@
 #import "LoginViewController.h"
 #import "DataLayer.h"
 #import "SBJson/SBJson.h"
+#import "Utility.h"
+#import "Constraint.h"
 #define kLeftMargin				20.0
 #define kRightMargin			20.0
 
@@ -252,15 +254,16 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (IBAction)Login:(id)sender {
-    NSString* returnString = @"{\"s\":\"1\"}";
-    NSMutableDictionary* result1 = [returnString JSONValue];
-    NSLog(@"%@",returnString);
-    int test = [result1[@"s"] intValue];
-    
-    
-    BOOL result = [DataLayer Login:self.txtUser.text pwd:self.txtPass.text];
-    MainTabBarController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
-    [self presentViewController:ctl animated:YES completion:nil];
+    NSString* errorCode = [DataLayer Login:self.txtUser.text pwd:self.txtPass.text];
+    if([errorCode isEqualToString:SUCCESS])
+    {
+        MainTabBarController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+        [self presentViewController:ctl animated:YES completion:nil];
+    }else
+    {
+        // show the error message
+        [Utility showErrorMessage:errorCode];
+    }
 }
 
 - (IBAction)returnLoginPage:(id)sender {

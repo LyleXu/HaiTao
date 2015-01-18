@@ -9,6 +9,7 @@
 #import "DataLayer.h"
 #import "SBJson/SBJson.h"
 #import "Constraint.h"
+#import "Utility.h"
 #define ServerHost @"Localhost"
 #define ServiceAddress @""
 
@@ -62,6 +63,12 @@
     NSMutableString *jsonString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
     
     NSMutableDictionary *jsonDic = [jsonString  JSONValue];
+    if(!jsonDic)
+    {
+        // todo: should be removed by the server fix the login issue
+        //return value is {"s":"1","u":1563,	k":"C642125D688E38AEAA805FAA1D8E8253","ut":"0"}
+         jsonDic = [[jsonString stringByReplacingOccurrencesOfString:@"k\":" withString:@"\"tk\":"] JSONValue];
+    }
     
     return jsonDic;
 }
@@ -112,12 +119,30 @@
     return [result[@"s"] intValue];
 }
 
-+(int)Login:(NSString*)phone pwd:(NSString*)password
++(NSString*)Login:(NSString*)phone pwd:(NSString*)password
 {
-    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@&n=%@&p=%@",SERVER_INTERFACE_PREFIX,phone,password];
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/u/l?jc=&n=%@&p=%@",SERVER_HOSTURL,phone,password];
     
     NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
-    return [[result objectForKey:@"s"] intValue];
+    
+    NSString* returnCode = result[@"s"];
+    if([returnCode isEqualToString:SUCCESS])
+    {
+        NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+        [mydefault setObject:result[@"u"] forKey:CURRENT_USERID];
+        [mydefault setObject:result[@"tk"] forKey:CURRENT_TOKEN];
+        [mydefault setObject:result[@"ut"] forKey:CURRENT_USERTYPE];
+        [mydefault synchronize];
+    }
+    
+    return returnCode;
+}
+
++(NSMutableDictionary*)GetUserInfo
+{
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/u/i?jc=&u=%@&tk=%@",SERVER_HOSTURL, [Utility getUserId],[Utility getUserToken]];
+    NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
+    return result;
 }
 
 // Main page Seller goods info

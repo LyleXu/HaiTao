@@ -10,5 +10,12 @@
 #import "UIKit/UIImageView.h"
 
 @interface Utility : NSObject
++(NSString*)getUserId;
++(NSString*)getUserType;
++(NSString*)getUserToken;
 
++(NSString*)getErrorMessage:(NSString*)errorCode;
++(NSMutableDictionary*) allErrorMessages;
+
++(void)showErrorMessage:(NSString*)errorCode;
 @end

@@ -739,7 +739,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ulR-Eu-vxn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cjj-1u-E40">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1535,7 +1535,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gZU-mK-5RM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wBH-ds-qBM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SellerAvatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="gdR-dy-hA0">
@@ -2053,7 +2053,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTx-6P-BFE">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="79CA01F2-7750-4615-8D28-7B006DFF7A8C">
+                                                    <state key="normal" title="Button" image="5F5F18AC-6FB6-4332-8D64-425556D8E7ED">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -2246,7 +2246,7 @@
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KO-ju-rGL">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Button" image="0E847EA8-33DF-461F-9563-C1B41C7B3D58">
+                                                    <state key="normal" title="Button" image="317766DB-803A-4E28-8717-F2EA5E2AAAFD">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -3521,15 +3521,15 @@
                                 <exclude reference="MF2-kP-mBO"/>
                                 <exclude reference="Y6N-Sr-LcW"/>
                                 <exclude reference="sid-MV-5sm"/>
-                                <exclude reference="YDl-QB-KFo"/>
                                 <exclude reference="11n-Ag-X0R"/>
+                                <exclude reference="YDl-QB-KFo"/>
                                 <exclude reference="eUN-FJ-Qf2"/>
-                                <exclude reference="h2X-ho-6ai"/>
                                 <exclude reference="CZ1-Ij-Yqu"/>
-                                <exclude reference="j3Y-2x-tCm"/>
+                                <exclude reference="h2X-ho-6ai"/>
                                 <exclude reference="D87-3D-On5"/>
-                                <exclude reference="wAS-xl-aW6"/>
                                 <exclude reference="bKx-SM-SlW"/>
+                                <exclude reference="j3Y-2x-tCm"/>
+                                <exclude reference="wAS-xl-aW6"/>
                                 <exclude reference="Zo9-Jl-h63"/>
                                 <exclude reference="485-40-j1l"/>
                                 <exclude reference="AoJ-Sr-src"/>
@@ -3547,15 +3547,15 @@
                                 <include reference="MF2-kP-mBO"/>
                                 <include reference="Y6N-Sr-LcW"/>
                                 <include reference="sid-MV-5sm"/>
-                                <include reference="YDl-QB-KFo"/>
                                 <include reference="11n-Ag-X0R"/>
+                                <include reference="YDl-QB-KFo"/>
                                 <include reference="eUN-FJ-Qf2"/>
-                                <include reference="h2X-ho-6ai"/>
                                 <include reference="CZ1-Ij-Yqu"/>
-                                <include reference="j3Y-2x-tCm"/>
+                                <include reference="h2X-ho-6ai"/>
                                 <include reference="D87-3D-On5"/>
-                                <include reference="wAS-xl-aW6"/>
                                 <include reference="bKx-SM-SlW"/>
+                                <include reference="j3Y-2x-tCm"/>
+                                <include reference="wAS-xl-aW6"/>
                                 <include reference="Zo9-Jl-h63"/>
                                 <include reference="485-40-j1l"/>
                                 <include reference="AoJ-Sr-src"/>
@@ -3575,7 +3575,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0E847EA8-33DF-461F-9563-C1B41C7B3D58" width="98" height="98">
+        <image name="317766DB-803A-4E28-8717-F2EA5E2AAAFD" width="98" height="98">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4266,7 +4266,7 @@ b594n4ufj5+in62ftp+7n8Ofxp/Ln9qf3p/ln+2f+p//oAGgA6AIoBCgE6AYoCCgI6A1oDigPQAAAAAA
 AAIBAAAAAAAAAEIAAAAAAAAAAAAAAAAAAKA/A
 </mutableData>
         </image>
-        <image name="79CA01F2-7750-4615-8D28-7B006DFF7A8C" width="34" height="34">
+        <image name="5F5F18AC-6FB6-4332-8D64-425556D8E7ED" width="34" height="34">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

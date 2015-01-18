@@ -10,9 +10,13 @@
 
 @interface DataLayer : NSObject
 
-+(int)Login:(NSString*)phone pwd:(NSString*)password;
+
 +(int)uploadImage:(NSString*)serverURL img:(UIImage*)image;
 +(NSMutableDictionary *)FetchDataFromWebByGet:(NSString* )url;
+
+
++(NSString*)Login:(NSString*)phone pwd:(NSString*)password;
++(NSMutableDictionary*)GetUserInfo;
 
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;
