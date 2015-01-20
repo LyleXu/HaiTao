@@ -18,4 +18,6 @@
 +(NSMutableDictionary*) allErrorMessages;
 
 +(void)showErrorMessage:(NSString*)errorCode;
++(void)showMessage:(NSString *)title message:(NSString*)msg;
++(void)showConfirmMessage:(NSString*)title message:(NSString*) msg delegate:(id)dlg;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Constraint.h"
 @interface DataLayer : NSObject
 
 
@@ -17,6 +17,8 @@
 
 +(NSString*)Login:(NSString*)phone pwd:(NSString*)password;
 +(NSMutableDictionary*)GetUserInfo;
++(NSMutableDictionary*)ForgetPassword:(NSString*)phone;
++(NSMutableDictionary*)SetNewPassword:(NSString*)uid newPassword:(NSString*)pwd verificationCode:(NSString*)vc;
 
 +(NSArray*)GetSellerGoodsItems;
 +(NSArray*)GetBuyerGoodsItems;

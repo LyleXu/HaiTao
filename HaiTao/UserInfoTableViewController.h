@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserInfoTableViewController : UITableViewController
+@interface UserInfoTableViewController : UITableViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UITableViewDataSource,UITabBarControllerDelegate>
 
 @end

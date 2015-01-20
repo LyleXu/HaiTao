@@ -197,19 +197,18 @@
     //        }
     
     self.items = [[NSMutableArray alloc] initWithObjects:
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test0",@"hash",@".png",@"ext",@"194",@"width",@"151",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test1",@"hash",@".png",@"ext",@"205",@"width",@"154",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test2",@"hash",@".png",@"ext",@"193",@"width",@"157",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test3",@"hash",@".png",@"ext",@"225",@"width",@"157",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test4",@"hash",@".png",@"ext",@"168",@"width",@"157",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test5",@"hash",@".png",@"ext",@"116",@"width",@"148",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test6",@"hash",@".png",@"ext",@"132",@"width",@"154",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test7",@"hash",@".png",@"ext",@"224",@"width",@"150",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test8",@"hash",@".png",@"ext",@"211",@"width",@"142",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test9",@"hash",@".png",@"ext",@"166",@"width",@"154",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test10",@"hash",@".png",@"ext",@"213",@"width",@"153",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test11",@"hash",@".png",@"ext",@"152",@"width",@"154",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test12",@"hash",@".png",@"ext",@"234",@"width",@"155",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test0",@"hash",@".png",@"ext",@"212",@"width",@"158",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test1",@"hash",@".png",@"ext",@"202",@"width",@"178",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test2",@"hash",@".png",@"ext",@"216",@"width",@"174",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test3",@"hash",@".png",@"ext",@"198",@"width",@"154",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test4",@"hash",@".png",@"ext",@"231",@"width",@"147",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test5",@"hash",@".png",@"ext",@"183",@"width",@"169",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test6",@"hash",@".png",@"ext",@"172",@"width",@"179",@"height" , nil ],
+                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test7",@"hash",@".png",@"ext",@"165",@"width",@"170",@"height" , nil ],
+                  //                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test8",@"hash",@".png",@"ext",@"211",@"width",@"142",@"height" , nil ],
+                  //                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test9",@"hash",@".png",@"ext",@"166",@"width",@"154",@"height" , nil ],
+                  //                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test10",@"hash",@".png",@"ext",@"213",@"width",@"153",@"height" , nil ],
+                  //                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test11",@"hash",@".png",@"ext",@"152",@"width",@"154",@"height" , nil ],
                   nil];
     //}];
 }

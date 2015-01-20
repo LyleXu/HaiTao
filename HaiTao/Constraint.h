@@ -18,4 +18,11 @@
 
 #define SUCCESS @"1"
 
+
+#define kLeftMargin				20.0
+#define kRightMargin			20.0
+#define kTextFieldWidth			160.0
+#define kTextFieldHeight		25
+#define kViewTag				100
+
 #endif

@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 #import "DataLayer.h"
+#import "Utility.h"
 @implementation CameraViewController
 
 -(void)showCamera
@@ -21,13 +22,6 @@
     }
     [picker setCustomDelegate:self];
     [self presentViewController:picker animated:YES completion:nil];
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    
-    //[self showCamera];
 }
 
 -(void)viewDidLoad
@@ -50,12 +44,15 @@
 }
 - (void)imageFitlerProcessDone:(UIImage *)image //图片处理完
 {
+//    NSString* url = [NSString stringWithFormat:@"http://114.215.83.218/d/v1/u/u/p?jc=&tk=%@&u=%@",[Utility getUserToken],[Utility getUserId]];
+//    
+//    [DataLayer uploadImage:url img:image];
 //
-//    //self.imgTest.image = image;
-//    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
-//    mlController.imgCaptured = [image copy];
-//    [self.navigationController pushViewController:mlController animated:YES];
-//    //[self presentViewController:mlController animated:YES completion:nil];
+    //self.imgTest.image = image;
+    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
+    mlController.imgCaptured = [image copy];
+    [self.navigationController pushViewController:mlController animated:YES];
+    //[self presentViewController:mlController animated:YES completion:nil];
 }
 
 

@@ -8,7 +8,6 @@
 
 #import "DataLayer.h"
 #import "SBJson/SBJson.h"
-#import "Constraint.h"
 #import "Utility.h"
 #define ServerHost @"Localhost"
 #define ServiceAddress @""
@@ -63,12 +62,45 @@
     NSMutableString *jsonString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
     
     NSMutableDictionary *jsonDic = [jsonString  JSONValue];
-    if(!jsonDic)
-    {
-        // todo: should be removed by the server fix the login issue
-        //return value is {"s":"1","u":1563,	k":"C642125D688E38AEAA805FAA1D8E8253","ut":"0"}
-         jsonDic = [[jsonString stringByReplacingOccurrencesOfString:@"k\":" withString:@"\"tk\":"] JSONValue];
-    }
+//    if(!jsonDic)
+//    {
+//        // todo: should be removed by the server fix the login issue
+//        //return value is {"s":"1","u":1563,	k":"C642125D688E38AEAA805FAA1D8E8253","ut":"0"}
+//        NSString* temp = [jsonString stringByReplacingOccurrencesOfString:@"k\":" withString:@"\"tk\":"];
+//        
+//        jsonDic = [temp JSONValue];
+//    }else
+//    {
+//        //NSString* temp1 = @"{\"s\":\"1\",\"u\":1563,\"code\":879631}";
+//        NSString* temp = [jsonString substringFromIndex:1];
+//        temp = [temp substringToIndex:[temp length]-1];
+//        NSArray* array = [temp componentsSeparatedByString:@","];
+//        NSString* finalString = nil;
+//        for (NSString* item in array) {
+//            NSArray* temp2 = [item componentsSeparatedByString:@":"];
+//            
+//            if([temp2[1] containsString:@"\""] || [temp2[1] containsString:@"{"])
+//            {
+//                if(finalString)
+//                    finalString = [NSString  stringWithFormat:@"%@%@,",finalString,item];
+//                else
+//                    finalString = [NSString  stringWithFormat:@"%@,",item];
+//            }else
+//            {
+//                if(finalString)
+//                    finalString = [NSString stringWithFormat:@"%@%@:\"%@\",",finalString,temp2[0],temp2[1]];
+//                else
+//                    finalString = [NSString stringWithFormat:@"%@:\"%@\",",temp2[0],temp2[1]];
+//            }
+//        }
+//        finalString = [finalString substringToIndex:[finalString length]-1];
+//        finalString = [NSString stringWithFormat:@"{%@}",finalString];
+//        jsonDic = [finalString JSONValue];
+   // }
+    
+//    NSString* temp1 = @"{\"s\":\"1\",\"u\":1563,\"code\":879631}";
+//    NSMutableDictionary* testDic = [temp1 JSONValue];
+//    NSLog(@"%d",[[testDic objectForKey:@"u"] intValue]);
     
     return jsonDic;
 }
@@ -104,8 +136,8 @@
      */
     NSMutableData *body = [NSMutableData data];
     [body appendData:[[NSString stringWithFormat:@"--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Disposition: form-data; name=\"Filedata\"; filename=\"test.jpeg\";\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[@"Content-Type: image/jpeg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition: form-data; name=\"Filedata\"; filename=\"test.png\";\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: image/png\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[NSData dataWithData:imageData]];
     [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     // setting the body of the post to the reqeust
@@ -138,9 +170,23 @@
     return returnCode;
 }
 
++(NSMutableDictionary*)ForgetPassword:(NSString*)phone
+{
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/u/sc?jc=&m=%@",SERVER_HOSTURL,phone];
+    
+    return [self FetchDataFromWebByGet:serverURL];
+}
+
 +(NSMutableDictionary*)GetUserInfo
 {
     NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/u/i?jc=&u=%@&tk=%@",SERVER_HOSTURL, [Utility getUserId],[Utility getUserToken]];
+    NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
+    return result;
+}
+
++(NSMutableDictionary*)SetNewPassword:(NSString*)uid newPassword:(NSString*)pwd verificationCode:(NSString*)vc
+{
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/u/up?jc=&u=%@&p=%@&c=%@",SERVER_HOSTURL, uid,pwd,vc];
     NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
     return result;
 }
@@ -194,28 +240,28 @@
     for (int i=0; i<1; i++) {
         NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#潮品", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test0.png",@"test1.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test0_1_2.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#街拍", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test2.png",@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test3_4_5.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#CHANEL", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test7.png",@"test8.png",@"test9.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test6_7_8.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#PRADA", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test10.png",@"test11.png",@"test12.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test9_10_11.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
@@ -230,28 +276,28 @@
     for (int i=0; i<1; i++) {
         NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#街拍", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test2.png",@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test0_1_2.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#CHANEL", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test7.png",@"test8.png",@"test9.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test3_4_5.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#PRADA", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test10.png",@"test11.png",@"test12.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test6_7_8.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#潮品", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test0.png",@"test1.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test9_10_11.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
@@ -267,28 +313,28 @@
         
         NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#CHANEL", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test7.png",@"test8.png",@"test9.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test0_1_2.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#PRADA", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test10.png",@"test11.png",@"test12.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test3_4_5.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
          item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#潮品", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test0.png",@"test1.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test6_7_8.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#街拍", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test2.png",@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test9_10_11.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
@@ -303,28 +349,28 @@
     for (int i=0; i<1; i++) {
        NSDictionary* item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#PRADA", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test10.png",@"test11.png",@"test12.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test0_1_2.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                                @"#潮品", @"name",//tag name
-                               [[NSArray alloc] initWithObjects:@"test0.png",@"test1.png",@"test3.png", nil], @"goodsPics", //Goods pics
+                               [[NSArray alloc] initWithObjects:@"test3_4_5.png", nil], @"goodsPics", //Goods pics
                                nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#街拍", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test2.png",@"test4.png",@"test5.png",@"test6.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test6_7_8.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];
         
         item =  [[NSDictionary alloc] initWithObjectsAndKeys: @"1", @"id",     //tag id
                  @"#CHANEL", @"name",//tag name
-                 [[NSArray alloc] initWithObjects:@"test7.png",@"test8.png",@"test9.png", nil], @"goodsPics", //Goods pics
+                 [[NSArray alloc] initWithObjects:@"test9_10_11.png", nil], @"goodsPics", //Goods pics
                  nil];
         
         [items addObject:item];

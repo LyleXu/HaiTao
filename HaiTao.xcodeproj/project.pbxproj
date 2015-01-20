@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D1FA2A41A6B4932008EF4FB /* ErrorMessage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D1FA2A31A6B4932008EF4FB /* ErrorMessage.strings */; };
+		6D1FA2A71A6B891D008EF4FB /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FA2A61A6B891D008EF4FB /* ResetPasswordViewController.m */; };
+		6D1FA2AA1A6BA210008EF4FB /* SetNewPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1FA2A91A6BA210008EF4FB /* SetNewPasswordViewController.m */; };
 		6D2371E31A3C01CD008B8B44 /* icon_brand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */; };
 		6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */; };
 		6D2371E81A3C7D6C008B8B44 /* big_biaoqian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */; };
@@ -175,6 +177,10 @@
 		6DB71C051A2557D500625612 /* maijia3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71C041A2557D500625612 /* maijia3@2x.png */; };
 		6DB71C081A26002900625612 /* SearchTagUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB71C071A26002900625612 /* SearchTagUserViewController.m */; };
 		6DB71C0A1A26248000625612 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB71C091A26248000625612 /* search@2x.png */; };
+		6DC867A51A6DBC1D009D3CF5 /* test0_1_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC867A11A6DBC1D009D3CF5 /* test0_1_2@2x.png */; };
+		6DC867A61A6DBC1D009D3CF5 /* test3_4_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC867A21A6DBC1D009D3CF5 /* test3_4_5@2x.png */; };
+		6DC867A71A6DBC1D009D3CF5 /* test6_7_8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC867A31A6DBC1D009D3CF5 /* test6_7_8@2x.png */; };
+		6DC867A81A6DBC1D009D3CF5 /* test9_10_11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC867A41A6DBC1D009D3CF5 /* test9_10_11@2x.png */; };
 		6DCA1AFC1A0CCC1A000E4E7E /* MaijiaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */; };
 		6DCA1AFF1A0CCC87000E4E7E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1AFE1A0CCC87000E4E7E /* MainTableViewController.m */; };
 		6DCA1B021A0D36DD000E4E7E /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA1B011A0D36DD000E4E7E /* Utility.m */; };
@@ -223,6 +229,10 @@
 
 /* Begin PBXFileReference section */
 		6D1FA2A31A6B4932008EF4FB /* ErrorMessage.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ErrorMessage.strings; sourceTree = "<group>"; };
+		6D1FA2A51A6B891D008EF4FB /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		6D1FA2A61A6B891D008EF4FB /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		6D1FA2A81A6BA210008EF4FB /* SetNewPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNewPasswordViewController.h; sourceTree = "<group>"; };
+		6D1FA2A91A6BA210008EF4FB /* SetNewPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNewPasswordViewController.m; sourceTree = "<group>"; };
 		6D2371E11A3C01CD008B8B44 /* icon_brand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_brand@2x.png"; path = "resources/icon_brand@2x.png"; sourceTree = "<group>"; };
 		6D2371E21A3C01CD008B8B44 /* icon_Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_Location@2x.png"; path = "resources/icon_Location@2x.png"; sourceTree = "<group>"; };
 		6D2371E71A3C7D6C008B8B44 /* big_biaoqian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "big_biaoqian@2x.png"; path = "resources/big_biaoqian@2x.png"; sourceTree = "<group>"; };
@@ -483,6 +493,10 @@
 		6DB71C061A26002900625612 /* SearchTagUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTagUserViewController.h; sourceTree = "<group>"; };
 		6DB71C071A26002900625612 /* SearchTagUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTagUserViewController.m; sourceTree = "<group>"; };
 		6DB71C091A26248000625612 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "search@2x.png"; path = "resources/search@2x.png"; sourceTree = "<group>"; };
+		6DC867A11A6DBC1D009D3CF5 /* test0_1_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test0_1_2@2x.png"; path = "resources/Test/test0_1_2@2x.png"; sourceTree = "<group>"; };
+		6DC867A21A6DBC1D009D3CF5 /* test3_4_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test3_4_5@2x.png"; path = "resources/Test/test3_4_5@2x.png"; sourceTree = "<group>"; };
+		6DC867A31A6DBC1D009D3CF5 /* test6_7_8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test6_7_8@2x.png"; path = "resources/Test/test6_7_8@2x.png"; sourceTree = "<group>"; };
+		6DC867A41A6DBC1D009D3CF5 /* test9_10_11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "test9_10_11@2x.png"; path = "resources/Test/test9_10_11@2x.png"; sourceTree = "<group>"; };
 		6DCA1AFA1A0CCC1A000E4E7E /* MaijiaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaijiaTableViewCell.h; sourceTree = "<group>"; };
 		6DCA1AFB1A0CCC1A000E4E7E /* MaijiaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaijiaTableViewCell.m; sourceTree = "<group>"; };
 		6DCA1AFD1A0CCC87000E4E7E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -801,6 +815,10 @@
 		6D77DFCE1A1500C100BDCE9E /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				6DC867A11A6DBC1D009D3CF5 /* test0_1_2@2x.png */,
+				6DC867A21A6DBC1D009D3CF5 /* test3_4_5@2x.png */,
+				6DC867A31A6DBC1D009D3CF5 /* test6_7_8@2x.png */,
+				6DC867A41A6DBC1D009D3CF5 /* test9_10_11@2x.png */,
 				6D86E2471A2E1BF300E991E9 /* test0@2x.png */,
 				6D86E2481A2E1BF300E991E9 /* test1@2x.png */,
 				6D86E2491A2E1BF300E991E9 /* test2@2x.png */,
@@ -1137,6 +1155,10 @@
 				6D98A3161A2196F800B23B46 /* CallDelegate.h */,
 				6D2E09B81A68DC4400E71B68 /* RegisterViewController.h */,
 				6D2E09B91A68DC4400E71B68 /* RegisterViewController.m */,
+				6D1FA2A51A6B891D008EF4FB /* ResetPasswordViewController.h */,
+				6D1FA2A61A6B891D008EF4FB /* ResetPasswordViewController.m */,
+				6D1FA2A81A6BA210008EF4FB /* SetNewPasswordViewController.h */,
+				6D1FA2A91A6BA210008EF4FB /* SetNewPasswordViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1266,6 +1288,7 @@
 				6D77DFDD1A150DAF00BDCE9E /* fans1@2x.png in Resources */,
 				6D77E0241A15A37C00BDCE9E /* icon01.jpg in Resources */,
 				6DCA1B361A1100FB000E4E7E /* QQ_logo64X64@2x.png in Resources */,
+				6DC867A61A6DBC1D009D3CF5 /* test3_4_5@2x.png in Resources */,
 				6D77E01C1A15A37C00BDCE9E /* chat_bottom_up_nor.png in Resources */,
 				6D6164E61A16637A00DF1B14 /* goodsImage@2x.png in Resources */,
 				6D86E2601A2E1BF300E991E9 /* test12@2x.png in Resources */,
@@ -1286,6 +1309,7 @@
 				6D77DFC61A14F63A00BDCE9E /* Location@2x.png in Resources */,
 				6D6164D91A15F04900DF1B14 /* Default-568h@2x.png in Resources */,
 				6D77DFDE1A150DAF00BDCE9E /* fans2@2x.png in Resources */,
+				6DC867A51A6DBC1D009D3CF5 /* test0_1_2@2x.png in Resources */,
 				6D77E0161A15A37C00BDCE9E /* chat_bg_default.jpg in Resources */,
 				6DCA1B311A1100FB000E4E7E /* feed@2x.png in Resources */,
 				6D8812591A18FE1000C863C2 /* blueArrow.png in Resources */,
@@ -1327,6 +1351,7 @@
 				6D6164DA1A15F04900DF1B14 /* Default.png in Resources */,
 				6DCA1B2D1A1100FB000E4E7E /* Back_button@2x.png in Resources */,
 				6DB71BFD1A24BFD200625612 /* Unselected@2x.png in Resources */,
+				6DC867A71A6DBC1D009D3CF5 /* test6_7_8@2x.png in Resources */,
 				6D6164DB1A15F04900DF1B14 /* Default@2x.png in Resources */,
 				6DCA1B391A1100FB000E4E7E /* weibo@2x.png in Resources */,
 				6D8812581A18FE1000C863C2 /* blackArrow@2x.png in Resources */,
@@ -1341,6 +1366,7 @@
 				6D86E2571A2E1BF300E991E9 /* test3@2x.png in Resources */,
 				6D2371E41A3C01CD008B8B44 /* icon_Location@2x.png in Resources */,
 				6D86E25F1A2E1BF300E991E9 /* test11@2x.png in Resources */,
+				6DC867A81A6DBC1D009D3CF5 /* test9_10_11@2x.png in Resources */,
 				6D6164D31A15F04900DF1B14 /* camera_button_switch_camera.png in Resources */,
 				6D5F172C1A2B6208003B18CB /* share_Qzone@2x.png in Resources */,
 				6D88125C1A18FE1000C863C2 /* grayArrow@2x.png in Resources */,
@@ -1388,6 +1414,7 @@
 				6D6164B81A15F01600DF1B14 /* UIImage+Alpha.m in Sources */,
 				6D8812481A18FDFA00C863C2 /* SDImageCache.m in Sources */,
 				6D88126C1A18FE2200C863C2 /* PullPsCollectionView.m in Sources */,
+				6D1FA2A71A6B891D008EF4FB /* ResetPasswordViewController.m in Sources */,
 				6D23721F1A4084F2008B8B44 /* HYSegmentedControl.m in Sources */,
 				6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */,
 				6D86E2661A2F331900E991E9 /* NewArrivalCell.m in Sources */,
@@ -1404,6 +1431,7 @@
 				6D987AE61A2A0D00001F4F4C /* AWActionSheet.m in Sources */,
 				6D88126A1A18FE2200C863C2 /* LoadMoreTableFooterView.m in Sources */,
 				6D6164B91A15F01600DF1B14 /* UIImage+Cut.m in Sources */,
+				6D1FA2AA1A6BA210008EF4FB /* SetNewPasswordViewController.m in Sources */,
 				6D88124B1A18FDFA00C863C2 /* SDWebImageManager.m in Sources */,
 				6D77DFCD1A14FC5100BDCE9E /* GoodsTableViewCell.m in Sources */,
 				6DB71C001A25412800625612 /* PrivateChatListViewController.m in Sources */,

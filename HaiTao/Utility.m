@@ -79,4 +79,24 @@
     [av show];
 }
 
++(void)showMessage:(NSString *)title message:(NSString*)msg
+{
+    UIAlertView* av = [[UIAlertView alloc] initWithTitle:title
+                                                 message:msg
+                                                delegate:nil
+                                       cancelButtonTitle:@"确定"
+                                       otherButtonTitles:nil];
+    [av show];
+}
+
++(void)showConfirmMessage:(NSString*)title message:(NSString*)msg delegate:(id)dlg
+{
+    UIAlertView* av = [[UIAlertView alloc] initWithTitle:title
+                                                 message:msg
+                                                delegate:dlg
+                                       cancelButtonTitle:@"取消"
+                                       otherButtonTitles:@"确定",nil];
+    [av show];
+}
+
 @end

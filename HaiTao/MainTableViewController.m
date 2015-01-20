@@ -147,7 +147,7 @@ int CurrentSelectedSegmentedControlIndex = 0;
 
 -(void)InitRoundCornerButton:(UIView*)parent
 {
-    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(247, 8, 60, 22)];
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(256, 13, 60, 22)];
     [button setTitle:@"分 享" forState:UIControlStateNormal];
     [button setBackgroundColor:[UIColor whiteColor]];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -236,7 +236,7 @@ int CurrentSelectedSegmentedControlIndex = 0;
     
     // title
     UILabel* lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(140, 0, 100, 24)];
-    lblTitle.text = @"轻 奢";
+    lblTitle.text = @"海淘平台";
     [self.navigationController.navigationBar addSubview:lblTitle] ;
 
     // shop cart

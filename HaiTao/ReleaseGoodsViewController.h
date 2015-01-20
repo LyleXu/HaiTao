@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ReleaseGoodsViewController : UIViewController
+@property (strong, nonatomic) UIImage* imgCaptured;
 
+@property (weak, nonatomic) IBOutlet UIImageView *FirstImageView;
 @end

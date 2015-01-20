@@ -114,6 +114,7 @@ bool isDisplayedTagandLocation = NO;
 -(void)toNextPage
 {
     ReleaseGoodsViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"releasegoodsviewcontroller"];
+    ctl.imgCaptured = self.imageMarkLocation.image;
     [self.navigationController pushViewController:ctl animated:YES];
 }
 
