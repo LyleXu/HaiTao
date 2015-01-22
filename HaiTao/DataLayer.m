@@ -113,7 +113,7 @@
      setting the quality to 90
      */
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 90);    
+    NSData *imageData = UIImagePNGRepresentation(image);
     // setting up the request object now
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:serverURL]];
