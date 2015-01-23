@@ -254,16 +254,16 @@ static NSString *kViewKey = @"viewKey";
 }
 
 - (IBAction)Login:(id)sender {
-//    NSString* errorCode = [DataLayer Login:self.txtUser.text pwd:self.txtPass.text];
-//    if([errorCode isEqualToString:SUCCESS])
-//    {
+    NSString* errorCode = [DataLayer Login:self.txtUser.text pwd:self.txtPass.text];
+    if([errorCode isEqualToString:SUCCESS])
+    {
         MainTabBarController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
         [self presentViewController:ctl animated:YES completion:nil];
-//    }else
-//    {
-//        // show the error message
-//        [Utility showErrorMessage:errorCode];
-//    }
+    }else
+    {
+        // show the error message
+        [Utility showErrorMessage:errorCode];
+    }
 }
 
 - (IBAction)returnLoginPage:(id)sender {

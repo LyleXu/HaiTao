@@ -8,23 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "PassValueDelegate.h"
-@interface RegisterViewController : UIViewController<UITableViewDataSource, UITextFieldDelegate,PassValueDelegate>
+@interface RegisterViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,PassValueDelegate,UIAlertViewDelegate>
 {
     IBOutlet UITableView *registerTableview;
-    UIButton *btnRegister;
     
     UILabel *lblCountryPhoneCode;
     UITextField *txtUser;
     UITextField *txtPass;
-    UITextField *txtConfirmPass;
     
     NSArray *dataArray;
 }
 @property (nonatomic, retain) UILabel *lblCountryPhoneCode;
 @property (nonatomic, retain) UITextField *txtUser;
 @property (nonatomic, retain) UITextField *txtPass;
-@property (nonatomic, retain) UITextField *txtConfirmPass;
 @property (nonatomic, retain) NSArray *dataArray;
-@property (retain, nonatomic) IBOutlet UIButton *btnRegister;
 @property (retain, nonatomic) IBOutlet UITableView *registerTableview;
+
+@property (nonatomic,strong) NSString* userName;
+@property (nonatomic,strong) NSString* userType;
 @end

@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "Utility.h"
 #import "DataLayer.h"
+#import "PAImageView.h"
 @interface UserViewController()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate>
 
 @end
@@ -38,15 +39,30 @@
     self.btnModifyUserInfo.layer.cornerRadius = 4;
     
     // username
-//    NSMutableDictionary* userInfo = [DataLayer GetUserInfo];
-//    int returnCode = [userInfo[@"s"] intValue];
-//    if(returnCode == 1)
-//    {
-//        self.navigationItem.title = userInfo[@"i"][@"nn"];
-//    }else
-//    {
-//        
-//    }
+    NSMutableDictionary* result = [DataLayer GetUserInfo];
+    NSString* returnCode = result[@"s"];
+    if([returnCode isEqualToString:SUCCESS])
+    {
+        if(result[@"i"][@"nn"] != [NSNull null])
+        {
+            self.navigationItem.title = result[@"i"][@"nn"];
+        }
+    }else
+    {
+        
+    }
+    
+    CGFloat imageSize = 75.f;
+    PAImageView *avaterImageView = [[PAImageView alloc]initWithFrame:CGRectMake(20, 83, imageSize, imageSize) backgroundProgressColor:[UIColor whiteColor] progressColor:[UIColor lightGrayColor]];
+    [self.view addSubview:avaterImageView];
+    
+    NSString* imageURL = [Utility getLargeImageURL:result[@"i"][@"p"]];
+    [avaterImageView setImageURL:imageURL];
+    
+    //然后再给图层添加一个有色的边框，类似qq空间头像那样
+    //self.imgAvatar.layer.borderWidth = 5;
+    //self.imgAvatar.layer.borderColor = [[UIColor whiteColor] CGColor];
+
 //    // collection view
 //    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
 //    [self.view addSubview:collectionView];

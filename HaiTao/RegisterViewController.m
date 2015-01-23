@@ -8,6 +8,9 @@
 
 #import "RegisterViewController.h"
 #import "CountryPhoneTableViewController.h"
+#import "DataLayer.h"
+#import "Utility.h"
+#import "VerifyCodeViewController.h"
 #define kLeftMargin				20.0
 #define kRightMargin			20.0
 
@@ -21,10 +24,8 @@ static NSString *kViewKey = @"viewKey";
 
 @implementation RegisterViewController
 @synthesize registerTableview;
-@synthesize btnRegister;
-@synthesize lblCountryPhoneCode, txtUser,txtPass,txtConfirmPass;
+@synthesize lblCountryPhoneCode, txtUser,txtPass;
 @synthesize dataArray;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,23 +43,15 @@ static NSString *kViewKey = @"viewKey";
                        @"密码: ",kSourceKey,
                        self.txtPass,kViewKey,
                        nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"确认密码: ",kSourceKey,
-                       self.txtConfirmPass,kViewKey,
-                       nil],
-
                       nil];
+    self.navigationItem.title = @"注册账号和密码";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"下一步" style:UIBarButtonItemStyleBordered target:self action:@selector(toNextPage)];
 }
-
-
-- (IBAction)registerWithPhoneNumber:(id)sender {
-}
-
 
 #pragma mark UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -152,26 +145,6 @@ static NSString *kViewKey = @"viewKey";
     return txtPass;
 }
 
-- (UITextField *)txtConfirmPass{
-    if (txtConfirmPass == nil) {
-        CGRect frame = CGRectMake(kLeftMargin + 110, 10.0, kTextFieldWidth, kTextFieldHeight);
-        txtConfirmPass = [[UITextField alloc] initWithFrame:frame];
-        txtConfirmPass.borderStyle = UITextBorderStyleNone;
-        txtConfirmPass.textColor = [UIColor blackColor];
-        txtConfirmPass.font = [UIFont systemFontOfSize:17];
-        txtConfirmPass.placeholder = @" Confirm Password";
-        txtConfirmPass.backgroundColor = [UIColor whiteColor];
-        txtConfirmPass.autocorrectionType = UITextAutocorrectionTypeNo;
-        txtConfirmPass.keyboardType = UIKeyboardTypeDefault;
-        txtConfirmPass.returnKeyType = UIReturnKeyDone;
-        txtConfirmPass.clearButtonMode = UITextFieldViewModeWhileEditing;
-        txtConfirmPass.tag = kViewTag;
-        txtConfirmPass.delegate = self;
-        txtConfirmPass.secureTextEntry = YES; // Make password display "*******"
-    }
-    return txtConfirmPass;
-}
-
 #pragma mark UITextFieldDelegate methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
@@ -185,6 +158,40 @@ static NSString *kViewKey = @"viewKey";
 -(void)passValue:(NSString *)value
 {
     self.lblCountryPhoneCode.text = value;
+}
+
+-(void)toNextPage
+{
+    NSString* msg = [NSString stringWithFormat:@"你选择的手机归属地:\n%@\n我们将发送验证码到这个手机:%@",self.lblCountryPhoneCode.text, self.txtUser.text];
+    [Utility showConfirmMessage:@"确认手机号码" message:msg delegate:self];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //NSString* msg = [[NSString alloc] initWithFormat:@"您按下的第%d个按钮！",buttonIndex];
+    if(buttonIndex == 1)
+    {
+        // ask server to send the verification code
+        NSMutableDictionary* result = [DataLayer GetVerificationCode:self.txtUser.text];
+        NSString* errorCode = result[@"s"];
+        if ([errorCode isEqualToString:SUCCESS]) {
+            NSString* verificatoinCode =  [NSString stringWithFormat:@"%d", [[result objectForKey:@"code"] intValue]];
+            VerifyCodeViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"VerifyCodeViewController"];
+            NSLog(@"verification code:%@",verificatoinCode);
+            mlController.verificationCode = verificatoinCode;
+            mlController.userName = self.userName;
+            mlController.userType = self.userType;
+            mlController.phone = self.txtUser.text;
+            mlController.password = self.txtPass.text;
+            mlController.areaCode = self.lblCountryPhoneCode.text;
+            
+            [self.navigationController pushViewController:mlController animated:YES];
+        }else
+        {
+            [Utility showErrorMessage:errorCode];
+        }
+    }
 }
 
 @end

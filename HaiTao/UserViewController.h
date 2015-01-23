@@ -17,4 +17,5 @@
 @property(nonatomic,retain) PullPsCollectionView *collectionView;
 @property(nonatomic,retain)NSMutableArray *items;
 -(void)loadDataSource;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAvatar;
 @end

@@ -13,9 +13,15 @@
 +(NSString*)getUserId;
 +(NSString*)getUserType;
 +(NSString*)getUserToken;
++(void)setUserId:(NSString*)userId;
++(void)setUserToken:(NSString*)token;
++(void)setUserType:(NSString*)userType;
 
 +(NSString*)getErrorMessage:(NSString*)errorCode;
 +(NSMutableDictionary*) allErrorMessages;
+
++(NSString*)getSmallImageURL:(NSString*)relativeURL;
++(NSString*)getLargeImageURL:(NSString*)relativeURL;
 
 +(void)showErrorMessage:(NSString*)errorCode;
 +(void)showMessage:(NSString *)title message:(NSString*)msg;

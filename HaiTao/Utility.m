@@ -52,16 +52,37 @@
     return  [mydefault objectForKey:CURRENT_USERID];
 }
 
++(void)setUserId:(NSString*)userId
+{
+    NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+    [mydefault setObject:userId forKey:CURRENT_USERID];
+    [mydefault synchronize];
+}
+
 +(NSString*)getUserToken
 {
     NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
     return  [mydefault objectForKey:CURRENT_TOKEN];
 }
 
++(void)setUserToken:(NSString*)token
+{
+    NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+    [mydefault setObject:token forKey:CURRENT_TOKEN];
+    [mydefault synchronize];
+}
+
 +(NSString*)getUserType
 {
     NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
     return  [mydefault objectForKey:CURRENT_USERTYPE];
+}
+
++(void)setUserType:(NSString*)userType
+{
+    NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+    [mydefault setObject:userType forKey:CURRENT_USERTYPE];
+    [mydefault synchronize];
 }
 
 +(NSString*)getErrorMessage:(NSString*)errorCode
@@ -99,4 +120,14 @@
     [av show];
 }
 
++(NSString*)getSmallImageURL:(NSString*)relativeURL
+{
+    return [NSString stringWithFormat:@"%@S%@",SERVER_IMAGE_RREFIX,relativeURL];
+}
+
+
++(NSString*)getLargeImageURL:(NSString*)relativeURL
+{
+    return [NSString stringWithFormat:@"%@L%@",SERVER_IMAGE_RREFIX,relativeURL];
+}
 @end
