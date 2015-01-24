@@ -160,7 +160,7 @@
  */
 +(NSMutableDictionary*)UploadGoodsImage:(UIImage*)image
 {
-    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/g/u?jc=&u=%@&token=%@",SERVER_HOSTURL,[Utility getUserId], [Utility getUserToken]];
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/g/u/p?jc=&u=%@&token=%@",SERVER_HOSTURL,[Utility getUserId], [Utility getUserToken]];
     return [self uploadImage:serverURL img:image];
 }
 
@@ -170,7 +170,7 @@
  */
 +(NSMutableDictionary*)AddorUpdateGoods:(NSString*)goodsName price:(NSString*)p number:(NSString*)num goodsDescription:(NSString*)m image:(NSString*)pic tag:(NSString*)t buyTagName:(NSString*)bta buyTagID:(NSString*)btad
 {
-    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/g/u?u=%@&tk=%@&n=%@&p=%@&num=%@&m=%@&pic=%@&t=%@&btn=%@&btad=%@",SERVER_HOSTURL, [Utility getUserId],[Utility getUserToken],goodsName,p,num,m,pic,t,bta,btad];
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@/d/v1/g/u?u=%@&tk=%@&n=%@&p=%@&num=%@&m=%@&pic=%@&t=%@&btn=%@&btad=%@&s=1",SERVER_HOSTURL, [Utility getUserId],[Utility getUserToken],goodsName,p,num,m,pic,t,bta,btad];
     NSMutableDictionary* result = [self FetchDataFromWebByGet:serverURL];
     return result;
 }
@@ -365,7 +365,8 @@
 +(NSMutableDictionary*)FetchDataFromWebByGet:(NSString *)url
 {
     NSError *theError = nil;
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[[NSURL alloc] initWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"GET"];
     NSURLResponse *theResponse =[[NSURLResponse alloc]init];

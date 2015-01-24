@@ -663,6 +663,8 @@
 				6D6164DD1A15F08A00DF1B14 /* CameraViewController.m */,
 				6D6164DF1A15FE4F00DF1B14 /* MarkLocationViewController.h */,
 				6D6164E01A15FE4F00DF1B14 /* MarkLocationViewController.m */,
+				6D2A34A01A1AB7D000E6615E /* ReleaseGoodsViewController.h */,
+				6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -1268,8 +1270,6 @@
 				6D77DFD61A1506BF00BDCE9E /* SellerViewController.m */,
 				6D2A349D1A1AB66100E6615E /* LocationViewController.h */,
 				6D2A349E1A1AB66100E6615E /* LocationViewController.m */,
-				6D2A34A01A1AB7D000E6615E /* ReleaseGoodsViewController.h */,
-				6D2A34A11A1AB7D000E6615E /* ReleaseGoodsViewController.m */,
 				6D2A34C21A1B403600E6615E /* GoodsDetailViewController.h */,
 				6D2A34C31A1B403600E6615E /* GoodsDetailViewController.m */,
 				6DA25EAB1A2AEE16006B8574 /* BuyerShowCell.h */,

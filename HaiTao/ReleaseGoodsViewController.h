@@ -12,4 +12,6 @@
 @property (strong, nonatomic) UIImage* imgCaptured;
 
 @property (weak, nonatomic) IBOutlet UIImageView *FirstImageView;
+@property (weak, nonatomic) IBOutlet UITextView *txtTitle;
+@property (weak, nonatomic) IBOutlet UITextView *txtDescription;
 @end

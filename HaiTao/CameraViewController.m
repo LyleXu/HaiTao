@@ -42,17 +42,12 @@
     fitler.currentImage = image;
     [self presentViewController:fitler animated:YES completion:nil];
 }
+
 - (void)imageFitlerProcessDone:(UIImage *)image //图片处理完
 {
-//    NSString* url = [NSString stringWithFormat:@"http://114.215.83.218/d/v1/u/u/p?jc=&tk=%@&u=%@",[Utility getUserToken],[Utility getUserId]];
-//    
-//    [DataLayer uploadImage:url img:image];
-//
-    //self.imgTest.image = image;
-    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"marklocationviewcontroller"];
+    MarkLocationViewController* mlController = [self.storyboard instantiateViewControllerWithIdentifier:@"MarkLocationViewController"];
     mlController.imgCaptured = [image copy];
     [self.navigationController pushViewController:mlController animated:YES];
-    //[self presentViewController:mlController animated:YES completion:nil];
 }
 
 
