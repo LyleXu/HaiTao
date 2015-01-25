@@ -64,6 +64,8 @@
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 height:44 Titles:@[@"私聊",@"通知",@"赞"] delegate:self] ;
 
         [self.navigationController.navigationBar addSubview:segmentedControl];
+    
+    self.tabBarController.tabBar.frame = CGRectMake(0, DEVICE_HEIGHT-TabBarHeight, DEVICE_WIDTH, TabBarHeight);
 }
 
 -(void)viewWillDisappear:(BOOL)animated

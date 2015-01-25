@@ -67,10 +67,12 @@ int CurrentSelectedSegmentedControlIndexOfSearch = 0;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:YES];
+    [super viewWillAppear:animated];
     
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:270 height:44 Titles:@[@"标签",@"特卖",@"最新",@"最热"] delegate:self] ;
     [self.navigationController.navigationBar addSubview:segmentedControl];
+    
+    self.tabBarController.tabBar.frame = CGRectMake(0, DEVICE_HEIGHT-TabBarHeight, DEVICE_WIDTH, TabBarHeight);
 }
 
 -(void)viewWillDisappear:(BOOL)animated

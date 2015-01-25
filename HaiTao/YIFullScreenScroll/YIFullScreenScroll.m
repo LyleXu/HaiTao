@@ -19,8 +19,9 @@
 @synthesize viewController = _viewController;
 @synthesize enabled = _enabled;
 @synthesize shouldShowUIBarsOnScrollUp = _shouldShowUIBarsOnScrollUp;
+@synthesize addtionalControl = _addtionalControl;
 
-- (id)initWithViewController:(UIViewController*)viewController
+- (id)initWithViewController:(UIViewController*)viewController otherControl:(UIButton*)theControl
 {
     self = [super init];
     if (self) {
@@ -30,6 +31,7 @@
         viewController.navigationController.navigationBar.translucent = YES;
         viewController.navigationController.toolbar.translucent = YES;
         _viewController = viewController;
+        _addtionalControl = theControl;
     }
     return self;
 }
@@ -72,6 +74,14 @@
             tabBarSuperviewHeight = tabBar.superview.height;
         }
         tabBar.top = MIN(MAX(tabBar.top+deltaY, tabBarSuperviewHeight-tabBar.height), tabBarSuperviewHeight);
+    }
+    
+    BOOL isAdditionalControlExisting = self.addtionalControl && !self.addtionalControl.hidden;
+    CGFloat additinalControlSuperviewHeight = 0;
+    if(isAdditionalControlExisting)
+    {
+        additinalControlSuperviewHeight = self.addtionalControl.superview.height;
+        self.addtionalControl.top = MIN(MAX(self.addtionalControl.top+deltaY, additinalControlSuperviewHeight-self.addtionalControl.height), additinalControlSuperviewHeight);
     }
     
     // scrollIndicatorInsets

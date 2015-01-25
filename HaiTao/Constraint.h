@@ -25,4 +25,8 @@
 #define kTextFieldHeight		25
 #define kViewTag				100
 
+#define DEVICE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define DEVICE_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define TabBarHeight 38.0
+
 #endif

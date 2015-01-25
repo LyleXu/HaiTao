@@ -16,11 +16,12 @@
 }
 
 @property (strong, nonatomic) UIViewController* viewController;
+@property (strong, nonatomic) UIButton* addtionalControl;
 
 @property (nonatomic) BOOL enabled;
 @property (nonatomic) BOOL shouldShowUIBarsOnScrollUp;
 
-- (id)initWithViewController:(UIViewController*)viewController;
+- (id)initWithViewController:(UIViewController*)viewController otherControl:(UIButton*)additionalControl;
 
 - (void)layoutTabBarController; // set on viewDidAppear, if using tabBarController
 

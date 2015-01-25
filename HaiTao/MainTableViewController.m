@@ -5,7 +5,6 @@
 //  Created by gtcc on 11/7/14.
 //  Copyright (c) 2014 home. All rights reserved.
 //
-#define DEVICE_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import "MainTableViewController.h"
 #import "MaijiaTableViewCell.h"
@@ -14,6 +13,7 @@
 #import "AWActionSheet.h"
 #import "DataLayer.h"
 #import "BuyerShowCell.h"
+#import "MainTabBarController.h"
 
 int CurrentSelectedSegmentedControlIndex = 0;
 @interface MainTableViewController ()<UITableViewDataSource,UITableViewDelegate,POHorizontalListDelegate,UIActionSheetDelegate,AWActionSheetDelegate,HYSegmentedControlDelegate>
@@ -35,10 +35,8 @@ int CurrentSelectedSegmentedControlIndex = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _fullScreenDelegate = [[YIFullScreenScroll alloc] initWithViewController:self];
+    _fullScreenDelegate = [[YIFullScreenScroll alloc] initWithViewController:self otherControl:((MainTabBarController*)self.tabBarController).centerButton];
     _fullScreenDelegate.shouldShowUIBarsOnScrollUp = YES;
-    
-    self.tabBarController.tabBar.frame = CGRectMake(0, 530, 320, 38);
 }
 
 -(NSArray*)sellerGoodsItems
@@ -251,11 +249,11 @@ int CurrentSelectedSegmentedControlIndex = 0;
     if (self.toolbarItems.count == 0) {
         [self.navigationController setToolbarHidden:YES animated:animated];
     }
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     // remove the segment control in the navigation bar
     for (UIView *views in self.navigationController.navigationBar.subviews) {
         if([views isKindOfClass:[UILabel class]])
@@ -304,6 +302,8 @@ int CurrentSelectedSegmentedControlIndex = 0;
     self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:0 width:220 Titles:@[@"卖家商品",@"买家SHOW"] delegate:self];
     [container addSubview:self.segmentedControl];
     [self.navigationController.navigationBar addSubview:container];
+    
+    self.tabBarController.tabBar.frame = CGRectMake(0, DEVICE_HEIGHT - TabBarHeight, DEVICE_WIDTH, TabBarHeight);
 }
 
 #pragma mark -

@@ -163,6 +163,13 @@
 - (IBAction)modifyUserInfo:(id)sender {
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.tabBarController.tabBar.frame = CGRectMake(0, DEVICE_HEIGHT-TabBarHeight, DEVICE_WIDTH, TabBarHeight);
+}
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [self setHidesBottomBarWhenPushed:NO];

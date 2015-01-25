@@ -38,6 +38,10 @@ bool isDisplayedTagandLocation = NO;
     
     self.navigationItem.title = @"标记标签";
     
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:self action:@selector(toPrevioustPage)];
+    leftBarButtonItem.image = [UIImage imageNamed:@"Back_button.png"];
+    [self.navigationItem setLeftBarButtonItem:leftBarButtonItem];
+    
     self.imageMarkLocation.image = self.imgCaptured;
     
     self.imageMarkLocation.userInteractionEnabled = YES;
@@ -116,6 +120,11 @@ bool isDisplayedTagandLocation = NO;
     ReleaseGoodsViewController* ctl = [self.storyboard instantiateViewControllerWithIdentifier:@"releasegoodsviewcontroller"];
     ctl.imgCaptured = self.imageMarkLocation.image;
     [self presentViewController:ctl animated:YES completion:nil];
+}
+
+-(void)toPrevioustPage
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)passValue:(NSString *)value
