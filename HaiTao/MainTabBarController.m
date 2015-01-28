@@ -22,6 +22,12 @@
                             [self viewControllerWithTabTitle:@"" image:[UIImage imageNamed:@"xiaoxi.png"] storyboardID:@"PrivateChatListViewController"],
                             [self viewControllerWithTabTitle:@"" image:[UIImage imageNamed:@"geren.png"] storyboardID:@"UserViewController"], nil];
     [self addCenterButtonWithImage:[UIImage imageNamed:@"camera-icon.png"] highlightImage:nil];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 // Create a view controller and setup it's tab bar item with a title and image

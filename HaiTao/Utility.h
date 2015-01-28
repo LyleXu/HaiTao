@@ -16,12 +16,14 @@
 +(void)setUserId:(NSString*)userId;
 +(void)setUserToken:(NSString*)token;
 +(void)setUserType:(NSString*)userType;
++(BOOL)IsBuyer;
 
 +(NSString*)getErrorMessage:(NSString*)errorCode;
 +(NSMutableDictionary*) allErrorMessages;
 
 +(NSString*)getSmallImageURL:(NSString*)relativeURL;
 +(NSString*)getLargeImageURL:(NSString*)relativeURL;
++(NSString*)getImageURL:(NSString*)relativeURL;
 
 +(void)showErrorMessage:(NSString*)errorCode;
 +(void)showMessage:(NSString *)title message:(NSString*)msg;

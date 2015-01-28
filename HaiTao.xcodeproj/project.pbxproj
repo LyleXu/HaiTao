@@ -58,7 +58,6 @@
 		6D6A42CD1A05BA3B0005B35F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42CB1A05BA3B0005B35F /* LaunchScreen.xib */; };
 		6D6A42D91A05BA3B0005B35F /* HaiTaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A42D81A05BA3B0005B35F /* HaiTaoTests.m */; };
 		6D6A42E91A05BE6C0005B35F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A42E81A05BE6C0005B35F /* LoginViewController.m */; };
-		6D6A42EB1A05C00C0005B35F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A42EA1A05C00C0005B35F /* Main.storyboard */; };
 		6D6A453C1A061FB50005B35F /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6A45391A061FB50005B35F /* libWeiboSDK.a */; };
 		6D6A453D1A061FB50005B35F /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */; };
 		6D77DFC61A14F63A00BDCE9E /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D77DFC51A14F63A00BDCE9E /* Location@2x.png */; };
@@ -236,6 +235,9 @@
 		6DCA1B7E1A138053000E4E7E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCA1B7D1A138053000E4E7E /* libstdc++.dylib */; };
 		6DCA1B801A138060000E4E7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCA1B7F1A138060000E4E7E /* libz.dylib */; };
 		6DCA1B821A1380D0000E4E7E /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DCA1B811A1380D0000E4E7E /* TencentOpenApi_IOS_Bundle.bundle */; };
+		6DE11D341A76AF5000176EC2 /* ReceivedAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE11D331A76AF5000176EC2 /* ReceivedAddressViewController.m */; };
+		6DE11D371A76AFDE00176EC2 /* ReceivedAddressTableviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE11D361A76AFDE00176EC2 /* ReceivedAddressTableviewCell.m */; };
+		6DE11D391A770F7F00176EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE11D381A770F7F00176EC2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -330,7 +332,6 @@
 		6D6A42D81A05BA3B0005B35F /* HaiTaoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaiTaoTests.m; sourceTree = "<group>"; };
 		6D6A42E71A05BE6C0005B35F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6D6A42E81A05BE6C0005B35F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		6D6A42EA1A05C00C0005B35F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6D6A45391A061FB50005B35F /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeiboSDK.a; path = libWeiboSDK/libWeiboSDK.a; sourceTree = "<group>"; };
 		6D6A453A1A061FB50005B35F /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WeiboSDK.bundle; path = libWeiboSDK/WeiboSDK.bundle; sourceTree = "<group>"; };
 		6D6A453B1A061FB50005B35F /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeiboSDK.h; path = libWeiboSDK/WeiboSDK.h; sourceTree = "<group>"; };
@@ -604,6 +605,11 @@
 		6DCA1B7D1A138053000E4E7E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		6DCA1B7F1A138060000E4E7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6DCA1B811A1380D0000E4E7E /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = libQQSDK/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		6DE11D321A76AF4F00176EC2 /* ReceivedAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedAddressViewController.h; sourceTree = "<group>"; };
+		6DE11D331A76AF5000176EC2 /* ReceivedAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedAddressViewController.m; sourceTree = "<group>"; };
+		6DE11D351A76AFDE00176EC2 /* ReceivedAddressTableviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedAddressTableviewCell.h; sourceTree = "<group>"; };
+		6DE11D361A76AFDE00176EC2 /* ReceivedAddressTableviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedAddressTableviewCell.m; sourceTree = "<group>"; };
+		6DE11D381A770F7F00176EC2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -757,6 +763,7 @@
 		6D6A42B81A05BA3B0005B35F /* HaiTao */ = {
 			isa = PBXGroup;
 			children = (
+				6DE11D381A770F7F00176EC2 /* Main.storyboard */,
 				6DB5C36A1A71E33B00082E3E /* Register */,
 				6D98A2E91A20CBEE00B23B46 /* Network */,
 				6D61649D1A15EF9800DF1B14 /* Camera */,
@@ -766,7 +773,6 @@
 				6D77DFC71A14F91500BDCE9E /* Search */,
 				6DCA1B1C1A10FBBF000E4E7E /* Login */,
 				6DCA1AF51A0CC687000E4E7E /* Main */,
-				6D6A42EA1A05C00C0005B35F /* Main.storyboard */,
 				6D6A42BD1A05BA3B0005B35F /* AppDelegate.h */,
 				6D6A42BE1A05BA3B0005B35F /* AppDelegate.m */,
 				6D6A42C91A05BA3B0005B35F /* Images.xcassets */,
@@ -1021,6 +1027,10 @@
 				6D77E0301A15BB4000BDCE9E /* UserInfoTableViewController.m */,
 				6D6164981A15DAD800DF1B14 /* SettingsViewController.h */,
 				6D6164991A15DAD800DF1B14 /* SettingsViewController.m */,
+				6DE11D321A76AF4F00176EC2 /* ReceivedAddressViewController.h */,
+				6DE11D331A76AF5000176EC2 /* ReceivedAddressViewController.m */,
+				6DE11D351A76AFDE00176EC2 /* ReceivedAddressTableviewCell.h */,
+				6DE11D361A76AFDE00176EC2 /* ReceivedAddressTableviewCell.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -1477,6 +1487,7 @@
 				6D8812761A18FE8100C863C2 /* CellView.xib in Resources */,
 				6D77E0261A15A37C00BDCE9E /* toolbar_bottom_bar.png in Resources */,
 				6D77E0221A15A37C00BDCE9E /* chatto_bg_focused.png in Resources */,
+				6DE11D391A770F7F00176EC2 /* Main.storyboard in Resources */,
 				6D6A42CD1A05BA3B0005B35F /* LaunchScreen.xib in Resources */,
 				6D77E01A1A15A37C00BDCE9E /* chat_bottom_smile_press.png in Resources */,
 				6D77E01E1A15A37C00BDCE9E /* chat_bottom_voice_nor.png in Resources */,
@@ -1517,7 +1528,6 @@
 				6D77DFD21A1500E200BDCE9E /* chaopin1@2x.png in Resources */,
 				6DCA1B351A1100FB000E4E7E /* pinglun@2x.png in Resources */,
 				6D6A42CA1A05BA3B0005B35F /* Images.xcassets in Resources */,
-				6D6A42EB1A05C00C0005B35F /* Main.storyboard in Resources */,
 				6D86E2461A2E1A2D00E991E9 /* toShopCart.png in Resources */,
 				6D77DFE01A150DAF00BDCE9E /* fans4@2x.png in Resources */,
 				6D86E2431A2E15B000E991E9 /* shopcart@2x.png in Resources */,
@@ -1565,6 +1575,7 @@
 				6D2A34961A1A362800E6615E /* ShopCartViewController.m in Sources */,
 				6D86E2661A2F331900E991E9 /* NewArrivalCell.m in Sources */,
 				6D98A3151A218CD200B23B46 /* MainViewController.m in Sources */,
+				6DE11D371A76AFDE00176EC2 /* ReceivedAddressTableviewCell.m in Sources */,
 				6DB5C38F1A7244E000082E3E /* AFNetworkReachabilityManager.m in Sources */,
 				6D98A3061A20CDD300B23B46 /* SBJsonStreamParser.m in Sources */,
 				6DA25EAD1A2AEE16006B8574 /* BuyerShowCell.m in Sources */,
@@ -1633,6 +1644,7 @@
 				6DB5C3A81A72450300082E3E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				6D77DFCA1A14F94700BDCE9E /* SearchViewController.m in Sources */,
 				6DB5C3AC1A72450300082E3E /* UIProgressView+AFNetworking.m in Sources */,
+				6DE11D341A76AF5000176EC2 /* ReceivedAddressViewController.m in Sources */,
 				6D86E2631A2F330400E991E9 /* SpecialSellingCell.m in Sources */,
 				6D98A2EC1A20CC3000B23B46 /* DataLayer.m in Sources */,
 				6D61649A1A15DAD800DF1B14 /* SettingsViewController.m in Sources */,

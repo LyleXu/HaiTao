@@ -10,6 +10,8 @@
 #import "PSCollectionViewCell.h"
 #import "CellView.h"
 #import "UIImageView+WebCache.h"
+#import "DataLayer.h"
+#import "Utility.h"
 @interface SellerViewController()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate,PullPsCollectionViewDelegate,HYSegmentedControlDelegate>
 @end
 
@@ -220,6 +222,19 @@
         // Maijia shang pin
     }else{
         // Maijia Show
+    }
+}
+- (IBAction)addFocus:(id)sender {
+    NSMutableDictionary* result = [DataLayer AddFocus:@"1563" goodsId:@"" focusStatus:@"1" focusType:@"0"];
+    NSString* returnCode = result[@"s"];
+    if([returnCode isEqualToString:SUCCESS])
+    {
+        [Utility showErrorMessage:@"1001"];
+        self.btnFocus.enabled = false;
+        self.btnFocus.titleLabel.text = @"已关注";
+    }else
+    {
+        [Utility showErrorMessage:returnCode];
     }
 }
 

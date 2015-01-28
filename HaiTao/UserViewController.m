@@ -60,38 +60,38 @@
     [avaterImageView setImageURL:imageURL];
     
     //然后再给图层添加一个有色的边框，类似qq空间头像那样
-    //self.imgAvatar.layer.borderWidth = 5;
-    //self.imgAvatar.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.imgAvatar.layer.borderWidth = 5;
+    self.imgAvatar.layer.borderColor = [[UIColor whiteColor] CGColor];
 
-//    // collection view
-//    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
-//    [self.view addSubview:collectionView];
-//    collectionView.collectionViewDelegate = self;
-//    collectionView.collectionViewDataSource = self;
-//    collectionView.pullDelegate=self;
-//    collectionView.backgroundColor = [UIColor clearColor];
-//    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    
-//    
-//    collectionView.numColsPortrait = 3;
-//    collectionView.numColsLandscape = 3;
-//    
-//    collectionView.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
-//    collectionView.pullBackgroundColor = [UIColor yellowColor];
-//    collectionView.pullTextColor = [UIColor blackColor];
-//    //    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
-//    //    [headerView setBackgroundColor:[UIColor redColor]];
-//    //    self.collectionView.headerView=headerView;
-//    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:self.collectionView.bounds];
-//    loadingLabel.text = @"Loading...";
-//    loadingLabel.textAlignment = UITextAlignmentCenter;
-//    collectionView.loadingView = loadingLabel;
-//    
-//    //    [self loadDataSource];
-//    if(!collectionView.pullTableIsRefreshing) {
-//        collectionView.pullTableIsRefreshing = YES;
-//        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
-//    }
+    // collection view
+    collectionView = [[PullPsCollectionView alloc] initWithFrame:CGRectMake(0, 270, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:collectionView];
+    collectionView.collectionViewDelegate = self;
+    collectionView.collectionViewDataSource = self;
+    collectionView.pullDelegate=self;
+    collectionView.backgroundColor = [UIColor clearColor];
+    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    
+    collectionView.numColsPortrait = 3;
+    collectionView.numColsLandscape = 3;
+    
+    collectionView.pullArrowImage = [UIImage imageNamed:@"blackArrow"];
+    collectionView.pullBackgroundColor = [UIColor yellowColor];
+    collectionView.pullTextColor = [UIColor blackColor];
+    //    UIView *headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 45)];
+    //    [headerView setBackgroundColor:[UIColor redColor]];
+    //    self.collectionView.headerView=headerView;
+    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:self.collectionView.bounds];
+    loadingLabel.text = @"Loading...";
+    loadingLabel.textAlignment = UITextAlignmentCenter;
+    collectionView.loadingView = loadingLabel;
+    
+    //    [self loadDataSource];
+    if(!collectionView.pullTableIsRefreshing) {
+        collectionView.pullTableIsRefreshing = YES;
+        [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0];
+    }
 
 }
 
@@ -99,7 +99,15 @@
 {
     [super viewDidAppear:animated];
     
-    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:240 Titles:@[@"交易",@"购物车"] delegate:self] ;
+    NSArray* titles = nil;
+    if([Utility IsBuyer])
+    {
+        titles = @[@"交易",@"购物车"];
+    }else
+    {
+        titles = @[@"商品",@"标签"];
+    }
+    self.segmentedControl = [[HYSegmentedControl alloc] initWithOriginY:240 Titles:titles delegate:self] ;
     [self.view addSubview:segmentedControl];
 }
 
@@ -158,7 +166,7 @@
         
     }
     
-    [self setHidesBottomBarWhenPushed:YES];
+    //[self setHidesBottomBarWhenPushed:YES];
 }
 - (IBAction)modifyUserInfo:(id)sender {
 }
@@ -172,7 +180,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self setHidesBottomBarWhenPushed:NO];
+    //[self setHidesBottomBarWhenPushed:NO];
     [super viewWillDisappear:YES];
 
 }
@@ -193,9 +201,7 @@
     
     //    [v fillViewWithObject:item];
     
-    //NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://imgur.com/%@%@", [item objectForKey:@"hash"], [item objectForKey:@"ext"]]];
-    //NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost/pic/%@%@", [item objectForKey:@"hash"], [item objectForKey:@"ext"]]];
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.110/pic/%@%@", [item objectForKey:@"hash"], [item objectForKey:@"ext"]]];
+    NSURL *URL = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@", SERVER_IMAGE_RREFIX, item[@"imageRelativeName"]]];
     //    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     
     [v.picView  setImageWithURL:URL placeholderImage:[UIImage imageNamed:@"placeholder"]];
@@ -239,20 +245,37 @@
     //            [self dataSourceDidError];
     //        }
     
-    self.items = [[NSMutableArray alloc] initWithObjects:
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test0",@"hash",@".png",@"ext",@"212",@"width",@"158",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test1",@"hash",@".png",@"ext",@"202",@"width",@"178",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test2",@"hash",@".png",@"ext",@"216",@"width",@"174",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test3",@"hash",@".png",@"ext",@"198",@"width",@"154",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test4",@"hash",@".png",@"ext",@"231",@"width",@"147",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test5",@"hash",@".png",@"ext",@"183",@"width",@"169",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test6",@"hash",@".png",@"ext",@"172",@"width",@"179",@"height" , nil ],
-                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test7",@"hash",@".png",@"ext",@"165",@"width",@"170",@"height" , nil ],
-//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test8",@"hash",@".png",@"ext",@"211",@"width",@"142",@"height" , nil ],
-//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test9",@"hash",@".png",@"ext",@"166",@"width",@"154",@"height" , nil ],
-//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test10",@"hash",@".png",@"ext",@"213",@"width",@"153",@"height" , nil ],
-//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test11",@"hash",@".png",@"ext",@"152",@"width",@"154",@"height" , nil ],
-                  nil];
+    NSMutableDictionary* result = [DataLayer GetSellerGoodsList:[Utility getUserId] pageIndex:@"1" pageSize:@"9"];
+    NSString* returnCode = result[@"s"];
+    if([returnCode isEqualToString:SUCCESS])
+    {
+        if(!self.items)
+        {
+            self.items = [NSMutableArray array];
+        }
+        for (NSDictionary* row in result[@"m"][@"rows"]) {
+            [self.items addObject:[[NSDictionary alloc] initWithObjectsAndKeys:row[@"id"], @"goodsId", row[@"fpic"],@"imageRelativeName", nil]];
+        }
+    }else
+    {
+        [Utility showErrorMessage:returnCode];
+    }
+        
+    
+//    self.items = [[NSMutableArray alloc] initWithObjects:
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test0",@"hash",@".png",@"ext",@"212",@"width",@"158",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test1",@"hash",@".png",@"ext",@"202",@"width",@"178",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test2",@"hash",@".png",@"ext",@"216",@"width",@"174",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test3",@"hash",@".png",@"ext",@"198",@"width",@"154",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test4",@"hash",@".png",@"ext",@"231",@"width",@"147",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test5",@"hash",@".png",@"ext",@"183",@"width",@"169",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test6",@"hash",@".png",@"ext",@"172",@"width",@"179",@"height" , nil ],
+//                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test7",@"hash",@".png",@"ext",@"165",@"width",@"170",@"height" , nil ],
+////                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test8",@"hash",@".png",@"ext",@"211",@"width",@"142",@"height" , nil ],
+////                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test9",@"hash",@".png",@"ext",@"166",@"width",@"154",@"height" , nil ],
+////                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test10",@"hash",@".png",@"ext",@"213",@"width",@"153",@"height" , nil ],
+////                  [[NSDictionary alloc] initWithObjectsAndKeys:@"test11",@"hash",@".png",@"ext",@"152",@"width",@"154",@"height" , nil ],
+//                  nil];
     //}];
 }
 

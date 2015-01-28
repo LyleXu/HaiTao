@@ -41,6 +41,7 @@
                             @"订单不可关闭(只有未付款订单方可关闭)",@"119",
                             @"订单付款状态异常(不可以付款.即只有未付款、预付状态订单方可付款)",@"120",
                             @"订单不存在或已删除",@"121",
+                            @"关注成功",@"1001",
                              nil];
     }
     return _allErrorMessages;
@@ -83,6 +84,11 @@
     NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
     [mydefault setObject:userType forKey:CURRENT_USERTYPE];
     [mydefault synchronize];
+}
+
++(BOOL)IsBuyer
+{
+    return [[Utility getUserType] isEqualToString:USER_BUYER];
 }
 
 +(NSString*)getErrorMessage:(NSString*)errorCode
@@ -130,4 +136,10 @@
 {
     return [NSString stringWithFormat:@"%@L%@",SERVER_IMAGE_RREFIX,relativeURL];
 }
+
++(NSString*)getImageURL:(NSString*)relativeURL
+{
+    return [NSString stringWithFormat:@"%@%@",SERVER_IMAGE_RREFIX,relativeURL];
+}
+
 @end

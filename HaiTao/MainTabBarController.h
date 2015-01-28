@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "CameraViewController.h"
 @interface MainTabBarController : UITabBarController<CustomImagePickerControllerDelegate,ImageFitlerProcessDelegate>
-@property (nonatomic,weak) UIButton* centerButton;
+@property (nonatomic,strong) UIButton* centerButton;
 @end

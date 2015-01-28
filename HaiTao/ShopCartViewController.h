@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopCartViewController : UIViewController
-@property (strong,nonatomic) NSArray* cartItems;
+@property (strong,nonatomic) NSMutableArray* cartItems;
 @property (weak, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UILabel *lblTotal;
+@property (weak, nonatomic) IBOutlet UILabel *lblGoodsMoney;
+@property (weak, nonatomic) IBOutlet UIButton *btnJieSuan;
 @end

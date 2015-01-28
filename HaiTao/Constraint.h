@@ -29,4 +29,7 @@
 #define DEVICE_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define TabBarHeight 38.0
 
+#define USER_SELLER @"2"
+#define USER_BUYER @"0"
+
 #endif
